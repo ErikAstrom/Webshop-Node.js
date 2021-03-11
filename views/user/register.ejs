@@ -2,11 +2,15 @@
 
 <form action="/register" method="post">
     <input type="text" name="username" placeholder="Username">
-    <input type="password" name="password" placeholder="Password">
     <input type="email" name="email" placeholder="E-mail">
+    <input type="password" name="password" placeholder="Create Password">
+    <input type="password" name="password2" placeholder="Confirm Password">
     <button type="submit">Go</button>
 </form>
+
+<div><a href="/login">To Login</a></div>
 
 <%- include("../helpers/errorMessage") %>
 
 <%- include("../partials/footer") %>
+
