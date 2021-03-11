@@ -9,7 +9,10 @@ const submitRegister = async (req, res) => {
     const { username, email, password } = req.body;
 
     try {
-        await new User({ username: username, email: email, password: password }).save();
+        const salt = await bcrypt.genSalt(10);
+        const hashedPassword = await bcrypt.hash(password, salt);
+
+        await new User({ username: username, email: email, password: hashedPassword }).save();
         res.send("Hej");
     } catch (err) {
         console.log(err);
