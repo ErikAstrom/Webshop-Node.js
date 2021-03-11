@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
 const renderLogin = (req, res) => {
-    if (req.cookies.jwtToken) return res.redirect("/");
+    // if (req.cookies.jwtToken) return res.redirect("/");
     try {
       res.render("user/login.ejs");
     } catch (err) {

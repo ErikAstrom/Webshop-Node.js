@@ -12,7 +12,7 @@ const renderRegister = (req, res) => {
 const submitRegister = async (req, res) => {
     
     const {error} = validateUser(req.body);
-    const { username, email, password } = req.body;
+    const { username, email, password, password2 } = req.body;
     let errors = [];
 
     try {
@@ -21,9 +21,16 @@ const submitRegister = async (req, res) => {
         res.render("user/register.ejs", {
             errors,
             error
-        })
+        });
         }
-
+        if (password !== password2) {
+            return errors.push({ msg: "The passwords does not match." }),
+            res.render('user/register.ejs', {
+                errors,
+                password,
+                password2
+            });
+        }
         const userMail = await User.findOne({ email: email });
         const userName = await User.findOne({ username: username });
         if (userName) {
