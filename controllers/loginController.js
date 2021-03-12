@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
 const renderLogin = (req, res) => {
-    // if (req.cookies.jwtToken) return res.redirect("/");
+    if (req.cookies.jwtToken) return res.redirect("/userStart");
     try {
       res.render("user/login.ejs");
     } catch (err) {
@@ -53,7 +53,7 @@ const renderLogin = (req, res) => {
         });
       }
 
-      const jwtToken = await jwt.sign({ username: user }, process.env.SECRET_KEY);
+      const jwtToken = await jwt.sign({ user: user }, process.env.SECRET_KEY);
       if (jwtToken) {
         const cookie = req.cookies.jwtToken;
         if (!cookie) {
