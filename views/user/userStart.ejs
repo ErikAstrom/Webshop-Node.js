@@ -6,6 +6,12 @@
     
 </div>
 
+<% products.forEach(product => { %>
+    
+    <div><%= product.title %></div>
+
+<% }) %>
+
 <div><a href="/logout">Log Out</a></div>
 
 <%- include("../partials/footer") %>
