@@ -1,10 +1,20 @@
-const User = require("../models/user");
+const {User} = require("../models/user");
 
-const adminRender = (req,res)=> {
+const adminRender = async (req, res) => {
 
-    res.render("admin/admin.ejs")
-
-}
+    try {
+      const adminProduct = await User.findOne({ _id: req.user.user._id}).populate(
+          "adminProducts"
+      );
+      res.render('admin/admin.ejs', {
+        user: req.user.user,
+        items: adminProduct.adminProducts, 
+      })
+      
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
 
 

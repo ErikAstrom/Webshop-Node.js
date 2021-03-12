@@ -9,8 +9,19 @@ const userSchema = new mongoose.Schema({
   mailToken: String,
   mailExpiration: Date,
   role: { type: String, default: "customer" },
-  date: { type: Date, default: Date.now } 
+  date: { type: Date, default: Date.now },
+  adminProducts: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'product'
+    }
+  ]
 });
+
+userSchema.methods.addProduct = async function (productId) {
+  this.adminProducts.push(productId)
+  await this.save();
+}
 
 function validateUser(user) {
 
