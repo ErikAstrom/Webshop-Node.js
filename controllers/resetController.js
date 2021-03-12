@@ -1,4 +1,4 @@
-const User = require("../models/user");
+const {User} = require("../models/user");
 const crypto = require("crypto");
 const bcrypt = require("bcrypt");
 require("dotenv").config();
@@ -28,7 +28,7 @@ const submitReset = async (req,res) => {
         from: "eckedevelopments@gmail.com", 
         subject: "Daytell reset password link",
         text: "Instructions for creating a new password",
-        html: `<h2> Click  <a href="http://localhost:8003/reset/${user.mailToken}"> <b>here</b></a> to create a new password </h2>`,
+        html: `<h2> Click  <a href="http://localhost:${process.env.PORT}/reset/${user.mailToken}"> <b>here</b></a> to create a new password </h2>`,
       };
       sgMail
       .send(msg)

@@ -5,7 +5,7 @@ const verifyUser = (req,res,next)=>  {
 
     const token = req.cookies.jwtToken;
 
-    if(!token) return res.redirect("/login", {err: "Du måste logga in"});
+    if(!token) return res.redirect("/login");
 
     const validUser = jwt.verify(token, process.env.SECRET_KEY)
 
