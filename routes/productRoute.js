@@ -1,13 +1,16 @@
 const express = require("express");
 const router = express.Router();
 
-const { userStart, createProduct, editProduct, submitEdit, deleteProduct } = require("../controllers/productController");
+const { createProduct, editProduct, submitEdit, deleteProduct, renderProducts } = require("../controllers/productController"); 
 const verifyAdmin = require("../middleware/verifyAdmin");
 const verifyUser = require("../middleware/verifyUser");
+const productMiddleware = require("../middleware/productMiddleware");
 const {adminRender} = require("../controllers/adminController")
 
-// Startpage
-router.get("/userStart", verifyUser, userStart);
+
+//Product
+router.get("/productPage", productMiddleware, renderProducts)
+
 
 
 // Admin

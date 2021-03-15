@@ -5,7 +5,9 @@ const verifyUser = (req,res,next)=>  {
 
     const token = req.cookies.jwtToken;
 
-    if(!token) return res.redirect("/login");
+    if(!token) { 
+        return res.render("index.ejs");
+    }
 
     const validUser = jwt.verify(token, process.env.SECRET_KEY)
 

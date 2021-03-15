@@ -6,11 +6,11 @@ const {renderRegister, submitRegister} = require("../controllers/registerControl
 const {renderLogin, submitLogin} = require("../controllers/loginController");
 const { startPage, logout } = require("../controllers/homeController");
 const { deleteUser } = require("../controllers/adminController");
-
+const verifyUser = require("../middleware/verifyUser");
 const verifyAdmin = require("../middleware/verifyAdmin");
 
 // Startpage for all non-logged in customers
-router.get("/", startPage)
+router.get("/", verifyUser,  startPage)
 
 // Logout
 router.get("/logout", logout);

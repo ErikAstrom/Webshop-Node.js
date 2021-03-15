@@ -1,6 +1,16 @@
-const startPage = (req, res) => {
+const { User } = require("../models/user");
+const Product = require("../models/product");
+
+
+
+
+const startPage = async (req, res) => {
     try {
-        res.render("index.ejs")
+        const products = await Product.find();
+        res.render('index.ejs', {
+            user:req.user.user, 
+            products
+          })
     } catch (err) {
         console.log(err)
     };
