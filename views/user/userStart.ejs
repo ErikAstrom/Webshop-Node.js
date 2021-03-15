@@ -1,0 +1,17 @@
+<%- include("../partials/header") %>
+
+<div>
+    
+    <h1>Hi <%=user.username%> and Welcome to Bubblify!</h1>
+    
+</div>
+
+<% products.forEach(product => { %>
+    
+    <div><%= product.title %></div>
+
+<% }) %>
+
+<div><a href="/logout">Log Out</a></div>
+
+<%- include("../partials/footer") %>

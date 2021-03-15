@@ -1,0 +1,27 @@
+<%- include("../partials/header") %>
+<h1>HELLO ADMIN USER</h1>
+
+<form action="/admin" method="POST">
+
+    <input type="text" name="title" id="" placeholder="product name" required />
+    <input type="text" name="description" id="" placeholder="product description" required />
+    <input type="number" name="price" id="" placeholder="product price" required />
+    <input type="text" name="origin" id="" placeholder="product origin country" required />
+    <input type="text" name="blend" id="" placeholder="product grape blend" required />
+    <button type="submit">Add</button>
+
+</form>
+
+<% items.forEach(product => { %>
+    
+    <div>
+        <p><%= product.title %></p>
+        <a href="/adminEdit/<%= product.id %>">Edit</a>
+        <a href="/adminDelete/<%= product.id %>">Delete</a>
+    </div>
+
+<% }) %>
+
+<div><a href="/userStart">Back to start</a></div>
+
+<%- include("../partials/footer") %>

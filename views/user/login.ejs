@@ -1,0 +1,17 @@
+<%- include("../partials/header") %>
+
+<form action="/login" method="post">
+<input type="email" name="email" id="" placeholder="E-mail">
+<input type="password" name="password" id="" placeholder="Password">
+<button type="submit">Login</button>
+</form>
+
+<div>
+    <a href="/register">To Register</a>
+    <a href="/reset">Reset your password</a>
+</div>
+
+
+<%- include("../helpers/errorMessage") %>
+
+<%- include("../partials/footer") %>
