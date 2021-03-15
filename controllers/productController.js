@@ -2,10 +2,21 @@ const { User } = require("../models/user");
 const Product = require("../models/product");
 
 const renderProducts = async (req,res) => {
+  const page = +req.query.page || 1;
     try {
+        const totalProducts = await Product.countDocuments();
+        const limitPerPage = 3;
+        const totalPages = Math.ceil(totalProducts / limitPerPage);
+        const productsToShow = limitPerPage * page;
+        const products = await Product.find().limit(productsToShow);
         res.render('productPage.ejs', {
             user:req.user.user, 
-            products:product
+            page, 
+            totalProducts,
+            totalPages,
+            limitPerPage,
+            productsToShow,
+            products
           })
     } catch (err) {
         console.log(err)

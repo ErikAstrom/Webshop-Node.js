@@ -30,10 +30,13 @@
 
 
 <% if (user.role == 'admin') { %>
-    <a href="/admin">To admin page</a> 
+    <a href="/admin">To admin page</a>
+    
 <% } %>
 
 <div><a href="/logout">Log Out</a></div>
+<div><a href="/">Back to Start</a></div>
+
 <% } %>
 
 <% products.forEach(product => { %>
@@ -41,5 +44,19 @@
     <div><%= product.title %></div>
 
 <% }) %>
+
+<% if(totalPages> 1){%>
+    <ul class="pagination">
+      <%if(page>1){%>
+        <li><a href="/productPage/?page=<%=(productsToShow/limitPerPage)-1 %>">&larr;
+            less </a>
+        </li>
+        <%}%>
+          <% if(totalPages !==productsToShow/limitPerPage){%>
+            <li><a href="/productPage/?page=<%=(productsToShow/limitPerPage)+1 %>">more
+                &rarr;</a></li>
+            <% } %>
+              <%} %>
+    </ul>
 
 <%- include("./partials/footer") %>
