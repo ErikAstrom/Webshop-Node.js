@@ -1,19 +1,16 @@
 const { User } = require("../models/user");
 const Product = require("../models/product");
 
-const userStart = async (req, res) => {
-
+const renderProducts = async (req,res) => {
     try {
-      const products = await Product.find();
-      res.render('user/userStart.ejs', {
-        user:req.user.user,
-        products,
-      })
-      
+        res.render('productPage.ejs', {
+            user:req.user.user, 
+            products:product
+          })
     } catch (err) {
-      console.log(err);
-    }
-  };
+        console.log(err)
+    };
+}
 
   const createProduct = async (req, res) => {
     const { title, description, price, origin, blend } = req.body;
@@ -73,7 +70,7 @@ const userStart = async (req, res) => {
   
 
   module.exports = {
-    userStart,
+    renderProducts,
     createProduct,
     editProduct,
     submitEdit,

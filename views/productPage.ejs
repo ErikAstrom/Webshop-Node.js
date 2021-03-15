@@ -2,10 +2,14 @@
 
 
 <%- include("./partials/header") %>
+
+
+
+
 <% if (!locals.user) { %>
 
     <div>
-        <h1>Welcome to Bubblify!</h1>
+        <h1>Welcome to product page!</h1>
     </div>
 
     <a href="/register">Register</a>
@@ -13,20 +17,17 @@
 
 <% } %> 
 
+
 <% if (locals.user) { %>
 
 
 <div>
     
-    <h1>Hi <%=user.username%> and Welcome to Bubblify!</h1>
+    <h1>Hi <%=user.username%></h1>
     
 </div>
 
-<% products.forEach(product => { %>
-    
-    <div><%= product.title %></div>
 
-<% }) %>
 
 <% if (user.role == 'admin') { %>
     <a href="/admin">To admin page</a> 
@@ -34,5 +35,11 @@
 
 <div><a href="/logout">Log Out</a></div>
 <% } %>
-<a href="/productPage">Products</a>
+
+<% products.forEach(product => { %>
+    
+    <div><%= product.title %></div>
+
+<% }) %>
+
 <%- include("./partials/footer") %>
