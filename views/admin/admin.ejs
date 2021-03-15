@@ -22,6 +22,15 @@
 
 <% }) %>
 
+<% userList.forEach(user => { %>
+    
+    <div>
+        <p><%= user.username %></p>
+        <a href="/userDelete/<%= user.id %>">Delete</a>
+    </div>
+
+<% }) %>
+
 <div><a href="/userStart">Back to start</a></div>
 
 <%- include("../partials/footer") %>

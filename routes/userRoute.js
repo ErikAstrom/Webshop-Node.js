@@ -5,6 +5,9 @@ const { renderReset, submitReset, paramsReset,submitFormReset } =require("../con
 const {renderRegister, submitRegister} = require("../controllers/registerController");
 const {renderLogin, submitLogin} = require("../controllers/loginController");
 const { startPage, logout } = require("../controllers/homeController");
+const { deleteUser } = require("../controllers/adminController");
+
+const verifyAdmin = require("../middleware/verifyAdmin");
 
 // Startpage for all non-logged in customers
 router.get("/", startPage)
@@ -26,6 +29,9 @@ router.post("/reset", submitReset)
 
 router.get("/reset/:mailToken", paramsReset);
 router.post("/resetPassword", submitFormReset);
+
+// Admin
+router.get("/userDelete/:id", verifyAdmin, deleteUser);
 
 
 
