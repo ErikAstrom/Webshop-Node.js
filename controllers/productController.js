@@ -48,9 +48,22 @@ const userStart = async (req, res) => {
   }
 
   const submitEdit = async (req, res) => {
-    
+
     try {
       await Product.updateOne({ _id: req.body.id }, { title: req.body.title });
+  
+      res.redirect("/admin");
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  const deleteProduct = async (req, res) => {
+    try {
+      await Product.deleteOne({ _id: req.params.id });
+  
+      const user = await User.findOne({ _id: req.user.user._id });
+      user.removeProduct(req.params.id);
   
       res.redirect("/admin");
     } catch (err) {
@@ -63,5 +76,6 @@ const userStart = async (req, res) => {
     userStart,
     createProduct,
     editProduct,
-    submitEdit
+    submitEdit,
+    deleteProduct
 };

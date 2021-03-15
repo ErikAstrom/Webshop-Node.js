@@ -23,6 +23,11 @@ userSchema.methods.addProduct = async function (productId) {
   await this.save();
 }
 
+userSchema.methods.removeProduct = async function (productId) {
+  this.adminProducts.pull(productId);
+  await this.save();
+};
+
 function validateUser(user) {
 
   const schema = Joi.object({
