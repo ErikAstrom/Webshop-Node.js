@@ -12,15 +12,12 @@
 
 </form>
 
-<% items.forEach(product => { %>
-    
-    <div>
-        <p><%= product.title %></p>
-        <a href="/adminEdit/<%= product.id %>">Edit</a>
-    </div>
+<form action="/adminEdit" method="post">
+    <input type="text" name="title" id="" value="<%= product.title %>">
+    <input type="text" name="id" value="<%= product._id %>" hidden>
+    <button type="submit">OK</button>
+</form>
 
-<% }) %>
-
-<div><a href="/userStart">Back to start</a></div>
+<div><a href="/admin">Back to admin</a></div>
 
 <%- include("../partials/footer") %>

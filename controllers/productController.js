@@ -37,7 +37,31 @@ const userStart = async (req, res) => {
     }
   }
 
+  const editProduct = async (req, res) => {
+    try {
+      const product = await Product.findOne({ _id: req.params.id });
+  
+      res.render("admin/adminEdit.ejs", { product: product });
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  const submitEdit = async (req, res) => {
+    
+    try {
+      await Product.updateOne({ _id: req.body.id }, { title: req.body.title });
+  
+      res.redirect("/admin");
+    } catch (err) {
+      console.log(err);
+    }
+  }
+  
+
   module.exports = {
     userStart,
-    createProduct
+    createProduct,
+    editProduct,
+    submitEdit
 };
