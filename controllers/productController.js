@@ -1,7 +1,7 @@
 const { User } = require("../models/user");
 const Product = require("../models/product");
-const fs = require("fs"); // New
-const path = require("path"); // New
+const fs = require("fs");
+const path = require("path");
 
 const renderProducts = async (req, res) => {
   const page = +req.query.page || 1;
@@ -35,7 +35,7 @@ const renderProducts = async (req, res) => {
 }
 
   const createProduct = async (req, res) => {
-    const { title, img, description, price, origin, blend } = req.body;
+    const { title, description, price, origin, blend } = req.body;
     try {
       const product = await new Product({
         title: title,
