@@ -1,48 +1,36 @@
-
-
-
 <%- include("./partials/header") %>
 
 
-
-
 <% if (!locals.user) { %>
-
     <div>
         <h1>Welcome to product page!</h1>
     </div>
-
     <a href="/register">Register</a>
     <a href="/login">Login</a>
-
 <% } %> 
 
 
 <% if (locals.user) { %>
-
-
 <div>
-    
     <h1>Hi <%=user.username%></h1>
-    
 </div>
-
 
 
 <% if (user.role == 'admin') { %>
     <a href="/admin">To admin page</a>
-    
 <% } %>
 
 <div><a href="/logout">Log Out</a></div>
 <div><a href="/">Back to Start</a></div>
-
 <% } %>
 
-<% products.forEach(product => { %>
-    
-    <div><%= product.title %></div>
+<div>
+    <a href="/productPage/?page=<%=(productsToShow/limitPerPage)%>&&price=1">Lowest first</a>
+    <a href="/productPage/?page=<%=(productsToShow/limitPerPage)%>&&price=-1">Highest first</a>
+</div>
 
+<% products.forEach(product => { %>
+    <div><%= product.title %></div>
 <% }) %>
 
 <% if(totalPages> 1){%>
@@ -56,7 +44,7 @@
             <li><a href="/productPage/?page=<%=(productsToShow/limitPerPage)+1 %>">more
                 &rarr;</a></li>
             <% } %>
-              <%} %>
+<%} %>
     </ul>
 
 <%- include("./partials/footer") %>
