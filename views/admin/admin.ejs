@@ -30,11 +30,12 @@
 
 <% userList.forEach(user => { %>
     
+    <% if (user.role != 'admin') { %>
     <div>
         <p><%= user.username %></p>
         <a href="/userDelete/<%= user.id %>">Delete</a>
     </div>
-
+    <% } %>
 <% }) %>
 
 <div><a href="/">Back to start</a></div>

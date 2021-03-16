@@ -15,7 +15,6 @@ const renderLogin = (req, res) => {
   const submitLogin = async (req, res) => {
     
     const { email, password } = req.body;
-    // const {error} = validateUser(email, password);
     let errors = [];
   
     try {
@@ -27,14 +26,7 @@ const renderLogin = (req, res) => {
             password 
         })
       }
-      // if (error) {
-      //   return errors.push({msg: error.details[0].message}),
-      //   res.render("user/login.ejs", {
-      //       errors,
-      //       error
-      //   });
-      // }
-
+    
       const user = await User.findOne({ email: email });
       if (!user) {
         return errors.push({msg: "This email is not registered. Please register before log in."}),
@@ -59,7 +51,6 @@ const renderLogin = (req, res) => {
         if (!cookie) {
           res.cookie("jwtToken", jwtToken, { maxAge: 10000000, httpOnly: true });
         }
-        // req.flash("success_msg", "You are now logged in!");
         res.redirect("/");
       }
     } catch (err) {
