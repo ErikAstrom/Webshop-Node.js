@@ -89,7 +89,6 @@ const submitEdit = async (req, res) => {
       res.redirect("/admin");
     } catch (err) {
       console.log(err);
-    }
   }
 }
 
