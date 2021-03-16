@@ -1,5 +1,7 @@
 const { User } = require("../models/user");
 const Product = require("../models/product");
+const fs = require("fs"); // New
+const path = require("path"); // New
 
 const renderProducts = async (req,res) => {
   const page = +req.query.page || 1;
@@ -24,10 +26,14 @@ const renderProducts = async (req,res) => {
 }
 
   const createProduct = async (req, res) => {
-    const { title, description, price, origin, blend } = req.body;
+    const { title, img, description, price, origin, blend } = req.body;
     try {
       const product = await new Product({
         title: title,
+        img: {
+          data: fs.readFileSync(path.join("uploads/" + req.file.filename)),
+          contentType: "image",
+        },
         description: description,
         price: price,
         origin: origin, 
@@ -58,7 +64,18 @@ const renderProducts = async (req,res) => {
   const submitEdit = async (req, res) => {
 
     try {
-      await Product.updateOne({ _id: req.body.id }, { title: req.body.title });
+      await Product.updateOne({ _id: req.body.id }, 
+        { 
+          title: req.body.title,
+          img: {
+            data: fs.readFileSync(path.join("uploads/" + req.file.filename)),
+            contentType: "image",
+          },
+          description: req.body.description,
+          price: req.body.price,
+          origin: req.body.origin, 
+          blend: req.body.blend,
+        });
   
       res.redirect("/admin");
     } catch (err) {
@@ -79,11 +96,10 @@ const renderProducts = async (req,res) => {
     }
   }
   
-
   module.exports = {
     renderProducts,
     createProduct,
     editProduct,
     submitEdit,
-    deleteProduct
+    deleteProduct,
 };

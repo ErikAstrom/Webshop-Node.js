@@ -41,7 +41,13 @@
 
 <% products.forEach(product => { %>
     
-    <div><%= product.title %></div>
+    <div><%= product.title %>
+    <img src="data:image/<%=product.img.contentType%>;base64,<%=product.img.data.toString('base64')%>" alt="" />
+    <p><%= product.description %></p>
+    <p><%= product.origin %></p>
+    <p><%= product.blend %></p>
+    <p><%= product.price %></p>
+    </div>
 
 <% }) %>
 

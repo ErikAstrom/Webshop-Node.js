@@ -1,21 +1,27 @@
 <%- include("../partials/header") %>
-<h1>HELLO ADMIN USER</h1>
+<h1>HELLO ADMIN <%= user.username %></h1>
 
-<form action="/admin" method="POST">
+<form action="/admin" method="POST" enctype="multipart/form-data">
 
-    <input type="text" name="title" id="" placeholder="product name" required />
-    <input type="text" name="description" id="" placeholder="product description" required />
-    <input type="number" name="price" id="" placeholder="product price" required />
-    <input type="text" name="origin" id="" placeholder="product origin country" required />
-    <input type="text" name="blend" id="" placeholder="product grape blend" required />
+    <input type="text" name="title" placeholder="product name" required />
+    <input type="text" name="description" placeholder="product description" required />
+    <input type="number" name="price" placeholder="product price" required />
+    <input type="text" name="origin" placeholder="product origin country" required />
+    <input type="text" name="blend" placeholder="product grape blend" required />
+    <input type="file" name="image" id="image" value="" required>
     <button type="submit">Add</button>
 
 </form>
 
-<% items.forEach(product => { %>
+<% products.forEach(product => { %>
     
     <div>
         <p><%= product.title %></p>
+        <img src="data:image/<%=product.img.contentType%>;base64,<%=product.img.data.toString('base64')%>" alt="" />
+        <p><%= product.description %></p>
+        <p><%= product.origin %></p>
+        <p><%= product.blend %></p>
+        <p><%= product.price %></p>
         <a href="/adminEdit/<%= product.id %>">Edit</a>
         <a href="/adminDelete/<%= product.id %>">Delete</a>
     </div>
