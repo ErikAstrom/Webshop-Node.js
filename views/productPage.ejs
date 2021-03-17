@@ -25,34 +25,50 @@
 <% } %>
 
 <div>
-    <a href="/productPage/?page=<%=(productsToShow/limitPerPage)%>&&price=1">Lowest first</a>
-    <a href="/productPage/?page=<%=(productsToShow/limitPerPage)%>&&price=-1">Highest first</a>
+    <a href="/productPage/?origin=spain">Spain</a>
+    <a href="/productPage/?origin=france">France</a>
+    <a href="/productPage/?origin=italy">Italy</a>
 </div>
 
-<% products.forEach(product => { %>
-   
-    <div><%= product.title %>
-    <img src="data:image/<%=product.img.contentType%>;base64,<%=product.img.data.toString('base64')%>" alt="" />
-    <p><%= product.description %></p>
-    <p><%= product.origin %></p>
-    <p><%= product.blend %></p>
-    <p><%= product.price %></p>
+<% if (origin == null) { %>
+    <div>
+        <a href="/productPage/?page=<%=(productsToShow/limitPerPage)%>&&price=1">Lowest first</a>
+        <a href="/productPage/?page=<%=(productsToShow/limitPerPage)%>&&price=-1">Highest first</a>
     </div>
+    <% products.forEach(product => { %>
+        <div><%= product.title %>
+            <img src="data:image/<%=product.img.contentType%>;base64,<%=product.img.data.toString('base64')%>" alt="" />
+            <p><%= product.description %></p>
+            <p><%= product.origin %></p>
+            <p><%= product.blend %></p>
+            <p><%= product.price %></p>
+        </div>
+    <% }) %>
 
-<% }) %>
-
-<% if(totalPages> 1){%>
-    <ul class="pagination">
-      <%if(page>1){%>
-        <li><a href="/productPage/?page=<%=(productsToShow/limitPerPage)-1 %>">&larr;
-            less </a>
-        </li>
+    <% if(totalPages> 1){%>
+        <ul class="pagination">
+        <%if(page>1){%>
+            <li>
+                <a href="/productPage/?page=<%=(productsToShow/limitPerPage)-1 %>&&price=<%= sortPrice %>">&larr; less</a>
+            </li>
         <%}%>
-          <% if(totalPages !==productsToShow/limitPerPage){%>
-            <li><a href="/productPage/?page=<%=(productsToShow/limitPerPage)+1 %>">more
-                &rarr;</a></li>
-            <% } %>
-<%} %>
-    </ul>
+        <% if(totalPages !==productsToShow/limitPerPage){%>
+            <li>
+                <a href="/productPage/?page=<%=(productsToShow/limitPerPage)+1 %>&&price=<%= sortPrice %>">more &rarr;</a>
+            </li>
+        <% } %>
+        </ul>
+    <%} %>
+<% } else { %>
+    <% origin.forEach(item => { %>
+        <div><%= item.title %>
+            <img src="data:image/<%=item.img.contentType%>;base64,<%=item.img.data.toString('base64')%>" alt="" />
+            <p><%= item.description %></p>
+            <p><%= item.origin %></p>
+            <p><%= item.blend %></p>
+            <p><%= item.price %></p>
+        </div>
+    <% }) %>
+<% } %>
 
 <%- include("./partials/footer") %>
