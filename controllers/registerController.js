@@ -55,6 +55,7 @@ const submitRegister = async (req, res) => {
             email: email, 
             password: hashedPassword 
         }).save();
+        req.flash("success_msg", "You are now registered and can log in!")
         res.redirect("/login");
         }
     } catch (err) {

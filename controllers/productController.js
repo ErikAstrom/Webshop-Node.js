@@ -64,11 +64,14 @@ const renderProducts = async (req, res) => {
     const user = await User.findOne({ _id: req.user.user._id });
 
     user.addProduct(product._id);
-
+    
+    req.flash("success_msg", "Producted added successfully!")
     res.redirect("/admin")
 
   } catch (err) {
-    console.log(err)
+    console.log(err.message)
+    req.flash("warning_msg", "Something went wrong, please try again")
+    res.redirect("/admin")
   }
 }
 
@@ -111,6 +114,7 @@ const deleteProduct = async (req, res) => {
     const user = await User.findOne({ _id: req.user.user._id });
     user.removeProduct(req.params.id);
 
+    req.flash("warning_msg", "Product Removed.")
     res.redirect("/admin");
   } catch (err) {
     console.log(err);
