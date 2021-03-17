@@ -6,18 +6,25 @@ const sgMail = require("@sendgrid/mail");
 sgMail.setApiKey(process.env.SENDGRID_APIKEY);
 
 const renderReset = (req, res) => {
-  res.render("user/reset.ejs", { err: "" });
+  try {
+  res.render("user/reset.ejs");
+  } catch (err) {
+    console.log(err)
+  }
 };
 
 const submitReset = async (req,res) => {
 
     const email = req.body.email;
-
     const user = await User.findOne({ email: email });
 
-    if (!user) return res.redirect("/reset");
+    try {
+    if (!user) {
+      req.flash("warning_msg", "This email is not registered. Please try again or go to register for a new account."),
+      res.redirect("/reset")
+    }
+    
     const mailToken = await crypto.randomBytes(32).toString("hex");
-
     user.mailToken = mailToken;
     user.mailExpiration = Date.now() + 3600000;
     await user.save();
@@ -32,15 +39,16 @@ const submitReset = async (req,res) => {
       };
       sgMail
       .send(msg)
-      .then(() => {
-        console.log("Email sent to" + user.email);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  
-    res.redirect("/login");
+      
+      req.flash("success_msg", "An email has been sent to your adress, please check your inbox.")
+      res.redirect("/reset");
+    } catch (err) {
+      console.log(err)
+      req.flash("warning_msg", "An error has occured. Please try sending the email again.")
+      res.redirect("/reset");
+    }
   };
+
   const paramsReset = async (req, res) => {
 
     const mailToken = req.params.mailToken;
@@ -51,33 +59,44 @@ const submitReset = async (req,res) => {
         mailExpiration: { $gt: Date.now() },
       });
   
-      if (!user) return res.send("no work");
+      if (!user) {
+        req.flash("warning_msg", "You are not a registered user, please register");
+        res.redirect("register");   
+      }
   
-      res.render("user/resetPassword.ejs", { err: "", email: user.email });
+      res.render("user/resetPassword.ejs", { email: user.email });
     } catch (err) {
-      res.render("user/reset.ejs", { err: " Försök igen" });
+      console.log(err)
     }
   };
 
 
   const submitFormReset = async (req, res) => {
-    const password = req.body.password;
-    const email = req.body.email;
-  
+   
+    const { email, password, password2 } = req.body;
+    try {
+    const user = await User.findOne({ email: email });
+    if (password !== password2) {
+      req.flash( "warning_msg", "Passwords do not match"),
+      res.redirect('back');
+    }
+    if (password.length < 3) {
+      req.flash( "warning_msg", "Password must be atleast 6 characters long."),
+      res.redirect('back');
+    }
+    
     const salt = await bcrypt.genSalt(12);
     const hashedPassword = await bcrypt.hash(password, salt);
   
-  
-    const user = await User.findOne({ email: email });
-  
     user.password = hashedPassword;
     await user.save();
+    req.flash("success_msg", "Your password has been reset and you can now log in with your new password.")
     res.redirect("/login");
-  
+    } catch (err) {
+      console.log(err.message)
+      res.status(500).send("Something went wrong, please reload page and try again.")
+    }
   };
-
-
-    
 
 module.exports = {
   renderReset,

@@ -18,7 +18,7 @@ const startPage = async (req, res) => {
 
 const logout = (req, res) => {
     res.clearCookie("jwtToken");
-    // req.flash("success_msg", "You are now logged out!");
+    req.flash("success_msg", "You are now logged out!");
     res.redirect("/");
   }
 

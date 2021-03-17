@@ -51,6 +51,7 @@ const renderLogin = (req, res) => {
         if (!cookie) {
           res.cookie("jwtToken", jwtToken, { maxAge: 10000000, httpOnly: true });
         }
+        req.flash("success_msg", "You are now logged in!")
         res.redirect("/");
       }
     } catch (err) {
