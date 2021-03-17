@@ -4,34 +4,46 @@ const fs = require("fs");
 const path = require("path");
 
 const renderProducts = async (req, res) => {
-  const page = +req.query.page || 1;
+  try {
+    const spain = await Product.find({"origin": 'spain'}).collation({locale: "en", strength: 2});
+    const italy = await Product.find({"origin": 'italy'}).collation({locale: "en", strength: 2});
+    const france = await Product.find({"origin": 'france'}).collation({locale: "en", strength: 2});
+    let origin;
 
-  let sortPrice = +req.query.price;
-  let sort = {};
+    if (req.query.origin == "spain") {
+      origin = spain;
+    } 
+    else if (req.query.origin == "italy") {
+      origin = italy;
+    } 
+    else if (req.query.origin == "france") {
+      origin = france;
+    }
 
-  if (sortPrice) {
-    sort.price = sortPrice;
-  }
+    const page = +req.query.page || 1;
 
-    try {
-      const totalProducts = await Product.countDocuments();
-      const limitPerPage = 3;
-      const totalPages = Math.ceil(totalProducts / limitPerPage);
-      const productsToShow = limitPerPage * page;
-      const products = await Product.find().sort(sort).limit(productsToShow);
+    const sortPrice = +req.query.price;
 
-      res.render('productPage.ejs', {
-        user:req.user.user, 
-        page, 
-        totalProducts,
-        totalPages,
-        limitPerPage,
-        productsToShow,
-        products
-      })
-    } catch (err) {
-        console.log(err)
-    };
+    const totalProducts = await Product.countDocuments();
+    const limitPerPage = 3;
+    const totalPages = Math.ceil(totalProducts / limitPerPage);
+    const productsToShow = limitPerPage * page;
+    const products = await Product.find().sort({price: sortPrice}).limit(productsToShow);
+
+    res.render('productPage.ejs', {
+      user:req.user.user, 
+      page, 
+      totalProducts,
+      totalPages,
+      limitPerPage,
+      productsToShow,
+      products,
+      sortPrice,
+      origin
+    })
+  } catch (err) {
+      console.log(err)
+  };
 }
 
   const createProduct = async (req, res) => {
