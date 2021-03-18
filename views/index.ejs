@@ -1,36 +1,23 @@
-
-
-
 <%- include("./partials/header") %>
+
+
 <% if (!locals.user) { %>
-
     <div>
-        <h1>Welcome to Bubblify!</h1>
+        <h1>Welcome!</h1>
     </div>
-
-    <a href="/register">Register</a>
-    <a href="/login">Login</a>
-
 <% } %> 
 
+
 <% if (locals.user) { %>
+    <div>
+        <h1>Hi <%= user.username %></h1>
+    </div>
 
-
-<div>
-    
-    <h1>Hi <%=user.username%> and Welcome to Bubblify!</h1>
-    
-</div>
-
-
-<% if (user.role == 'admin') { %>
-    <a href="/admin">To admin page</a> 
+    <div><a href="/logout">Log Out</a></div>
 <% } %>
 
-<div><a href="/logout">Log Out</a></div>
-<% } %>
 <a href="/productPage">Products</a>
 
-<%- include("./helpers/messages") %>
 
+<%- include("./helpers/messages") %>
 <%- include("./partials/footer") %>

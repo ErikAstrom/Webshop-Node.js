@@ -2,25 +2,12 @@
 
 
 <% if (!locals.user) { %>
-    <div>
-        <h1>Welcome to product page!</h1>
-    </div>
-    <a href="/register">Register</a>
-    <a href="/login">Login</a>
+    <h1>Welcome to product page!</h1>
+    <div><a href="/">Back to Start</a></div>
 <% } %> 
 
 <% if (locals.user) { %>
-<div>
-    <h1>Hi <%=user.username%></h1>
-</div>
-
-<% if (user) { %>
-    <a href="/wishlist">To wishlist</a>
-<% } %>
- 
-<% if (user.role == 'admin') { %>
-    <a href="/admin">To admin page</a>
-<% } %>
+    <h1>Hi <%= user.username %></h1>
 
 <div><a href="/logout">Log Out</a></div>
 <div><a href="/">Back to Start</a></div>
