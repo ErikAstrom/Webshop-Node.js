@@ -6,6 +6,7 @@ const session = require("express-session");
 
 const userRoute = require("./routes/userRoute");
 const productRoute = require("./routes/productRoute");
+const wishlistRoute = require("./routes/wishlistRoute");
 
 const app = express();
 
@@ -38,6 +39,7 @@ app.use(
 
 app.use(userRoute);
 app.use(productRoute);
+app.use(wishlistRoute);
 
 mongoose.connect(process.env.DB_URL, {
     useNewUrlParser: true, 

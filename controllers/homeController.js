@@ -1,9 +1,6 @@
 const { User } = require("../models/user");
 const Product = require("../models/product");
 
-
-
-
 const startPage = async (req, res) => {
     try {
         const products = await Product.find();

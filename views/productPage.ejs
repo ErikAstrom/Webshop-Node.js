@@ -9,19 +9,23 @@
     <a href="/login">Login</a>
 <% } %> 
 
-
 <% if (locals.user) { %>
 <div>
     <h1>Hi <%=user.username%></h1>
 </div>
 
-
+<% if (user) { %>
+    <a href="/wishlist">To wishlist</a>
+<% } %>
+ 
 <% if (user.role == 'admin') { %>
     <a href="/admin">To admin page</a>
 <% } %>
 
 <div><a href="/logout">Log Out</a></div>
 <div><a href="/">Back to Start</a></div>
+
+<%- include("./helpers/messages") %>
 <% } %>
 
 <div>
@@ -42,6 +46,9 @@
             <p><%= product.origin %></p>
             <p><%= product.blend %></p>
             <p><%= product.price %></p>
+            <% if (locals.user) { %>
+                <a href="/wishlist/<%= product._id%>">&#10084</a>
+                <% } %>
         </div>
     <% }) %>
 
