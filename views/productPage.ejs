@@ -87,7 +87,7 @@
             <div class ="modalHidden">
                 <section class="modalContent">
                 <span class="closeModal"> &#9747; </span>
-                <img src="data:image/<%=product.img.contentType%>;base64,<%=product.img.data.toString('base64')%>" alt="" />
+                <img src="data:image/<%=item.img.contentType%>;base64,<%=item.img.data.toString('base64')%>" alt="" />
                 <p><%= item.title %></p>
                 <p><%= item.description %></p>
                 <p>Origin:<%= item.origin %></p>
@@ -111,6 +111,7 @@
 
 
 <script>
+
     let productPicture = document.getElementsByTagName('picture');
     for (let i = 0; i < productPicture.length; i++) {
         productPicture[i].addEventListener('click', ()=>{
