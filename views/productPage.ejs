@@ -36,8 +36,22 @@
         <a href="/productPage/?page=<%=(productsToShow/limitPerPage)%>&&price=-1">Highest first</a>
     </div>
     <% products.forEach(product => { %>
-        <div><%= product.title %>
-            <img src="data:image/<%=product.img.contentType%>;base64,<%=product.img.data.toString('base64')%>" alt="" />
+        <div class="productDiv">
+            <div class ="modalHidden">
+                <section class="modalContent">
+                <span class="closeModal"> &#9747; </span>
+                <img src="data:image/<%=product.img.contentType%>;base64,<%=product.img.data.toString('base64')%>" alt="" />
+                <p><%= product.title %></p>
+                <p><%= product.description %></p>
+                <p>Origin:<%= product.origin %></p>
+                <p>Blend:<%= product.blend %></p>
+                <p>Price:<%= product.price %> SEK</p>
+            </section>
+            </div>
+
+
+            <%= product.title %>
+           <picture> <img src="data:image/<%=product.img.contentType%>;base64,<%=product.img.data.toString('base64')%>" alt="" /></picture>
             <p><%= product.description %></p>
             <p><%= product.origin %></p>
             <p><%= product.blend %></p>
@@ -61,8 +75,23 @@
     <%} %>
 <% } else { %>
     <% origin.forEach(item => { %>
-        <div><%= item.title %>
-            <img src="data:image/<%=item.img.contentType%>;base64,<%=item.img.data.toString('base64')%>" alt="" />
+        <div class="productDiv">
+            
+            <div class ="modalHidden">
+                <section class="modalContent">
+                <span class="closeModal"> &#9747; </span>
+                <img src="data:image/<%=product.img.contentType%>;base64,<%=product.img.data.toString('base64')%>" alt="" />
+                <p><%= item.title %></p>
+                <p><%= item.description %></p>
+                <p>Origin:<%= item.origin %></p>
+                <p>Blend:<%= item.blend %></p>
+                <p>Price:<%= item.price %> SEK</p>
+            </section>
+            </div>
+            
+            
+            <%= item.title %>
+            <picture><img src="data:image/<%=item.img.contentType%>;base64,<%=item.img.data.toString('base64')%>" alt="" /></picture>
             <p><%= item.description %></p>
             <p><%= item.origin %></p>
             <p><%= item.blend %></p>
@@ -72,3 +101,21 @@
 <% } %>
 
 <%- include("./partials/footer") %>
+
+
+<script>
+    let productPicture = document.getElementsByTagName('picture');
+    for (let i = 0; i < productPicture.length; i++) {
+        productPicture[i].addEventListener('click', ()=>{
+            productPicture[i].previousElementSibling.classList.toggle('modalVisible')
+        })
+    }
+    let closeModal = document.getElementsByClassName('closeModal');
+    for (let i = 0; i < closeModal.length; i++) {
+        
+        closeModal[i].addEventListener('click', ()=>{
+            closeModal[i].closest('div').classList.toggle('modalVisible')
+        })
+        
+    }
+    </script>
