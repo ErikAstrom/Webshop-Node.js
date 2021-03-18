@@ -41,7 +41,7 @@ const productMiddleware = async (req,res,next)=>  {
                 limitPerPage,
                 productsToShow,
                 sortPrice,
-                origin
+                origin,
             });
         }
     
@@ -52,7 +52,7 @@ const productMiddleware = async (req,res,next)=>  {
             product = products;
         }
         next();
-    } catch { 
+    } catch (err) { 
         console.log(err);
     }
 }

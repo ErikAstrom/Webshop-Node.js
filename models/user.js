@@ -15,16 +15,30 @@ const userSchema = new mongoose.Schema({
       type: mongoose.Schema.Types.ObjectId,
       ref: 'product'
     }
-  ]
+  ],
+  wishList: [ // NEW
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'product',
+    },
+  ],
 });
 
 userSchema.methods.addProduct = async function (productId) {
   this.adminProducts.push(productId)
   await this.save();
-}
+};
 
 userSchema.methods.removeProduct = async function (productId) {
   this.adminProducts.pull(productId);
+  await this.save();
+};
+
+userSchema.methods.addWish = async function (wishId, user) { // New
+  for (i = 0; i < user.wishList.length; i++) {
+    if (user.wishList[i] == wishId) return;
+  }
+  this.wishList.push(wishId);
   await this.save();
 };
 
