@@ -1,23 +1,49 @@
 <%- include("./partials/header") %>
 
 
-<% if (!locals.user) { %>
-    <div>
-        <h1>Welcome!</h1>
-    </div>
-<% } %> 
-
-
-<% if (locals.user) { %>
-    <div>
-        <h1>Hi <%= user.username %></h1>
+<main class="indexMain">
+    <div class="heroText">
+        <p>Bring some sparkles into your life</p>
     </div>
 
-    <div><a href="/logout">Log Out</a></div>
-<% } %>
+    <div class="indexHero">
+        <img src="images/hero1.jpg" alt="Hero image of glasses with sparkling wine."/>
+    </div>
 
-<a href="/productPage">Products</a>
+    <div class="discoverDiv">
+        <p class="discoverText">Discover our exclusive sortiment</p>
+    </div>
+    <div class="indexProductContainer">
+        <div class="indexProductDiv">
+            <img src="data:image/<%=products[10].img.contentType%>;base64,<%=products[10].img.data.toString('base64')%>" alt="Image of a sparkling wine bottle." />
+            <p class="productTitle"><%= products[10].title %></p>
+            <div>
+                <p class="originBlend"><%= products[10].origin %></p> | <p class="originBlend"><%= products[10].blend %></p>
+            </div>
+            <a href="/productPage">Browse</a>
+        </div>
+        <div class="indexProductDiv">
+            <img src="data:image/<%=products[11].img.contentType%>;base64,<%=products[11].img.data.toString('base64')%>" alt="Image of a sparkling wine bottle." />
+            <p class="productTitle"><%= products[11].title %></p>
+            <div>
+                <p class="originBlend"><%= products[11].origin %></p> | <p class="originBlend"><%= products[11].blend %></p>
+            </div>
+            <a href="/productPage">Browse</a>
+        </div>
+        <div class="indexProductDiv">
+            <img src="data:image/<%=products[2].img.contentType%>;base64,<%=products[2].img.data.toString('base64')%>" alt="Image of a sparkling wine bottle." />
+            <p class="productTitle"><%= products[2].title %></p>
+            <div>
+                <p class="originBlend"><%= products[2].origin %></p> | <p class="originBlend"><%= products[2].blend %></p>
+            </div>
+            <a href="/productPage">Browse</a>
+        </div>
+    </div>
+    
+    <div class="indexQuoteText">
+        <p>“We import the luxury brands drinks champagne moet cava glera blend fizz bubbles delishious fresh.”</p>
+    </div>
+</main>
 
 
-<%- include("./helpers/messages") %>
 <%- include("./partials/footer") %>
