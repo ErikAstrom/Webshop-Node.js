@@ -3,6 +3,7 @@
 @import 'reset';
 @import 'helper/mixins.scss';
 @import 'helper/variables.scss';    
+@import 'wishlist.scss';
 
 * {
   margin: 0px;
@@ -17,7 +18,7 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 1rem;
 
-  //HEADER FOR ALL PAGES
+  //Header styling, all pages
   header {
     width: 100%;
     height: 75px;
@@ -32,6 +33,9 @@ body {
       font-family: 'Abhaya Libre', serif;
       font-size: 2rem;
       letter-spacing: 5px;
+      @media screen and (min-width: 1024px) {
+        font-size: 2.2rem;    
+      }
     }
 
     .nameOrAdminDiv {
@@ -41,6 +45,9 @@ body {
       margin-top: -6.5px;
       margin-left: 15px;
       font-size: 0.7rem;
+      @media screen and (min-width: 768px) {
+        font-size: 0.8rem;    
+      }
 
       p {
         text-transform: uppercase;
@@ -64,6 +71,10 @@ body {
       justify-content: center;
       float: right;
       margin-right: 15px;
+      @media screen and (min-width: 768px) {
+        flex-direction: row; 
+        align-items: center;
+      }
 
       a {
         color: #0F100A;
@@ -72,6 +83,190 @@ body {
         text-transform: uppercase;
         text-align: end;
         cursor: pointer;
+        @media screen and (min-width: 768px) {
+          font-size: 0.8rem;    
+          margin: 0 7px;
+        }
+
+        &:hover {
+          color: grey;
+        }
+      }
+    }
+  }
+
+  //Startpage styling
+  .indexMain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .heroText {
+      width: 50%;
+      height: 90px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      @media screen and (min-width: 768px) {
+        width: 100%;
+      }
+
+      p {
+        font-size: 1.2rem;
+      }
+    }
+
+    .indexHero {
+      width: 100%;
+      overflow: hidden;
+  
+      img {
+        height: 650px;
+        @media screen and (min-width: 768px) {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    .discoverDiv {
+      width: 100%;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+
+      .discoverText {
+        font-size: 1.1rem;
+        font-weight: bold;
+      }
+    }
+
+    .indexProductContainer {
+      width: 100%;
+      height: 330px;
+      display: flex;
+      justify-content: center;
+      border-bottom: 2px solid #2F342E;
+      @media screen and (min-width: 1024px) {
+        height: 450px;
+      }
+
+      
+      .indexProductDiv {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        @media screen and (min-width: 768px) {
+          width: 50%;
+          display: flex;
+        }
+        @media screen and (min-width: 1024px) {
+          width: 30%;
+        }
+
+        &:nth-of-type(2) {
+          display: none;
+          @media screen and (min-width: 1024px) {
+            width: 30%;
+            display: flex;
+          }
+        }
+
+        &:nth-of-type(3) {
+          display: none;
+          @media screen and (min-width: 768px) {
+            width: 50%;
+            display: flex;
+          }
+          @media screen and (min-width: 1024px) {
+            width: 30%;
+          }
+        }
+    
+        img {
+          width: 20%;
+          @media screen and (min-width: 768px) {
+            // height: 183px;
+            width: 30%;
+          }
+        }
+        
+        .productTitle {
+          font-weight: bold;
+        }
+    
+        div {
+          width: 25%;
+          display: flex;
+          justify-content: space-around;
+          font-size: 0.8rem;
+          font-weight: bold;
+          text-transform: uppercase;
+          margin-bottom: 20px;
+          @media screen and (min-width: 768px) {
+            width: 100%;
+            justify-content: center;
+          }
+
+          .originBlend {
+            margin: 0 5px;
+          }
+        }
+    
+        a {
+          padding: 5px 25px;
+          background-color: #2F342E;
+          color: #F9F9F9;
+          font-size: 0.8rem;
+          text-decoration: none;
+          text-transform: uppercase;
+          border-radius: 10px;
+    
+          &:hover {
+            background-color: #525252;
+          }
+        }
+      }
+    }
+  
+    .indexQuoteText {
+      width: 80%;
+      height: 140px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+  
+      p {
+        font-size: 1.1rem;
+        font-style: italic;
+      }
+    }
+  }
+
+  //Footer styling, all pages
+  footer {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #2F342E;
+
+    .footerContactDiv {
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      color: #F9F9F9;
+
+      a {
+        margin-top: 10px;
+        color: #F9F9F9;
 
         &:hover {
           color: grey;
@@ -82,7 +277,7 @@ body {
 }
 
 
-//POPUP MODAL ON PRODUCT PAGE
+//Popup modal, product page
 .modalHidden {
   display: none; 
 }
