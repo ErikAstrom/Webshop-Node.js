@@ -1,10 +1,10 @@
 @import 'helper/mixins';
 @import 'helper/variables.scss';
 
-.registerpage {
+.resetformpage {
     height: 100vh;
     @include flexdisplay;
-    .registerform {
+    .resetform {
         height: 80%;
         width: 80%;
         box-shadow: 2px 2px 4px #2F342E;
@@ -13,13 +13,13 @@
         @include ipad-large {
             width: 60%;
         }
-        .registerheader {
+        .resetheader {
             width: 100%;
             border-bottom: 5px double #000;
             @include flexdisplay;
             margin-bottom: 3rem;
             margin-top: 3rem;
-            .registerlogo {
+            .resetlogo {
                 margin-bottom: 1rem;
                 font-size: 3rem;
                 letter-spacing: 0.1ch;
@@ -28,24 +28,18 @@
                 font-weight: bold;
             }
         }
-        .registererror {
+        .resetmessages {
             @include formmessages;
         }
-        .register {
+        .reset {
             @include flexcolumn;
-            .registername {
+            .resetemail {
                 @include registerandloginform;
             }
-            .registeremail {
+            .resetpassword {
                 @include registerandloginform;
             }
-            .registerpassword {
-                @include registerandloginform;
-            }
-            .registerpassword2 {
-                @include registerandloginform;
-            }
-            .registerbtn {
+            .resetbtn {
                 margin-top: 0.5rem;
                 width: 100%;
                 background-color: $bubblifygrey;
@@ -53,18 +47,19 @@
                 color: $bubblifylight;
                 padding: 0.4rem;
                 letter-spacing: 0.3ch;
-                font-family: $fontroboto;
+                font-family: 'Roboto', sans-serif;
                 cursor: pointer;
                 &:hover {
                     transition: all 0.5s ease;
                     border: 1px solid #2F342E;
                     background-color: $bubblifylight;
-                    color: #2F342E;
+                    color: $bubblifygrey;
                 }
             }
         }
         .tologin {
             margin: 1.5rem 0 3rem 0;
+            @include flexcolumn;
             .tologinbtn {
                 text-align: center;
                 width: 100%;
@@ -73,7 +68,7 @@
                 font-size: 0.5rem;
                 font-weight: bold;
                 letter-spacing: 0.2ch;
-                color: #2F342E;
+                color: $bubblifygrey;
                 background-color: $bubblifylight;
                 border: 1px solid #2F342E;
                 padding: 0.3rem 0.5rem 0.3rem 0.5rem;
@@ -87,5 +82,3 @@
         }
     }
 }
-
-
