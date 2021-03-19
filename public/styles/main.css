@@ -179,7 +179,7 @@
         color: #f9f9f9;
         padding: 0.4rem;
         letter-spacing: 0.3ch;
-        font-family: 'Roboto', sans-serif;
+        font-family: "Roboto", sans-serif;
         cursor: pointer; }
         .loginpage .loginform .login .loginbtn:hover {
           transition: all 0.5s ease;
@@ -295,7 +295,7 @@
         color: #f9f9f9;
         padding: 0.4rem;
         letter-spacing: 0.3ch;
-        font-family: 'Roboto', sans-serif;
+        font-family: "Roboto", sans-serif;
         cursor: pointer; }
         .resetformpage .resetform .reset .resetbtn:hover {
           transition: all 0.5s ease;
@@ -325,6 +325,82 @@
           transition: all 0.5s ease;
           background-color: #2F342E;
           color: #f9f9f9; }
+
+.resetpasswordpage {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .resetpasswordpage .resetpasswordform {
+    height: 80%;
+    width: 80%;
+    box-shadow: 2px 2px 4px #2F342E;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto", sans-serif; }
+    @media screen and (min-width: 992px) {
+      .resetpasswordpage .resetpasswordform {
+        width: 60%; } }
+    .resetpasswordpage .resetpasswordform .resetpasswordheader {
+      width: 100%;
+      border-bottom: 5px double #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 3rem;
+      margin-top: 3rem; }
+      .resetpasswordpage .resetpasswordform .resetpasswordheader .resetpasswordlogo {
+        margin-bottom: 1rem;
+        font-size: 3rem;
+        letter-spacing: 0.1ch;
+        color: #0F100A;
+        font-family: "Abhaya Libre", serif;
+        font-weight: bold; }
+    .resetpasswordpage .resetpasswordform .resetpasswordmessages {
+      max-width: 50%;
+      font-size: 0.6rem;
+      text-align: center;
+      margin-bottom: 1rem; }
+    .resetpasswordpage .resetpasswordform .resetpassword {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+      .resetpasswordpage .resetpasswordform .resetpassword .resetpassword1 {
+        width: 100%;
+        margin-bottom: 0.4rem;
+        padding: 3px 0 2px 3px;
+        background-color: #f9f9f9;
+        border: none;
+        border-bottom: 1px solid #CCAC00; }
+        .resetpasswordpage .resetpasswordform .resetpassword .resetpassword1:focus {
+          outline: none; }
+      .resetpasswordpage .resetpasswordform .resetpassword .resetpassword2 {
+        width: 100%;
+        margin-bottom: 0.4rem;
+        padding: 3px 0 2px 3px;
+        background-color: #f9f9f9;
+        border: none;
+        border-bottom: 1px solid #CCAC00; }
+        .resetpasswordpage .resetpasswordform .resetpassword .resetpassword2:focus {
+          outline: none; }
+      .resetpasswordpage .resetpasswordform .resetpassword .resetpasswordbtn {
+        margin-top: 0.5rem;
+        width: 100%;
+        background-color: #2F342E;
+        border: 1px solid transparent;
+        color: #f9f9f9;
+        padding: 0.4rem;
+        letter-spacing: 0.3ch;
+        font-family: "Roboto", sans-serif;
+        cursor: pointer; }
+        .resetpasswordpage .resetpasswordform .resetpassword .resetpasswordbtn:hover {
+          transition: all 0.5s ease;
+          border: 1px solid #2F342E;
+          background-color: #f9f9f9;
+          color: #2F342E; }
 
 #wishWrapper {
   display: flex;

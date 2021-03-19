@@ -47,7 +47,7 @@
                 color: $bubblifylight;
                 padding: 0.4rem;
                 letter-spacing: 0.3ch;
-                font-family: 'Roboto', sans-serif;
+                font-family: $fontroboto;
                 cursor: pointer;
                 &:hover {
                     transition: all 0.5s ease;
