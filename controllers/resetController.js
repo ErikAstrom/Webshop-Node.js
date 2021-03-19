@@ -81,7 +81,7 @@ const submitReset = async (req,res) => {
       res.redirect('back');
     }
     if (password.length < 3) {
-      req.flash( "warning_msg", "Password must be atleast 6 characters long."),
+      req.flash( "warning_msg", "Password must be atleast 3 characters long."),
       res.redirect('back');
     }
     
