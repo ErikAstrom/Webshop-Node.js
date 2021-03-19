@@ -1,0 +1,96 @@
+@import 'helper/mixins';
+
+.registerpage {
+    height: 100vh;
+    @include flexdisplay;
+    .registerform {
+        height: 80%;
+        width: 80%;
+        box-shadow: 2px 2px 4px #2F342E;
+        @include flexcolumn;
+        font-family: 'Roboto', sans-serif;
+        @include ipad-small {
+            width: 60%;
+        }
+        @include ipad-large {
+            width: 50%;
+        }
+        .registerheader {
+            width: 100%;
+            border-bottom: 5px double #000;
+            @include flexdisplay;
+            margin-bottom: 3rem;
+            margin-top: 3rem;
+            .registerlogo {
+                margin-bottom: 1rem;
+                font-size: 3rem;
+                letter-spacing: 0.1ch;
+                color: #0F100A;
+                font-family: 'Abhaya Libre', serif;
+                font-weight: bold;
+            }
+        }
+        .registererror {
+            max-width: 50%;
+            font-size: 0.6rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .register {
+            @include flexcolumn;
+            .registername {
+                @include registerandloginform;
+            }
+            .registeremail {
+                @include registerandloginform;
+            }
+            .registerpassword {
+                @include registerandloginform;
+            }
+            .registerpassword2 {
+                @include registerandloginform;
+            }
+            .registerbtn {
+                margin-top: 0.5rem;
+                width: 100%;
+                background-color: #2F342E;
+                border: 1px solid transparent;
+                color: #f9f9f9;
+                padding: 0.4rem;
+                letter-spacing: 0.3ch;
+                font-family: 'Roboto', sans-serif;
+                cursor: pointer;
+                &:hover {
+                    transition: all 0.5s ease;
+                    border: 1px solid #2F342E;
+                    background-color: #f9f9f9;
+                    color: #2F342E;
+                }
+            }
+        }
+        .tologin {
+            margin: 1.5rem 0 3rem 0;
+            .tologinbtn {
+                text-align: center;
+                width: 100%;
+                margin-top: 0.5rem;
+                text-decoration: none;
+                font-size: 0.5rem;
+                font-weight: bold;
+                letter-spacing: 0.2ch;
+                color: #2F342E;
+                background-color: #f9f9f9;
+                border: 1px solid #2F342E;
+                padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+                transition: background-color 0.5s ease;
+                &:hover { 
+                    transition: all 0.5s ease;
+                    background-color: #2F342E;
+                    color: #f9f9f9;
+                }
+            }
+        }
+    }
+}
+
+
