@@ -30,6 +30,15 @@
         }
 }
 
+@mixin wishListWrap {
+    flex-direction: row;
+    flex-wrap: wrap;
+    .wishItem {
+        border-bottom: none;
+        margin-bottom: 10px;
+    }
+}
+
 /* Media Query*/
 
 @mixin mobile-large {
