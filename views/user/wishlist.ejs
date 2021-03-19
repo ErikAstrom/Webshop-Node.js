@@ -1,24 +1,25 @@
 <%- include("../partials/header") %>
+<div id="wishWrapper">
 
-<h1><%= user.username %>'s wishlist!</h1>
-
-<a href="/logout">Logout</a>
-<a href="/productPage">Back to products</a>
-<% if (wishes != '') { %>
-<div><a href="/wishlistRemoveAll">Cleart your Wishlist</a></div>
-<% } %>
-<%- include("../helpers/messages") %>
-<%- include("../helpers/errorMessage") %>
-
+<div id="wishMenu">
+  <h3><%= user.username %>'s wishlist</h3>
+  <a href="/productPage">Back to products</a>
+  <% if (wishes != '') { %>
+  <div><a href="/wishlistRemoveAll">Cleart your Wishlist</a></div>
+  <% } %>
+  <%- include("../helpers/messages") %>
+  <%- include("../helpers/errorMessage") %>
+</div>
 
   <% wishes.forEach(wish => { %>
-    <div>
-        <p><%= wish.title %></p>
+    <div class="wishItem">
+        <h4><%= wish.title %></h4>
         <p><%= wish.price %> kr</p>
-        <p><%= wish.date %></p>
-        <a href="/wishlistDelete/<%= wish.id %>">Remove Item</a>
+        <img src="data:image/<%=wish.img.contentType%>;base64,<%=wish.img.data.toString('base64')%>" alt="" />
+
+        <a href="/wishlistDelete/<%= wish.id %>">Remove</a>
     </div>
 
   <% }) %>
-
+</div>
 <%- include("../partials/footer") %>

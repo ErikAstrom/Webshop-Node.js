@@ -3,3 +3,8 @@ node_modules
 login.css
 register.css
 productPage.css
+reset.css
+mixins.css
+variables.css
+wishlist.css
+resetpassword.css

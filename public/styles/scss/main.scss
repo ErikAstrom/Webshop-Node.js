@@ -2,6 +2,11 @@
 @import 'login';
 @import 'productPage';
 @import 'helper/mixins.scss';  
+@import 'reset';
+@import 'resetpassword';
+@import 'helper/mixins.scss';
+@import 'helper/variables.scss';    
+@import 'wishlist.scss';
 
 * {
   margin: 0px;

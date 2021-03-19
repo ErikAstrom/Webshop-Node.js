@@ -1,18 +1,25 @@
-<%- include("../partials/header") %>
+<%- include("../partials/secondheader") %>
 
-<h1>hello</h1>
+<div class="resetformpage">
+    <div class="resetform">
+        <div class="resetheader">
+            <h1 class="resetlogo">bubblify</h1>
+        </div>
+        <div class="resetmessages">
+            <%- include("../helpers/messages") %>
+        </div>
+        <form action="/reset" method="post" class="reset">
+            <input type="email" name="email" class="resetemail" placeholder="Type your email">
+            <button type="submit" class="resetbtn">Send Email</button>
+        </form>
 
-<form action="/reset" method="post">
-    <input type="email" name="email" id="" placeholder="Your Email">
+    <div class="tologin">
+        <a href="/login" class="tologinbtn">Back to login</a>
+    </div>
 
-    <button type="submit">Enter</button>
+    </div>
+</div>
 
-</form>
-
-<a href="/login">Back to login</a>
-
-<%- include("../helpers/messages") %>
-
-<%- include("../partials/footer") %>
+<%- include("../partials/secondfooter") %>
 
 
