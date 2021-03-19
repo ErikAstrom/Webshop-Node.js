@@ -10,3 +10,28 @@
     <link rel="stylesheet" href="/styles/main.css">
 </head>
 <body>
+    <header>
+        <% if (!locals.user) { %>
+            <h1 class="logo">bubblify</h1>
+            <div class="headerLinksDiv">
+                <a href="/register">Register</a>
+                <a href="/login">Login</a>
+            </div>
+        <% } %>
+
+
+        <% if (locals.user) { %>
+            <div class="nameOrAdminDiv">
+                <% if (user.role == 'admin') { %>
+                    <a href="/admin">Admin</a>
+                <% } else { %>
+                    <p><%= user.username %></p>
+                <% } %>
+            </div>
+            <h1 class="logo">bubblify</h1>
+            <div class="headerLinksDiv">
+                <a href="#">Cart</a>
+                <a href="/wishlist">Wishlist</a>
+            </div>
+        <% } %>
+    </header>
