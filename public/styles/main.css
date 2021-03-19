@@ -1,4 +1,3 @@
-/* Media Query*/
 .registerpage {
   height: 100vh;
   display: flex;
@@ -12,13 +11,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: 'Roboto', sans-serif; }
-    @media screen and (min-width: 768px) {
-      .registerpage .registerform {
-        width: 60%; } }
+    font-family: "Roboto", sans-serif; }
     @media screen and (min-width: 992px) {
       .registerpage .registerform {
-        width: 50%; } }
+        width: 60%; } }
     .registerpage .registerform .registerheader {
       width: 100%;
       border-bottom: 5px double #000;
@@ -32,7 +28,7 @@
         font-size: 3rem;
         letter-spacing: 0.1ch;
         color: #0F100A;
-        font-family: 'Abhaya Libre', serif;
+        font-family: "Abhaya Libre", serif;
         font-weight: bold; }
     .registerpage .registerform .registererror {
       max-width: 50%;
@@ -88,7 +84,7 @@
         color: #f9f9f9;
         padding: 0.4rem;
         letter-spacing: 0.3ch;
-        font-family: 'Roboto', sans-serif;
+        font-family: "Roboto", sans-serif;
         cursor: pointer; }
         .registerpage .registerform .register .registerbtn:hover {
           transition: all 0.5s ease;
@@ -115,24 +111,22 @@
           background-color: #2F342E;
           color: #f9f9f9; }
 
-/* Media Query*/
 .loginpage {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center; }
   .loginpage .loginform {
-    height: 60%;
+    height: 80%;
     width: 80%;
     box-shadow: 2px 2px 4px #2F342E;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: 'Roboto', sans-serif; }
+    font-family: "Roboto", sans-serif; }
     @media screen and (min-width: 992px) {
       .loginpage .loginform {
-        height: 80%;
         width: 60%; } }
     .loginpage .loginform .loginheader {
       width: 100%;
@@ -147,7 +141,7 @@
         font-size: 3rem;
         letter-spacing: 0.1ch;
         color: #0F100A;
-        font-family: 'Abhaya Libre', serif;
+        font-family: "Abhaya Libre", serif;
         font-weight: bold; }
     .loginpage .loginform .loginmessages {
       max-width: 50%;
@@ -233,7 +227,105 @@
           background-color: #2F342E;
           color: #f9f9f9; }
 
-/* Media Query*/
+.resetformpage {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .resetformpage .resetform {
+    height: 80%;
+    width: 80%;
+    box-shadow: 2px 2px 4px #2F342E;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto", sans-serif; }
+    @media screen and (min-width: 992px) {
+      .resetformpage .resetform {
+        width: 60%; } }
+    .resetformpage .resetform .resetheader {
+      width: 100%;
+      border-bottom: 5px double #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 3rem;
+      margin-top: 3rem; }
+      .resetformpage .resetform .resetheader .resetlogo {
+        margin-bottom: 1rem;
+        font-size: 3rem;
+        letter-spacing: 0.1ch;
+        color: #0F100A;
+        font-family: "Abhaya Libre", serif;
+        font-weight: bold; }
+    .resetformpage .resetform .resetmessages {
+      max-width: 50%;
+      font-size: 0.6rem;
+      text-align: center;
+      margin-bottom: 1rem; }
+    .resetformpage .resetform .reset {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+      .resetformpage .resetform .reset .resetemail {
+        width: 100%;
+        margin-bottom: 0.4rem;
+        padding: 3px 0 2px 3px;
+        background-color: #f9f9f9;
+        border: none;
+        border-bottom: 1px solid #CCAC00; }
+        .resetformpage .resetform .reset .resetemail:focus {
+          outline: none; }
+      .resetformpage .resetform .reset .resetpassword {
+        width: 100%;
+        margin-bottom: 0.4rem;
+        padding: 3px 0 2px 3px;
+        background-color: #f9f9f9;
+        border: none;
+        border-bottom: 1px solid #CCAC00; }
+        .resetformpage .resetform .reset .resetpassword:focus {
+          outline: none; }
+      .resetformpage .resetform .reset .resetbtn {
+        margin-top: 0.5rem;
+        width: 100%;
+        background-color: #2F342E;
+        border: 1px solid transparent;
+        color: #f9f9f9;
+        padding: 0.4rem;
+        letter-spacing: 0.3ch;
+        font-family: 'Roboto', sans-serif;
+        cursor: pointer; }
+        .resetformpage .resetform .reset .resetbtn:hover {
+          transition: all 0.5s ease;
+          border: 1px solid #2F342E;
+          background-color: #f9f9f9;
+          color: #2F342E; }
+    .resetformpage .resetform .tologin {
+      margin: 1.5rem 0 3rem 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+      .resetformpage .resetform .tologin .tologinbtn {
+        text-align: center;
+        width: 100%;
+        margin-top: 0.5rem;
+        text-decoration: none;
+        font-size: 0.5rem;
+        font-weight: bold;
+        letter-spacing: 0.2ch;
+        color: #2F342E;
+        background-color: #f9f9f9;
+        border: 1px solid #2F342E;
+        padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+        transition: background-color 0.5s ease; }
+        .resetformpage .resetform .tologin .tologinbtn:hover {
+          transition: all 0.5s ease;
+          background-color: #2F342E;
+          color: #f9f9f9; }
+
 * {
   margin: 0px;
   padding: 0px;

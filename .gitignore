@@ -2,3 +2,6 @@ node_modules
 .env
 login.css
 register.css
+reset.css
+mixins.css
+variables.css

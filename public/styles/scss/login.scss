@@ -1,16 +1,16 @@
 @import 'helper/mixins';
+@import 'helper/variables.scss';
 
 .loginpage {
     height: 100vh;
     @include flexdisplay;
     .loginform {
-        height: 60%;
+        height: 80%;
         width: 80%;
         box-shadow: 2px 2px 4px #2F342E;
         @include flexcolumn;
-        font-family: 'Roboto', sans-serif;
+        font-family: $fontroboto;
         @include ipad-large {
-            height: 80%;
             width: 60%;
         }
         .loginheader {
@@ -23,16 +23,13 @@
                 margin-bottom: 1rem;
                 font-size: 3rem;
                 letter-spacing: 0.1ch;
-                color: #0F100A;
-                font-family: 'Abhaya Libre', serif;
+                color: $bubblifyblack;
+                font-family: $fontabhaya;
                 font-weight: bold;
             }
         }
         .loginmessages {
-            max-width: 50%;
-            font-size: 0.6rem;
-            text-align: center;
-            margin-bottom: 1rem;
+            @include formmessages;
         }
         .login {
             @include flexcolumn;
@@ -45,9 +42,9 @@
             .loginbtn {
                 margin-top: 0.5rem;
                 width: 100%;
-                background-color: #2F342E;
+                background-color: $bubblifygrey;
                 border: 1px solid transparent;
-                color: #f9f9f9;
+                color: $bubblifylight;
                 padding: 0.4rem;
                 letter-spacing: 0.3ch;
                 font-family: 'Roboto', sans-serif;
@@ -55,8 +52,8 @@
                 &:hover {
                     transition: all 0.5s ease;
                     border: 1px solid #2F342E;
-                    background-color: #f9f9f9;
-                    color: #2F342E;
+                    background-color: $bubblifylight;
+                    color: $bubblifygrey;
                 }
             }
         }
@@ -71,15 +68,15 @@
                 font-size: 0.5rem;
                 font-weight: bold;
                 letter-spacing: 0.2ch;
-                color: #2F342E;
-                background-color: #f9f9f9;
+                color: $bubblifygrey;
+                background-color: $bubblifylight;
                 border: 1px solid #2F342E;
                 padding: 0.3rem 0.5rem 0.3rem 0.5rem;
                 transition: background-color 0.5s ease;
                 &:hover { 
                     transition: all 0.5s ease;
-                    background-color: #2F342E;
-                    color: #f9f9f9;
+                    background-color: $bubblifygrey;
+                    color: $bubblifylight;
                 }
             }
             .toresetbtn {
@@ -90,15 +87,15 @@
                 font-size: 0.5rem;
                 font-weight: bold;
                 letter-spacing: 0.2ch;
-                color: #2F342E;
-                background-color: #f9f9f9;
+                color: $bubblifygrey;
+                background-color: $bubblifylight;
                 border: 1px solid #2F342E;
                 padding: 0.3rem 0.5rem 0.3rem 0.5rem;
                 transition: background-color 0.5s ease;
                 &:hover { 
                     transition: all 0.5s ease;
-                    background-color: #2F342E;
-                    color: #f9f9f9;
+                    background-color: $bubblifygrey;
+                    color: $bubblifylight;
                 }
             }
         }

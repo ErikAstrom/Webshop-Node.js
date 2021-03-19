@@ -1,6 +1,8 @@
 @import 'register';
 @import 'login';
-@import 'helper/mixins.scss';       
+@import 'reset';
+@import 'helper/mixins.scss';
+@import 'helper/variables.scss';    
 
 * {
   margin: 0px;
