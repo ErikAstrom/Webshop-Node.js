@@ -1,7 +1,5 @@
 @import 'helper/mixins';
-
-
-
+@import 'helper/variables.scss';
 
 #wishWrapper {
     @include flexcolumn;
@@ -11,20 +9,18 @@
         color:black;
         &:hover {
             opacity:0.7;
-          }
+        }
     }
-
     #wishMenu {
         display:flex;
         flex-direction: column;
         flex-wrap: wrap;
         width:100%;
         margin: 30px;
-        h3{
+        h3 {
             text-align: center;
         }
     }
-
     .wishItem {
         display:flex;
         flex-direction: column;
@@ -32,32 +28,27 @@
         width:70%;
         border-bottom: 1px solid black;
         margin-bottom: 10px;
-        
         img {
             width:187.5px;
             height:312.5px;
         }
-
     }
-@include ipad-small {
+    @include ipad-small {
+        @include wishListWrap;
+        .wishItem {
+            width:45%;
+        }
+    }
+    @include ipad-large {
+        @include wishListWrap;
+        .wishItem {
+            width:30%;
+        }
+    }
+    @include desktop {
     @include wishListWrap;
-    .wishItem {
-        width:45%;
+        .wishItem {
+            width:22%;
+        }
     }
-}
-@include ipad-large {
-    @include wishListWrap;
-    .wishItem {
-        width:30%;
-    }
-}
-@include desktop {
-@include wishListWrap;
-    .wishItem {
-        width:22%;
-    }
-}
-
-
-
 }
