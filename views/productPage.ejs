@@ -1,104 +1,117 @@
 <%- include("./partials/header") %>
 
 
-<% if (!locals.user) { %>
-    <h1>Welcome to product page!</h1>
-    <div><a href="/">Back to Start</a></div>
-<% } %> 
-
-<% if (locals.user) { %>
-    <h1>Hi <%= user.username %></h1>
-
-<div><a href="/logout">Log Out</a></div>
-<div><a href="/">Back to Start</a></div>
-
-<%- include("./helpers/messages") %>
-<% } %>
-
-<div>
-    <a href="/productPage/?origin=spain">Spain</a>
-    <a href="/productPage/?origin=france">France</a>
-    <a href="/productPage/?origin=italy">Italy</a>
-</div>
-
-<% if (origin == null) { %>
-    <div>
-        <a href="/productPage/?page=<%=(productsToShow/limitPerPage)%>&&price=1">Lowest first</a>
-        <a href="/productPage/?page=<%=(productsToShow/limitPerPage)%>&&price=-1">Highest first</a>
+<main class="productMain">
+    <div class="heroText">
+        <p>Bring some sparkles into your life</p>
     </div>
-    <% products.forEach(product => { %>
-        <div class="productDiv">
-            <div class ="modalHidden">
-                <section class="modalContent">
-                <span class="closeModal"> &#9747; </span>
-                <img src="data:image/<%=product.img.contentType%>;base64,<%=product.img.data.toString('base64')%>" alt="" />
-                <p><%= product.title %></p>
-                <p><%= product.description %></p>
-                <p>Origin:<%= product.origin %></p>
-                <p>Blend:<%= product.blend %></p>
-                <p>Price:<%= product.price %> SEK</p>
-            </section>
+
+    <div class="productHero">
+        <img src="images/hero2.jpg" alt="Hero image of sparkling wine bottle."/>
+    </div>
+
+    <div class="ourProductsDiv">
+        <p class="ourProductsText">Our products</p>
+    </div>
+
+    <div class="sortContainer">
+        <div class="sortDropdown">
+            <button class="sortBtn">By price</button>
+            <div class="sortLinks">
+                <a href="/productPage/?page=<%=(productsToShow/limitPerPage)%>&&price=1">Low - High</a>
+                <a href="/productPage/?page=<%=(productsToShow/limitPerPage)%>&&price=-1">High - Low</a>
             </div>
+        </div>
+        <div class="sortDropdown">
+            <button class="sortBtn">By origin</button>
+            <div class="sortLinks">
+                <a href="/productPage/?origin=spain">Spain</a>
+                <a href="/productPage/?origin=france">France</a>
+                <a href="/productPage/?origin=italy">Italy</a>
+            </div>
+        </div>
+    </div>
 
+    <div class="productContainer">
+    <% if (origin == null) { %>
+        <% products.forEach(product => { %>
+            <div class="productDiv">
+                <div class ="modalHidden">
+                    <section class="modalContent">
+                        <span class="closeModal"><i class="fas fa-times"></i></span>
+                        <div class="productInfo">
+                            <%= product.title %>
+                            <img src="data:image/<%=product.img.contentType%>;base64,<%=product.img.data.toString('base64')%>" alt="Picture of a bottle." />
+                            <p><%= product.description %></p>
+                            <p><strong>Origin:</strong> <%= product.origin %></p>
+                            <p><strong>Blend:</strong> <%= product.blend %></p>
+                            <p><strong>Price:</strong> <%= product.price %> SEK</p>
+                        </div>
+                    </section>
+                </div>
 
-            <%= product.title %>
-           <picture> <img src="data:image/<%=product.img.contentType%>;base64,<%=product.img.data.toString('base64')%>" alt="" /></picture>
-            <p><%= product.description %></p>
-            <p><%= product.origin %></p>
-            <p><%= product.blend %></p>
-            <p><%= product.price %></p>
-            <% if (locals.user) { %>
-                <a href="/wishlist/<%= product._id%>">&#10084</a>
+                <%= product.title %>
+                <picture><img src="data:image/<%=product.img.contentType%>;base64,<%=product.img.data.toString('base64')%>" alt="Picture of a bottle." /></picture>
+                <p><strong>Origin:</strong> <%= product.origin %></p>
+                <p><strong>Blend:</strong> <%= product.blend %></p>
+                <p><strong>Price:</strong> <%= product.price %> SEK</p>
+
+                <% if (locals.user) { %>
+                    <a href="/wishlist/<%= product._id%>">&#10084</a>
                 <% } %>
-        </div>
-    <% }) %>
-
-    <% if(totalPages> 1){%>
-        <ul class="pagination">
-        <%if(page>1){%>
-            <li>
-                <a href="/productPage/?page=<%=(productsToShow/limitPerPage)-1 %>&&price=<%= sortPrice %>">&larr; less</a>
-            </li>
-        <%}%>
-        <% if(totalPages !==productsToShow/limitPerPage){%>
-            <li>
-                <a href="/productPage/?page=<%=(productsToShow/limitPerPage)+1 %>&&price=<%= sortPrice %>">more &rarr;</a>
-            </li>
-        <% } %>
-        </ul>
-    <%} %>
-<% } else { %>
-    <% origin.forEach(item => { %>
-        <div class="productDiv">
-            
-            <div class ="modalHidden">
-                <section class="modalContent">
-                <span class="closeModal"> &#9747; </span>
-                <img src="data:image/<%=item.img.contentType%>;base64,<%=item.img.data.toString('base64')%>" alt="" />
-                <p><%= item.title %></p>
-                <p><%= item.description %></p>
-                <p>Origin:<%= item.origin %></p>
-                <p>Blend:<%= item.blend %></p>
-                <p>Price:<%= item.price %> SEK</p>
-            </section>
             </div>
-            
-            
-            <%= item.title %>
-            <picture><img src="data:image/<%=item.img.contentType%>;base64,<%=item.img.data.toString('base64')%>" alt="" /></picture>
-            <p><%= item.description %></p>
-            <p><%= item.origin %></p>
-            <p><%= item.blend %></p>
-            <p><%= item.price %></p>
-        </div>
-    <% }) %>
-<% } %>
+        <% }) %>
+
+        <% if(totalPages> 1){%>
+            <div class="paginationDiv">
+                <ul class="pagination">
+                <%if(page>1){%>
+                    <li>
+                        <a href="/productPage/?page=<%=(productsToShow/limitPerPage)-1 %>&&price=<%= sortPrice %>">&larr; Show less</a>
+                    </li>
+                <%}%>
+                <% if(totalPages !==productsToShow/limitPerPage){%>
+                    <li>
+                        <a href="/productPage/?page=<%=(productsToShow/limitPerPage)+1 %>&&price=<%= sortPrice %>">Show more &rarr;</a>
+                    </li>
+                <% } %>
+                </ul>
+            </div>
+        <%} %>
+    <% } else { %>
+        <% origin.forEach(item => { %>
+            <div class="productDiv">
+                <div class ="modalHidden">
+                    <section class="modalContent">
+                        <span class="closeModal"> &#9747; </span>
+                        <%= item.title %>
+                        <img src="data:image/<%=item.img.contentType%>;base64,<%=item.img.data.toString('base64')%>" alt="Picture of a bottle." />
+                        <p><%= item.description %></p>
+                        <p><strong>Origin:</strong> <%= item.origin %></p>
+                        <p><strong>Blend:</strong> <%= item.blend %></p>
+                        <p><strong>Price:</strong> <%= item.price %> SEK</p>
+                    </section>
+                </div>
+                
+                <%= item.title %>
+                <picture><img src="data:image/<%=item.img.contentType%>;base64,<%=item.img.data.toString('base64')%>" alt="Picture of a bottle." /></picture>
+                <p><strong>Origin:</strong> <%= item.origin %></p>
+                <p><strong>Blend:</strong> <%= item.blend %></p>
+                <p><strong>Price:</strong> <%= item.price %> SEK</p>
+
+                <% if (locals.user) { %>
+                    <a href="/wishlist/<%= item._id%>">&#10084</a>
+                <% } %>
+            </div>
+        <% }) %>
+    <% } %>
+    </div>
+</main>
 
 <%- include("./partials/footer") %>
 
 
 <script>
-
     let productPicture = document.getElementsByTagName('picture');
     for (let i = 0; i < productPicture.length; i++) {
         productPicture[i].addEventListener('click', ()=>{
@@ -111,6 +124,5 @@
         closeModal[i].addEventListener('click', ()=>{
             closeModal[i].closest('div').classList.toggle('modalVisible')
         })
-        
     }
-    </script>
+</script>
