@@ -1,0 +1,274 @@
+@import 'helper/mixins';
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box; 
+}
+
+body {
+    width: 100%;
+    background-color: #F9F9F9;
+    color: #0F100A;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+
+    //Productpage styling
+    .productMain {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .heroText {
+            width: 50%;
+            height: 90px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            @media screen and (min-width: 768px) {
+                width: 100%;
+            }
+
+            p {
+                font-size: 1.2rem;
+            }
+        }
+
+        .productHero {
+            width: 100%;
+
+            img {
+                width: 100%;
+
+            }
+        }
+
+        .ourProductsDiv {
+            width: 100%;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+      
+            .ourProductsText {
+                text-align: center;
+                font-size: 1.5rem;
+                font-weight: bold;
+            }
+        }
+
+        .sortContainer {
+            width: 100%;
+            height: 90px;
+            display: flex;
+            justify-content: center;
+            border-bottom: 1px solid rgb(158, 158, 158);
+
+            .sortDropdown {
+                width: 25%;
+                position: relative;
+                display: inline-block;
+                text-align: center;
+                @media screen and (min-width: 768px) {
+                  width: 15%;  
+                }
+
+                .sortBtn {
+                    border: none;
+                    border-radius: 5px;
+                    background-color: transparent;
+                    font-size: 0.8rem;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    padding: 3px 7px 2px 7px;
+                    margin-top: 10px;
+                    
+                    &:hover {
+                        font-weight: lighter;
+                        background-color: #0F100A;
+                        color: #F9F9F9;
+                    }
+                    
+                }
+
+                .sortLinks {
+                    width: 100%;
+                    display: none;
+                    position: absolute;
+                    z-index: 1;
+
+                    a {
+                        display: block;
+                        width: 100%;
+                        font-size: 0.8rem;
+                        color: #0F100A;
+                        text-decoration: none;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+
+        .sortDropdown:hover {
+            .sortLinks {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 5px;
+            }
+        }
+
+        .productContainer {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 20px;
+            @media screen and (min-width: 768px) {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            .productDiv {
+                width: 90%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding-bottom: 40px;
+                margin: 15px 0;
+                border-bottom: 1px solid #0F100A;
+                cursor: pointer;
+                @media screen and (min-width: 768px) {
+                   width: 33%;
+                   border: none;
+                }
+
+                .modalHidden {
+                    display: none; 
+                }
+                
+                .modalVisible {
+                    background-color: rgba(0, 0, 0, 0.8);
+                    position: fixed;
+                    top: 0;
+                    height: 100%;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center; 
+
+                    .modalContent {
+                        background-color: #F9F9F9;
+                        border: 1px solid #0F100A;
+                        max-width: 70%;
+                        font-weight: bold;
+                        text-align: center;
+                        padding-bottom: 15px;
+                        @media screen and (min-width: 768px) {
+                            max-width: 50%;
+                        }
+
+                        .closeModal {
+                            display: flex;
+                            justify-content: flex-end;
+                            font-weight: bold;
+                            margin: 5px 5px 0 0;
+                            cursor: pointer; 
+                        }
+
+                        .productInfo {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+
+                            img {
+                                max-width: 90%;
+                                max-height: 90%; 
+                                @media screen and (min-width: 768px) {
+                                    max-width: 40%;
+                                    max-height: 40%;
+                                }
+                                @media screen and (min-width: 1024px) {
+                                    max-width: 30%;
+                                    max-height: 30%;
+                                }
+                            }
+        
+                            p {
+                                font-size: 0.8rem;
+                                font-weight: normal;
+                                margin-bottom: 3px;
+                                @media screen and (min-width: 768px) {
+                                    width: 60%;
+                                }
+        
+                                &:nth-of-type(1) {
+                                    font-style: italic;
+                                    margin-bottom: 10px;
+                                }
+        
+                                &:nth-of-type(2) {
+                                    margin-bottom: 4px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                picture {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+
+                    img {
+                        width: 50%;
+                        @media screen and (min-width: 1024px) {
+                            width: 40%;
+                        }
+                    }
+                }
+
+                p {
+                    font-size: 0.9rem;
+                    letter-spacing: 2px;
+                    text-align: center;
+                }
+
+                a {
+                    font-size: 2rem;
+                    color: #CCAC00;
+                    text-decoration: none;
+
+                    &:hover {
+                        color: #FFE79E;
+                    }
+                }
+            }
+
+            .paginationDiv {
+                margin: 0 0 30px 30px;
+
+                .pagination {
+                    list-style: none;
+                    font-size: 0.9rem;
+
+                    a {
+                        color: #0F100A;
+                        text-decoration: none;
+
+                        &:hover {
+                            color: grey;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
