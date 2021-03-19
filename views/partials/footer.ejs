@@ -1,3 +1,15 @@
+    <footer>
+        <div class="footerContactDiv">
+            <p>+46-123 456 78</p>
+            <p><strong>Bubblify</strong></p>
+            <p>info@bubblify.se</p>
+        </div>
 
+        <div class="footerContactDiv">
+            <% if (locals.user) { %>
+                <a href="/logout">Log Out</a>
+            <% } %>
+        </div>
+    </footer>
 </body>
 </html>

@@ -258,6 +258,9 @@ body {
       font-family: 'Abhaya Libre', serif;
       font-size: 2rem;
       letter-spacing: 5px; }
+      @media screen and (min-width: 1024px) {
+        body header h1 {
+          font-size: 2.2rem; } }
     body header .nameOrAdminDiv {
       float: left;
       position: absolute;
@@ -265,6 +268,9 @@ body {
       margin-top: -6.5px;
       margin-left: 15px;
       font-size: 0.7rem; }
+      @media screen and (min-width: 768px) {
+        body header .nameOrAdminDiv {
+          font-size: 0.8rem; } }
       body header .nameOrAdminDiv p {
         text-transform: uppercase; }
       body header .nameOrAdminDiv a {
@@ -280,6 +286,10 @@ body {
       justify-content: center;
       float: right;
       margin-right: 15px; }
+      @media screen and (min-width: 768px) {
+        body header .headerLinksDiv {
+          flex-direction: row;
+          align-items: center; } }
       body header .headerLinksDiv a {
         color: #0F100A;
         font-size: 0.7rem;
@@ -287,7 +297,141 @@ body {
         text-transform: uppercase;
         text-align: end;
         cursor: pointer; }
+        @media screen and (min-width: 768px) {
+          body header .headerLinksDiv a {
+            font-size: 0.8rem;
+            margin: 0 7px; } }
         body header .headerLinksDiv a:hover {
+          color: grey; }
+  body .indexMain {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    body .indexMain .heroText {
+      width: 50%;
+      height: 90px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center; }
+      @media screen and (min-width: 768px) {
+        body .indexMain .heroText {
+          width: 100%; } }
+      body .indexMain .heroText p {
+        font-size: 1.2rem; }
+    body .indexMain .indexHero {
+      width: 100%;
+      overflow: hidden; }
+      body .indexMain .indexHero img {
+        height: 650px; }
+        @media screen and (min-width: 768px) {
+          body .indexMain .indexHero img {
+            width: 100%;
+            height: 100%; } }
+    body .indexMain .discoverDiv {
+      width: 100%;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end; }
+      body .indexMain .discoverDiv .discoverText {
+        font-size: 1.1rem;
+        font-weight: bold; }
+    body .indexMain .indexProductContainer {
+      width: 100%;
+      height: 330px;
+      display: flex;
+      justify-content: center;
+      border-bottom: 2px solid #2F342E; }
+      @media screen and (min-width: 1024px) {
+        body .indexMain .indexProductContainer {
+          height: 450px; } }
+      body .indexMain .indexProductContainer .indexProductDiv {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; }
+        @media screen and (min-width: 768px) {
+          body .indexMain .indexProductContainer .indexProductDiv {
+            width: 50%;
+            display: flex; } }
+        @media screen and (min-width: 1024px) {
+          body .indexMain .indexProductContainer .indexProductDiv {
+            width: 30%; } }
+        body .indexMain .indexProductContainer .indexProductDiv:nth-of-type(2) {
+          display: none; }
+          @media screen and (min-width: 1024px) {
+            body .indexMain .indexProductContainer .indexProductDiv:nth-of-type(2) {
+              width: 30%;
+              display: flex; } }
+        body .indexMain .indexProductContainer .indexProductDiv:nth-of-type(3) {
+          display: none; }
+          @media screen and (min-width: 768px) {
+            body .indexMain .indexProductContainer .indexProductDiv:nth-of-type(3) {
+              width: 50%;
+              display: flex; } }
+          @media screen and (min-width: 1024px) {
+            body .indexMain .indexProductContainer .indexProductDiv:nth-of-type(3) {
+              width: 30%; } }
+        body .indexMain .indexProductContainer .indexProductDiv img {
+          width: 20%; }
+          @media screen and (min-width: 768px) {
+            body .indexMain .indexProductContainer .indexProductDiv img {
+              width: 30%; } }
+        body .indexMain .indexProductContainer .indexProductDiv .productTitle {
+          font-weight: bold; }
+        body .indexMain .indexProductContainer .indexProductDiv div {
+          width: 25%;
+          display: flex;
+          justify-content: space-around;
+          font-size: 0.8rem;
+          font-weight: bold;
+          text-transform: uppercase;
+          margin-bottom: 20px; }
+          @media screen and (min-width: 768px) {
+            body .indexMain .indexProductContainer .indexProductDiv div {
+              width: 100%;
+              justify-content: center; } }
+          body .indexMain .indexProductContainer .indexProductDiv div .originBlend {
+            margin: 0 5px; }
+        body .indexMain .indexProductContainer .indexProductDiv a {
+          padding: 5px 25px;
+          background-color: #2F342E;
+          color: #F9F9F9;
+          font-size: 0.8rem;
+          text-decoration: none;
+          text-transform: uppercase;
+          border-radius: 10px; }
+          body .indexMain .indexProductContainer .indexProductDiv a:hover {
+            background-color: #525252; }
+    body .indexMain .indexQuoteText {
+      width: 80%;
+      height: 140px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center; }
+      body .indexMain .indexQuoteText p {
+        font-size: 1.1rem;
+        font-style: italic; }
+  body footer {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #2F342E; }
+    body footer .footerContactDiv {
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      color: #F9F9F9; }
+      body footer .footerContactDiv a {
+        margin-top: 10px;
+        color: #F9F9F9; }
+        body footer .footerContactDiv a:hover {
           color: grey; }
 
 .modalHidden {
