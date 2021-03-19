@@ -1,0 +1,108 @@
+@import 'helper/mixins';
+
+.loginpage {
+    height: 100vh;
+    @include flexdisplay;
+    .loginform {
+        height: 60%;
+        width: 80%;
+        box-shadow: 2px 2px 4px #2F342E;
+        @include flexcolumn;
+        font-family: 'Roboto', sans-serif;
+        @include ipad-large {
+            height: 80%;
+            width: 60%;
+        }
+        .loginheader {
+            width: 100%;
+            border-bottom: 5px double #000;
+            @include flexdisplay;
+            margin-bottom: 3rem;
+            margin-top: 3rem;
+            .loginlogo {
+                margin-bottom: 1rem;
+                font-size: 3rem;
+                letter-spacing: 0.1ch;
+                color: #0F100A;
+                font-family: 'Abhaya Libre', serif;
+                font-weight: bold;
+            }
+        }
+        .loginmessages {
+            max-width: 50%;
+            font-size: 0.6rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .login {
+            @include flexcolumn;
+            .loginemail {
+                @include registerandloginform;
+            }
+            .loginpassword {
+                @include registerandloginform;
+            }
+            .loginbtn {
+                margin-top: 0.5rem;
+                width: 100%;
+                background-color: #2F342E;
+                border: 1px solid transparent;
+                color: #f9f9f9;
+                padding: 0.4rem;
+                letter-spacing: 0.3ch;
+                font-family: 'Roboto', sans-serif;
+                cursor: pointer;
+                &:hover {
+                    transition: all 0.5s ease;
+                    border: 1px solid #2F342E;
+                    background-color: #f9f9f9;
+                    color: #2F342E;
+                }
+            }
+        }
+        .registerandresetbtn {
+            margin: 1.5rem 0 3rem 0;
+            @include flexcolumn;
+            .toregisterbtn {
+                text-align: center;
+                width: 100%;
+                margin-top: 0.5rem;
+                text-decoration: none;
+                font-size: 0.5rem;
+                font-weight: bold;
+                letter-spacing: 0.2ch;
+                color: #2F342E;
+                background-color: #f9f9f9;
+                border: 1px solid #2F342E;
+                padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+                transition: background-color 0.5s ease;
+                &:hover { 
+                    transition: all 0.5s ease;
+                    background-color: #2F342E;
+                    color: #f9f9f9;
+                }
+            }
+            .toresetbtn {
+                text-align: center;
+                width: 100%;
+                margin-top: 0.5rem;
+                text-decoration: none;
+                font-size: 0.5rem;
+                font-weight: bold;
+                letter-spacing: 0.2ch;
+                color: #2F342E;
+                background-color: #f9f9f9;
+                border: 1px solid #2F342E;
+                padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+                transition: background-color 0.5s ease;
+                &:hover { 
+                    transition: all 0.5s ease;
+                    background-color: #2F342E;
+                    color: #f9f9f9;
+                }
+            }
+        }
+    }
+}
+
+

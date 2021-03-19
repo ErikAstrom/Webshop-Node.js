@@ -1,17 +1,27 @@
 <%- include("../partials/header") %>
 
-<form action="/login" method="post">
-<input type="email" name="email" id="" placeholder="E-mail">
-<input type="password" name="password" id="" placeholder="Password">
-<button type="submit">Login</button>
-</form>
+<div class="loginpage">
+    <div class="loginform">
+        <div class="loginheader">
+            <h1 class="loginlogo">bubblify</h1>
+        </div>
+        <div class="loginmessages">
+        <%- include("../helpers/messages") %>
+        <%- include("../helpers/errorMessage") %>
+        </div>
+        
+        <form action="/login" method="post" class="login">
+        <input type="email" name="email" class="loginemail" placeholder="Email">
+        <input type="password" name="password" class="loginpassword" placeholder="Password">
+        <button type="submit" class="loginbtn">Login</button>
+        </form>
 
-<div>
-    <a href="/register">To Register</a>
-    <a href="/reset">Reset your password</a>
+        <div class="registerandresetbtn">
+            <a href="/register" class="toregisterbtn">I am not a member yet</a>
+            <a href="/reset" class="toresetbtn">Forgot your password?</a>
+        </div>
+
+    </div>  
 </div>
-<%- include("../helpers/messages") %>
-
-<%- include("../helpers/errorMessage") %>
 
 <%- include("../partials/footer") %>
