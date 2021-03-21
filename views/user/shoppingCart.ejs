@@ -1,10 +1,11 @@
 <%- include("../partials/header") %>
 
-<h1> <%= user.username %>'s shopping cart</h1>
+<h1>Shopping cart</h1>
 <a href="/productPage">Continue Shopping</a>
-<h3>My Cart: </h3><br>
+<h3><%= user.username %>'s personal cart: </h3><br>
 <div>
     <%- include("../helpers/messages") %>
+    <%- include("../helpers/errorMessage") %>
 </div>
 
 <% cartitems.forEach(product => { %>
