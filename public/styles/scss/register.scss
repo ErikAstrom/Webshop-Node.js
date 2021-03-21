@@ -57,9 +57,9 @@
                 cursor: pointer;
                 &:hover {
                     transition: all 0.5s ease;
-                    border: 1px solid #2F342E;
-                    background-color: $bubblifylight;
-                    color: #2F342E;
+                    border: 1px solid $bubblifygold;
+                    background-color: $bubblifygold;
+                    color: $bubblifylight;
                 }
             }
         }

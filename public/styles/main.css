@@ -88,9 +88,9 @@
         cursor: pointer; }
         .registerpage .registerform .register .registerbtn:hover {
           transition: all 0.5s ease;
-          border: 1px solid #2F342E;
-          background-color: #f9f9f9;
-          color: #2F342E; }
+          border: 1px solid #CCAC00;
+          background-color: #CCAC00;
+          color: #f9f9f9; }
     .registerpage .registerform .tologin {
       margin: 1.5rem 0 3rem 0; }
       .registerpage .registerform .tologin .tologinbtn {
@@ -183,9 +183,9 @@
         cursor: pointer; }
         .loginpage .loginform .login .loginbtn:hover {
           transition: all 0.5s ease;
-          border: 1px solid #2F342E;
-          background-color: #f9f9f9;
-          color: #2F342E; }
+          border: 1px solid #CCAC00;
+          background-color: #CCAC00;
+          color: #f9f9f9; }
     .loginpage .loginform .registerandresetbtn {
       margin: 1.5rem 0 3rem 0;
       display: flex;
@@ -495,9 +495,9 @@ body {
         cursor: pointer; }
         .resetformpage .resetform .reset .resetbtn:hover {
           transition: all 0.5s ease;
-          border: 1px solid #2F342E;
-          background-color: #f9f9f9;
-          color: #2F342E; }
+          border: 1px solid #CCAC00;
+          background-color: #CCAC00;
+          color: #f9f9f9; }
     .resetformpage .resetform .tologin {
       margin: 1.5rem 0 3rem 0;
       display: flex;
@@ -594,9 +594,9 @@ body {
         cursor: pointer; }
         .resetpasswordpage .resetpasswordform .resetpassword .resetpasswordbtn:hover {
           transition: all 0.5s ease;
-          border: 1px solid #2F342E;
-          background-color: #f9f9f9;
-          color: #2F342E; }
+          border: 1px solid #CCAC00;
+          background-color: #CCAC00;
+          color: #f9f9f9; }
 
 #wishWrapper {
   display: flex;
