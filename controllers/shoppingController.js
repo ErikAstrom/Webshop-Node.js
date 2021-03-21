@@ -30,7 +30,7 @@ const showShoppingCart = async (req, res) => {
 }
 
 const addToCart = async (req, res) => {
-    const { title, price, productId, quantity } = req.body;
+    const { title, price, productId, quantity, blend } = req.body;
     const total = price * quantity;
     const user = await User.findOne({ _id: req.user.user._id });
     const userId = user;
@@ -50,7 +50,8 @@ const addToCart = async (req, res) => {
                     quantity,
                     title, 
                     price, 
-                    total 
+                    total,
+                    blend
                 }]
             });
             let cart = await Cart.findOne({ userId });
@@ -85,7 +86,7 @@ const addToCart = async (req, res) => {
                 if (cart.totalAmount == 0) { // If user has removed all items
                     cart.totalAmount = userTotal;
                 }
-                cart.products.push({ title, price, productId, quantity, total });
+                cart.products.push({ title, price, productId, quantity, blend, total });
             }
             await cart.save();
             res.redirect("/myShoppingCart")
