@@ -1,0 +1,26 @@
+<%- include("../partials/header") %>
+
+<a href="/myShoppingCart">Back to Shopping Cart</a>
+
+<h1>Welcome to the checkout, <%= user.username %></h1>
+<h4>Please make sure everything is in order. If you need to change anything, you can return to the shopping cart <a href="/myShoppingCart">here.</a></h4>
+<br>
+<h2>Order Summary</h2><br>
+<% cartitems.forEach( product => { %>
+    <div>
+        <p><strong><%= product.title %></strong></p>
+        <p>Price per bottle: <%= product.price %> sek</p>
+        <p>Quantity: <%= product.quantity %></p>
+        <p>Totalprice: <%= product.total %> sek</p>
+    </div><br>
+<% }) %>
+
+<div>
+    <h4>Total Amount for all items: <%= totalAmount %> sek</h4>
+</div><br>
+
+<div>
+    <button type="submit">Proceed to Payment</button>
+</div><br>
+
+<%- include("../partials/footer") %>
