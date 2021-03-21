@@ -46,6 +46,13 @@
                             <p><strong>Origin:</strong> <%= product.origin %></p>
                             <p><strong>Blend:</strong> <%= product.blend %></p>
                             <p><strong>Price:</strong> <%= product.price %> SEK</p>
+                            <form action="/addToCart" method="post" >
+                                <input type="text" name="title" value="<%= product.title %>" hidden>
+                                <input type="number" name="quantity" value="1" min="1">
+                                <input type="text" name="productId" value="<%= product._id %>" hidden>
+                                <input type="number" name="price" value="<%= product.price %>" hidden>
+                                <button type="submit">Add to cart</button>
+                              </form>
                         </div>
                     </section>
                 </div>
