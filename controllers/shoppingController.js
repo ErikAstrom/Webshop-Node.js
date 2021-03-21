@@ -1,7 +1,5 @@
 const {User} = require("../models/user");
 const Cart = require("../models/cart");
-const fs = require("fs");
-const path = require("path");
 
 const showShoppingCart = async (req, res) => {
     const user = await User.findOne({ _id: req.user.user._id });
@@ -36,11 +34,7 @@ const addtoCart = async (req, res) => {
                 totalAmount, 
                 userId,
                 products: [{ 
-                    productId, 
-                    // img: {
-                    // data: fs.readFileSync(path.join("uploads/" + req.file.filename)),
-                    // contentType: "image"
-                    // }, 
+                    productId,  
                     quantity,
                     title, 
                     price, 
@@ -96,7 +90,7 @@ const removeFromCart = async (req, res) => {
         const cart = await Cart.findOne({ userId });
         const productId = req.params.id;
 
-        for (i = 0; i < cart.products.length; i++) {
+        for (i = 0; i < cart.products.length; i++) { // Empties totalAmount value if product is removed
             if (productId == cart.products[i]._id) {
               productTotal = cart.products[i].total;
               dataBaseTotalAmount = cart.totalAmount;
@@ -117,9 +111,64 @@ const removeFromCart = async (req, res) => {
     }
 }
 
+const increaseInCart = async (req, res) => {
+    const user = await User.findOne({ _id: req.user.user._id });
+    const userId = user;
+    const productId = req.params.id;
+    try {
+      const cart = await Cart.findOne({ userId });
+      for (i = 0; i < cart.products.length; i++) {
+        if (cart.products[i]._id == productId) {
+          let pastValue = cart.products[i].total;
+          cart.products[i].quantity++; // Increase quantity by one
+          cart.products[i].total = cart.products[i].quantity * cart.products[i].price;
+  
+          let newValue = cart.products[i].total;
+          cart.totalAmount -= pastValue; // Removes past vaule from totalAmount
+          cart.totalAmount += newValue; // Adds new value to totalAmount
+  
+          await cart.save();
+        }
+      }
+        res.redirect('/myShoppingCart');
+    } catch (err) {
+        console.log(err)
+    }
+}
+
+const decreaseInCart = async (req, res) => {
+    const user = await User.findOne({ _id: req.user.user._id });
+    const userId = user;
+    const productId = req.params.id;
+    try {
+      const cart = await Cart.findOne({ userId });
+      for (i = 0; i < cart.products.length; i++) {
+        if (cart.products[i]._id == productId) {
+          if (cart.products[i].quantity == 1) { // Can't go lower than 1, otherwise customer will have to remove product with Remove from Cart function
+              break
+          } else {
+          let pastValue = cart.products[i].total;
+          cart.products[i].quantity--; // decrease quantity by one
+          cart.products[i].total = cart.products[i].quantity * cart.products[i].price;
+  
+          let newValue = cart.products[i].total;
+          cart.totalAmount -= pastValue; // Removes past value from totalAmount
+          cart.totalAmount += newValue; // Adds new value to totalAmount
+  
+          await cart.save();
+          }
+        }
+      }
+        res.redirect('/myShoppingCart');
+    } catch (err) {
+        console.log(err)
+    }
+}
 
 module.exports = {
-    addtoCart,
     showShoppingCart,
-    removeFromCart
+    addtoCart,
+    removeFromCart,
+    increaseInCart,
+    decreaseInCart
 }

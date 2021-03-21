@@ -2,15 +2,19 @@ const express = require("express");
 const router = express.Router();
 
 const verifyUser = require("../middleware/verifyUser");
-const { addtoCart, showShoppingCart, removeFromCart } = require("../controllers/shoppingController");
+const { addtoCart, showShoppingCart, removeFromCart, increaseInCart, decreaseInCart } = require("../controllers/shoppingController");
+
+// Show shopping cart
+router.get("/myShoppingCart", verifyUser, showShoppingCart);
 
 // Add to shoppingcart
 router.post("/addToCart", verifyUser, addtoCart); 
 
-// Show shopping cart
-router.get("/myShoppingCart", verifyUser, showShoppingCart); 
-
 // Remove item from cart
 router.get("/removeFromCart/:id", verifyUser, removeFromCart);
+
+// Increase / Decrease amount in Cart
+router.get("/increaseInCart/:id", verifyUser, increaseInCart);
+router.get("/decreaseInCart/:id", verifyUser, decreaseInCart);
 
 module.exports = router;

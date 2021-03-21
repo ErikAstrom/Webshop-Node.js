@@ -4,20 +4,27 @@
 <a href="/productPage">Continue Shopping</a>
 <h3>My Cart: </h3><br>
 <div>
-<% cartitems.forEach(product => { %>
-
-    <p><%= product.title %></p>
-    <p>Price: <%= product.price %></p>
-    <p><%= product.quantity %></p>
-    <p>Total price: <%= product.total %></p>
-    <a href="/removeFromCart/<%= product.id %>">Remove</a>
-
-<% }) %>
+    <%- include("../helpers/messages") %>
 </div>
+
+<% cartitems.forEach(product => { %>
+    <div>
+    <p><strong><%= product.title %></strong></p>
+    <p>Price: <%= product.price %> sek</p>
+    <p> Quantity: 
+        <a href="/decreaseInCart/<%= product.id %>"><i class="fas fa-minus-square"></i></a>
+        <%= product.quantity %>
+        <a href="/increaseInCart/<%= product.id %>"><i class="fas fa-plus-square"></i></a>
+    </p>
+    <p>Total price: <%= product.total %> sek</p>
+    <a href="/removeFromCart/<%= product.id %>">Remove Product</a>
+    </div><br>
+<% }) %>
+
 <br>
 <div>
     <% if (totalAmount >= 1) { %>
-        <p>Total amount in cart: <%= totalAmount %></p>
+        <p>Total amount in cart: <%= totalAmount %> sek</p>
     <% } %>
 </div>
 <%- include("../partials/footer") %>
