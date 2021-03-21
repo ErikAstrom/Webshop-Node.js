@@ -124,7 +124,7 @@ const increaseInCart = async (req, res) => {
           cart.products[i].total = cart.products[i].quantity * cart.products[i].price;
   
           let newValue = cart.products[i].total;
-          cart.totalAmount -= pastValue; // Removes past vaule from totalAmount
+          cart.totalAmount -= pastValue; // Removes past value from totalAmount
           cart.totalAmount += newValue; // Adds new value to totalAmount
   
           await cart.save();
