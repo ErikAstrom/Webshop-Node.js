@@ -1,0 +1,20 @@
+<%- include("../partials/header") %>
+
+<h1> <%= user.username %>'s shopping cart</h1>
+
+<div>
+<% cartitems.forEach(product => { %>
+
+    <p><%= product.title %></p>
+    <p>Price: <%= product.price %></p>
+    <p><%= product.quantity %></p>
+    <p>Total: <%= product.total %></p>
+
+<% }) %>
+</div>
+<div>
+    <% if (totalAmount >= 1) { %>
+        <p>Cart totalAmount: <%= totalAmount %></p>
+    <% } %>
+</div>
+<%- include("../partials/footer") %>
