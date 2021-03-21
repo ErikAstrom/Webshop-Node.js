@@ -3,6 +3,22 @@ const Cart = require("../models/cart");
 const fs = require("fs");
 const path = require("path");
 
+const showShoppingCart = async (req, res) => {
+    const user = await User.findOne({ _id: req.user.user._id });
+    const userId = user;
+    try {
+        const cart = await Cart.findOne({ userId }).populate('userId');
+
+        res.render("user/shoppingCart.ejs", {
+            cartitems: cart.products,
+            user: req.user.user,
+            totalAmount: cart.totalAmount,
+        })
+    } catch (err) {
+        console.log(err)
+    }
+}
+
 const addtoCart = async (req, res) => {
     const { title, price, productId, quantity } = req.body;
     const total = price * quantity;
@@ -65,7 +81,7 @@ const addtoCart = async (req, res) => {
                 }
                 cart.products.push({ title, price, productId, quantity, total });
             }
-            cart = await cart.save();
+            await cart.save();
             res.redirect("/myShoppingCart")
         }
     } catch (err) {
@@ -73,23 +89,37 @@ const addtoCart = async (req, res) => {
     }
 }
 
-const showShoppingCart = async (req, res) => {
+const removeFromCart = async (req, res) => {
     const user = await User.findOne({ _id: req.user.user._id });
     const userId = user;
     try {
-        const cart = await Cart.findOne({ userId }).populate('userId');
+        const cart = await Cart.findOne({ userId });
+        const productId = req.params.id;
 
-        res.render("user/shoppingCart.ejs", {
-            cartitems: cart.products,
-            user: req.user.user,
-            totalAmount: cart.totalAmount,
-        })
+        for (i = 0; i < cart.products.length; i++) {
+            if (productId == cart.products[i]._id) {
+              productTotal = cart.products[i].total;
+              dataBaseTotalAmount = cart.totalAmount;
+              dataBaseTotalAmount -= productTotal;
+              cart.totalAmount = dataBaseTotalAmount;
+              if (cart.totalAmount <= 0) {
+                cart.totalAmount = 0;
+              }
+              await cart.save();
+            }
+        }
+        cart.products.pull({ _id: productId });
+        await cart.save();
+        req.flash("warning_msg", "Product removed")
+        res.redirect("/myShoppingCart")
     } catch (err) {
         console.log(err)
     }
 }
 
+
 module.exports = {
     addtoCart,
     showShoppingCart,
+    removeFromCart
 }

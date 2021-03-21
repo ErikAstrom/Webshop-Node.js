@@ -1,20 +1,23 @@
 <%- include("../partials/header") %>
 
 <h1> <%= user.username %>'s shopping cart</h1>
-
+<a href="/productPage">Continue Shopping</a>
+<h3>My Cart: </h3><br>
 <div>
 <% cartitems.forEach(product => { %>
 
     <p><%= product.title %></p>
     <p>Price: <%= product.price %></p>
     <p><%= product.quantity %></p>
-    <p>Total: <%= product.total %></p>
+    <p>Total price: <%= product.total %></p>
+    <a href="/removeFromCart/<%= product.id %>">Remove</a>
 
 <% }) %>
 </div>
+<br>
 <div>
     <% if (totalAmount >= 1) { %>
-        <p>Cart totalAmount: <%= totalAmount %></p>
+        <p>Total amount in cart: <%= totalAmount %></p>
     <% } %>
 </div>
 <%- include("../partials/footer") %>
