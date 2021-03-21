@@ -1,12 +1,12 @@
 @import 'register';
 @import 'login';
-@import 'productPage';
-@import 'helper/mixins.scss';  
+@import 'productPage';  
 @import 'reset';
 @import 'resetpassword';
-@import 'helper/mixins.scss';
-@import 'helper/variables.scss';    
 @import 'wishlist.scss';
+@import 'helper/mixins';
+@import 'helper/variables';    
+
 
 * {
   margin: 0px;

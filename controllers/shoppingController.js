@@ -4,20 +4,32 @@ const Cart = require("../models/cart");
 const showShoppingCart = async (req, res) => {
     const user = await User.findOne({ _id: req.user.user._id });
     const userId = user;
+    let errors = [];
     try {
         const cart = await Cart.findOne({ userId }).populate('userId');
-
-        res.render("user/shoppingCart.ejs", {
-            cartitems: cart.products,
-            user: req.user.user,
-            totalAmount: cart.totalAmount,
-        })
+        if (cart.products.length == 0) {
+        return errors.push({msg: "Your cart is empty."}), 
+            res.render("user/shoppingCart.ejs", {
+                cartitems: cart.products,
+                user: req.user.user,
+                totalAmount: cart.totalAmount,
+                errors
+            })
+        } else {
+            res.render("user/shoppingCart.ejs", {
+                cartitems: cart.products,
+                user: req.user.user,
+                totalAmount: cart.totalAmount,
+            })
+        }
     } catch (err) {
-        console.log(err)
+        console.log(err.message) // If person without a cart clicks on cart, it will throw Error. 
+        req.flash("warning_msg", "You must add a product to your shopping cart first!") // This is to message customer he needs to add a product
+        res.redirect("/productPage") //  And make the productpage reload instead of getting stuck to shoppingcart.
     }
 }
 
-const addtoCart = async (req, res) => {
+const addToCart = async (req, res) => {
     const { title, price, productId, quantity } = req.body;
     const total = price * quantity;
     const user = await User.findOne({ _id: req.user.user._id });
@@ -57,7 +69,7 @@ const addtoCart = async (req, res) => {
                 productItem.quantity = quantity;
                 cart.products[cartItem] = productItem;
 
-                let productTotalPrice = cart.products[cartItem]; // if product exists in cart, update the total
+                let productTotalPrice = cart.products[cartItem]; // if product exists in cart, update the total price
                 productTotalPrice.total = total;
                 cart.products[cartItem] = productTotalPrice;
 
@@ -104,7 +116,9 @@ const removeFromCart = async (req, res) => {
         }
         cart.products.pull({ _id: productId });
         await cart.save();
+        if (cart.products.length >= 1) {
         req.flash("warning_msg", "Product removed")
+        }
         res.redirect("/myShoppingCart")
     } catch (err) {
         console.log(err)
@@ -167,7 +181,7 @@ const decreaseInCart = async (req, res) => {
 
 module.exports = {
     showShoppingCart,
-    addtoCart,
+    addToCart,
     removeFromCart,
     increaseInCart,
     decreaseInCart
