@@ -83,13 +83,15 @@
             <div class="productDiv">
                 <div class ="modalHidden">
                     <section class="modalContent">
-                        <span class="closeModal"> &#9747; </span>
-                        <%= item.title %>
-                        <img src="data:image/<%=item.img.contentType%>;base64,<%=item.img.data.toString('base64')%>" alt="Picture of a bottle." />
-                        <p><%= item.description %></p>
-                        <p><strong>Origin:</strong> <%= item.origin %></p>
-                        <p><strong>Blend:</strong> <%= item.blend %></p>
-                        <p><strong>Price:</strong> <%= item.price %> SEK</p>
+                        <span class="closeModal"><i class="fas fa-times"></i></span>
+                        <div class="productInfo">
+                            <%= item.title %>
+                            <img src="data:image/<%=item.img.contentType%>;base64,<%=item.img.data.toString('base64')%>" alt="Picture of a bottle." />
+                            <p><%= item.description %></p>
+                            <p><strong>Origin:</strong> <%= item.origin %></p>
+                            <p><strong>Blend:</strong> <%= item.blend %></p>
+                            <p><strong>Price:</strong> <%= item.price %> SEK</p>
+                        </div>
                     </section>
                 </div>
                 
