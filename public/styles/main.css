@@ -1,11 +1,13 @@
 .registerpage {
+  background: url(../../images/regbackground.jpg) no-repeat center center/cover;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center; }
   .registerpage .registerform {
     height: 80%;
-    width: 80%;
+    width: 60%;
+    background-color: #f9f9f9;
     box-shadow: 2px 2px 4px #2F342E;
     display: flex;
     flex-direction: column;
@@ -14,7 +16,7 @@
     font-family: "Roboto", sans-serif; }
     @media screen and (min-width: 992px) {
       .registerpage .registerform {
-        width: 60%; } }
+        width: 50%; } }
     .registerpage .registerform .registerheader {
       width: 100%;
       border-bottom: 5px double #000;
@@ -430,7 +432,7 @@ body {
   align-items: center; }
   .resetformpage .resetform {
     height: 80%;
-    width: 80%;
+    width: 60%;
     box-shadow: 2px 2px 4px #2F342E;
     display: flex;
     flex-direction: column;
@@ -439,7 +441,7 @@ body {
     font-family: "Roboto", sans-serif; }
     @media screen and (min-width: 992px) {
       .resetformpage .resetform {
-        width: 60%; } }
+        width: 50%; } }
     .resetformpage .resetform .resetheader {
       width: 100%;
       border-bottom: 5px double #000;

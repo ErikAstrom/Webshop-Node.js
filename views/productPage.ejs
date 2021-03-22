@@ -48,14 +48,16 @@
                             <p><strong>Origin:</strong> <%= product.origin %></p>
                             <p><strong>Blend:</strong> <%= product.blend %></p>
                             <p><strong>Price:</strong> <%= product.price %> SEK</p>
-                            <form action="/addToCart" method="post" >
-                                <input type="text" name="title" value="<%= product.title %>" hidden>
-                                <input type="number" name="quantity" value="1" min="1">
-                                <input type="text" name="productId" value="<%= product._id %>" hidden>
-                                <input type="number" name="price" value="<%= product.price %>" hidden>
-                                <input type="text" name="blend" value="<%= product.blend %>" hidden>
-                                <button type="submit">Add to cart</button>
-                              </form>
+                            <% if (locals.user) { %>
+                                <form action="/addToCart" method="post" >
+                                    <input type="text" name="title" value="<%= product.title %>" hidden>
+                                    <input type="number" name="quantity" value="1" min="1">
+                                    <input type="text" name="productId" value="<%= product._id %>" hidden>
+                                    <input type="number" name="price" value="<%= product.price %>" hidden>
+                                    <input type="text" name="blend" value="<%= product.blend %>" hidden>
+                                    <button type="submit">Add to cart</button>
+                                </form>
+                            <% } %>
                         </div>
                     </section>
                 </div>
@@ -65,16 +67,16 @@
                 <p><strong>Origin:</strong> <%= product.origin %></p>
                 <p><strong>Blend:</strong> <%= product.blend %></p>
                 <p><strong>Price:</strong> <%= product.price %> SEK</p>
-                <form action="/addToCart" method="post" >
-                    <input type="text" name="title" value="<%= product.title %>" hidden>
-                    <input type="number" name="quantity" value="1" min="1">
-                    <input type="text" name="productId" value="<%= product._id %>" hidden>
-                    <input type="number" name="price" value="<%= product.price %>" hidden>
-                    <input type="text" name="blend" value="<%= product.blend %>" hidden>
-                    <button type="submit">Add to cart</button>
-                  </form>
-
-                <% if (locals.user) { %>
+                <% if (locals.user)  { %> 
+                    <form action="/addToCart" method="post" >
+                        <input type="text" name="title" value="<%= product.title %>" hidden>
+                        <input type="number" name="quantity" value="1" min="1">
+                        <input type="text" name="productId" value="<%= product._id %>" hidden>
+                        <input type="number" name="price" value="<%= product.price %>" hidden>
+                        <input type="text" name="blend" value="<%= product.blend %>" hidden>
+                        <button type="submit">Add to cart</button>
+                    </form>
+                
                     <a href="/wishlist/<%= product._id%>">&#10084</a>
                 <% } %>
             </div>
@@ -108,14 +110,16 @@
                         <p><strong>Origin:</strong> <%= item.origin %></p>
                         <p><strong>Blend:</strong> <%= item.blend %></p>
                         <p><strong>Price:</strong> <%= item.price %> SEK</p>
-                        <form action="/addToCart" method="post" >
-                            <input type="text" name="title" value="<%= item.title %>" hidden>
-                            <input type="number" name="quantity" value="1" min="1">
-                            <input type="text" name="productId" value="<%= item._id %>" hidden>
-                            <input type="number" name="price" value="<%= item.price %>" hidden>
-                            <input type="text" name="blend" value="<%= item.blend %>" hidden>
-                            <button type="submit">Add to cart</button>
-                        </form>
+                        <% if (locals.user) { %> 
+                            <form action="/addToCart" method="post" >
+                                <input type="text" name="title" value="<%= item.title %>" hidden>
+                                <input type="number" name="quantity" value="1" min="1">
+                                <input type="text" name="productId" value="<%= item._id %>" hidden>
+                                <input type="number" name="price" value="<%= item.price %>" hidden>
+                                <input type="text" name="blend" value="<%= item.blend %>" hidden>
+                                <button type="submit">Add to cart</button>
+                            </form>
+                        <% } %>
                     </section>
                 </div>
                 
@@ -124,16 +128,16 @@
                 <p><strong>Origin:</strong> <%= item.origin %></p>
                 <p><strong>Blend:</strong> <%= item.blend %></p>
                 <p><strong>Price:</strong> <%= item.price %> SEK</p>
-                <form action="/addToCart" method="post" >
-                    <input type="text" name="title" value="<%= item.title %>" hidden>
-                    <input type="number" name="quantity" value="1" min="1">
-                    <input type="text" name="productId" value="<%= item._id %>" hidden>
-                    <input type="number" name="price" value="<%= item.price %>" hidden>
-                    <input type="text" name="blend" value="<%= item.blend %>" hidden>
-                    <button type="submit">Add to cart</button>
-                </form>
-
-                <% if (locals.user) { %>
+                <% if (locals.user) { %> 
+                    <form action="/addToCart" method="post" >
+                        <input type="text" name="title" value="<%= item.title %>" hidden>
+                        <input type="number" name="quantity" value="1" min="1">
+                        <input type="text" name="productId" value="<%= item._id %>" hidden>
+                        <input type="number" name="price" value="<%= item.price %>" hidden>
+                        <input type="text" name="blend" value="<%= item.blend %>" hidden>
+                        <button type="submit">Add to cart</button>
+                    </form>
+                
                     <a href="/wishlist/<%= item._id%>">&#10084</a>
                 <% } %>
             </div>

@@ -6,12 +6,12 @@
     @include flexdisplay;
     .resetform {
         height: 80%;
-        width: 80%;
+        width: 60%;
         box-shadow: 2px 2px 4px #2F342E;
         @include flexcolumn;
         font-family: $fontroboto;
         @include ipad-large {
-            width: 60%;
+            width: 50%;
         }
         .resetheader {
             width: 100%;
