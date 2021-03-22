@@ -16,7 +16,13 @@
         <h4><%= wish.title %></h4>
         <p><%= wish.price %> kr</p>
         <img src="data:image/<%=wish.img.contentType%>;base64,<%=wish.img.data.toString('base64')%>" alt="" />
-
+        <form action="/addToCart" method="post" >
+          <input type="text" name="title" value="<%= wish.title %>" hidden>
+          <input type="number" name="quantity" value="1" hidden>
+          <input type="text" name="productId" value="<%= wish._id %>" hidden>
+          <input type="number" name="price" value="<%= wish.price %>" hidden>
+          <button type="submit">Add to cart</button>
+        </form>
         <a href="/wishlistDelete/<%= wish.id %>">Remove</a>
     </div>
 

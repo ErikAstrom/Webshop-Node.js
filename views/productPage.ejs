@@ -1,6 +1,5 @@
 <%- include("./partials/header") %>
 
-
 <main class="productMain">
     <div class="heroText">
         <p>Bring some sparkles into your life</p>
@@ -33,6 +32,9 @@
     </div>
 
     <div class="productContainer">
+        <div>
+            <%- include("./helpers/messages") %>
+        </div>
     <% if (origin == null) { %>
         <% products.forEach(product => { %>
             <div class="productDiv">
@@ -46,6 +48,16 @@
                             <p><strong>Origin:</strong> <%= product.origin %></p>
                             <p><strong>Blend:</strong> <%= product.blend %></p>
                             <p><strong>Price:</strong> <%= product.price %> SEK</p>
+                            <% if (locals.user) { %>
+                                <form action="/addToCart" method="post" >
+                                    <input type="text" name="title" value="<%= product.title %>" hidden>
+                                    <input type="number" name="quantity" value="1" min="1">
+                                    <input type="text" name="productId" value="<%= product._id %>" hidden>
+                                    <input type="number" name="price" value="<%= product.price %>" hidden>
+                                    <input type="text" name="blend" value="<%= product.blend %>" hidden>
+                                    <button type="submit">Add to cart</button>
+                                </form>
+                            <% } %>
                         </div>
                     </section>
                 </div>
@@ -55,8 +67,16 @@
                 <p><strong>Origin:</strong> <%= product.origin %></p>
                 <p><strong>Blend:</strong> <%= product.blend %></p>
                 <p><strong>Price:</strong> <%= product.price %> SEK</p>
-
-                <% if (locals.user) { %>
+                <% if (locals.user)  { %> 
+                    <form action="/addToCart" method="post" >
+                        <input type="text" name="title" value="<%= product.title %>" hidden>
+                        <input type="number" name="quantity" value="1" min="1">
+                        <input type="text" name="productId" value="<%= product._id %>" hidden>
+                        <input type="number" name="price" value="<%= product.price %>" hidden>
+                        <input type="text" name="blend" value="<%= product.blend %>" hidden>
+                        <button type="submit">Add to cart</button>
+                    </form>
+                
                     <a href="/wishlist/<%= product._id%>">&#10084</a>
                 <% } %>
             </div>
@@ -83,15 +103,25 @@
             <div class="productDiv">
                 <div class ="modalHidden">
                     <section class="modalContent">
-                        <span class="closeModal"><i class="fas fa-times"></i></span>
-                        <div class="productInfo">
-                            <%= item.title %>
-                            <img src="data:image/<%=item.img.contentType%>;base64,<%=item.img.data.toString('base64')%>" alt="Picture of a bottle." />
-                            <p><%= item.description %></p>
-                            <p><strong>Origin:</strong> <%= item.origin %></p>
-                            <p><strong>Blend:</strong> <%= item.blend %></p>
-                            <p><strong>Price:</strong> <%= item.price %> SEK</p>
-                        </div>
+
+                        <span class="closeModal"> &#9747; </span>
+                        <%= item.title %>
+                        <img src="data:image/<%=item.img.contentType%>;base64,<%=item.img.data.toString('base64')%>" alt="Picture of a bottle." />
+                        <p><%= item.description %></p>
+                        <p><strong>Origin:</strong> <%= item.origin %></p>
+                        <p><strong>Blend:</strong> <%= item.blend %></p>
+                        <p><strong>Price:</strong> <%= item.price %> SEK</p>
+                        <% if (locals.user) { %> 
+                            <form action="/addToCart" method="post" >
+                                <input type="text" name="title" value="<%= item.title %>" hidden>
+                                <input type="number" name="quantity" value="1" min="1">
+                                <input type="text" name="productId" value="<%= item._id %>" hidden>
+                                <input type="number" name="price" value="<%= item.price %>" hidden>
+                                <input type="text" name="blend" value="<%= item.blend %>" hidden>
+                                <button type="submit">Add to cart</button>
+                            </form>
+                        <% } %>
+
                     </section>
                 </div>
                 
@@ -100,8 +130,16 @@
                 <p><strong>Origin:</strong> <%= item.origin %></p>
                 <p><strong>Blend:</strong> <%= item.blend %></p>
                 <p><strong>Price:</strong> <%= item.price %> SEK</p>
-
-                <% if (locals.user) { %>
+                <% if (locals.user) { %> 
+                    <form action="/addToCart" method="post" >
+                        <input type="text" name="title" value="<%= item.title %>" hidden>
+                        <input type="number" name="quantity" value="1" min="1">
+                        <input type="text" name="productId" value="<%= item._id %>" hidden>
+                        <input type="number" name="price" value="<%= item.price %>" hidden>
+                        <input type="text" name="blend" value="<%= item.blend %>" hidden>
+                        <button type="submit">Add to cart</button>
+                    </form>
+                
                     <a href="/wishlist/<%= item._id%>">&#10084</a>
                 <% } %>
             </div>

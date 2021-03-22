@@ -1,0 +1,35 @@
+<%- include("../partials/header") %>
+
+<h1>Shopping cart</h1>
+<a href="/productPage">Continue Shopping</a>
+<h3><%= user.username %>'s personal cart: </h3><br>
+<div>
+    <%- include("../helpers/errorMessage") %>
+    <%- include("../helpers/messages") %>
+</div>
+
+<% cartitems.forEach(product => { %>
+    <div>
+    <p><strong><%= product.title %></strong></p>
+    <p><%= product.blend %></p>
+    <p>Price per bottle: <%= product.price %> sek</p>
+    <p> Quantity: 
+        <a href="/decreaseInCart/<%= product.id %>"><i class="fas fa-minus-square"></i></a>
+        <%= product.quantity %>
+        <a href="/increaseInCart/<%= product.id %>"><i class="fas fa-plus-square"></i></a>
+    </p>
+    <p>Total price: <%= product.total %> sek</p>
+    <a href="/removeFromCart/<%= product.id %>">Remove <i class="fas fa-times-circle"></i></a>
+    </div><br>
+<% }) %>
+
+<br>
+<div>
+    <% if (totalAmount >= 1) { %>
+        <p>Total amount in cart: <strong><%= totalAmount %></strong> sek</p>
+    <% } %>
+</div><br>
+<div>
+    <a href="/customerCheckout">To Checkout</a>
+</div>
+<%- include("../partials/footer") %>
