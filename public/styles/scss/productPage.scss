@@ -1,4 +1,5 @@
 @import 'helper/mixins';
+@import 'helper/variables';
 
 * {
     margin: 0px;
@@ -8,8 +9,8 @@
 
 body {
     width: 100%;
-    background-color: #F9F9F9;
-    color: #0F100A;
+    background-color: $bubblifylight;
+    color: $bubblifyblack;
     font-family: 'Roboto', sans-serif;
     font-size: 1rem;
 
@@ -18,6 +19,10 @@ body {
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-top: 75px;
+        @media screen and (min-width: 1024px) {
+          margin-top: 90px;
+        }
 
         .heroText {
             width: 50%;
@@ -37,10 +42,12 @@ body {
 
         .productHero {
             width: 100%;
-
-            img {
-                width: 100%;
-
+            height: 440px;
+            background-image: url(/../images/hero2.jpg);
+            background-position: center;
+            background-size: cover;
+            @media screen and (min-width: 1024px) {
+                height: 650px;
             }
         }
 
@@ -86,8 +93,8 @@ body {
                     
                     &:hover {
                         font-weight: lighter;
-                        background-color: #0F100A;
-                        color: #F9F9F9;
+                        background-color: $bubblifyblack;
+                        color: $bubblifylight;
                     }
                     
                 }
@@ -102,7 +109,7 @@ body {
                         display: block;
                         width: 100%;
                         font-size: 0.8rem;
-                        color: #0F100A;
+                        color: $bubblifyblack;
                         text-decoration: none;
 
                         &:hover {
@@ -142,7 +149,7 @@ body {
                 align-items: center;
                 padding-bottom: 40px;
                 margin: 15px 0;
-                border-bottom: 1px solid #0F100A;
+                border-bottom: 1px solid $bubblifyblack;
                 cursor: pointer;
                 @media screen and (min-width: 768px) {
                    width: 33%;
@@ -164,8 +171,8 @@ body {
                     align-items: center; 
 
                     .modalContent {
-                        background-color: #F9F9F9;
-                        border: 1px solid #0F100A;
+                        background-color: $bubblifylight;
+                        border: 1px solid $bubblifyblack;
                         max-width: 80%;
                         font-weight: bold;
                         text-align: center;
@@ -243,7 +250,7 @@ body {
 
                 a {
                     font-size: 2rem;
-                    color: #CCAC00;
+                    color: $bubblifygold;
                     text-decoration: none;
 
                     &:hover {
@@ -260,7 +267,7 @@ body {
                     font-size: 0.9rem;
 
                     a {
-                        color: #0F100A;
+                        color: $bubblifyblack;
                         text-decoration: none;
 
                         &:hover {
