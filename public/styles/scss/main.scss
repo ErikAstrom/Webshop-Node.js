@@ -16,8 +16,8 @@
 
 body {
   width: 100%;
-  background-color: #F9F9F9;
-  color: #0F100A;
+  background-color: $bubblifylight;
+  color: $bubblifyblack;
   font-family: 'Roboto', sans-serif;
   font-size: 1rem;
 
@@ -25,10 +25,13 @@ body {
   header {
     width: 100%;
     height: 75px;
-    position: relative;
+    position: fixed;
+    top: 0;
+    background-color: $bubblifylight;
     border-bottom: 5px double black;
+    z-index: 2;
     @media screen and (min-width: 1024px) {
-      height: 95px;   
+      height: 90px;
     }
     
     h1 {
@@ -90,7 +93,7 @@ body {
       }
 
       a {
-        color: #0F100A;
+        color: $bubblifyblack;
         font-size: 0.7rem;
         text-decoration: none;
         text-transform: uppercase;
@@ -113,10 +116,14 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 75px;
+    @media screen and (min-width: 1024px) {
+      margin-top: 90px;
+    }
 
     .heroText {
-      width: 50%;
-      height: 90px;
+      width: 75%;
+      height: 80px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -126,7 +133,10 @@ body {
       }
 
       p {
-        font-size: 1.2rem;
+        font-size: 1rem;
+        @media screen and (min-width: 768px) {
+          font-size: 1.1rem;
+        }
       }
     }
 
@@ -161,7 +171,7 @@ body {
       height: 330px;
       display: flex;
       justify-content: center;
-      border-bottom: 2px solid #2F342E;
+      border-bottom: 2px solid $bubblifygrey;
       @media screen and (min-width: 1024px) {
         height: 450px;
       }
@@ -227,15 +237,15 @@ body {
     
         a {
           padding: 5px 25px;
-          background-color: #2F342E;
-          color: #F9F9F9;
+          background-color: $bubblifygrey;
+          color: $bubblifylight;
           font-size: 0.8rem;
           text-decoration: none;
           text-transform: uppercase;
           border-radius: 10px;
     
           &:hover {
-            background-color: #525252;
+            background-color: #2f342e93;
           }
         }
       }
@@ -270,17 +280,17 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #2F342E;
+    background-color: $bubblifygrey;
 
     .footerContactDiv {
       width: 100%;
       display: flex;
       justify-content: space-evenly;
-      color: #F9F9F9;
+      color: $bubblifylight;
 
       a {
         margin-top: 10px;
-        color: #F9F9F9;
+        color: $bubblifylight;
 
         &:hover {
           color: grey;

@@ -236,14 +236,18 @@
 
 body {
   width: 100%;
-  background-color: #F9F9F9;
+  background-color: #f9f9f9;
   color: #0F100A;
   font-family: 'Roboto', sans-serif;
   font-size: 1rem; }
   body .productMain {
     display: flex;
     flex-direction: column;
-    align-items: center; }
+    align-items: center;
+    margin-top: 75px; }
+    @media screen and (min-width: 1024px) {
+      body .productMain {
+        margin-top: 90px; } }
     body .productMain .heroText {
       width: 50%;
       height: 90px;
@@ -257,9 +261,14 @@ body {
       body .productMain .heroText p {
         font-size: 1.2rem; }
     body .productMain .productHero {
-      width: 100%; }
-      body .productMain .productHero img {
-        width: 100%; }
+      width: 100%;
+      height: 440px;
+      background-image: url(/../images/hero2.jpg);
+      background-position: center;
+      background-size: cover; }
+      @media screen and (min-width: 1024px) {
+        body .productMain .productHero {
+          height: 650px; } }
     body .productMain .ourProductsDiv {
       width: 100%;
       height: 80px;
@@ -296,7 +305,7 @@ body {
           body .productMain .sortContainer .sortDropdown .sortBtn:hover {
             font-weight: lighter;
             background-color: #0F100A;
-            color: #F9F9F9; }
+            color: #f9f9f9; }
         body .productMain .sortContainer .sortDropdown .sortLinks {
           width: 100%;
           display: none;
@@ -352,9 +361,8 @@ body {
           justify-content: center;
           align-items: center; }
           body .productMain .productContainer .productDiv .modalVisible .modalContent {
-            background-color: #F9F9F9;
+            background-color: #f9f9f9;
             border: 1px solid #0F100A;
-
             max-width: 80%;
             font-weight: bold;
             text-align: center;
@@ -606,7 +614,11 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  justify-content: flex-start; }
+  justify-content: flex-start;
+  margin-top: 75px; }
+  @media screen and (min-width: 1024px) {
+    #wishWrapper {
+      margin-top: 90px; } }
   #wishWrapper a {
     text-decoration: none;
     color: black; }
@@ -665,18 +677,21 @@ body {
 
 body {
   width: 100%;
-  background-color: #F9F9F9;
+  background-color: #f9f9f9;
   color: #0F100A;
   font-family: 'Roboto', sans-serif;
   font-size: 1rem; }
   body header {
     width: 100%;
     height: 75px;
-    position: relative;
-    border-bottom: 5px double black; }
+    position: fixed;
+    top: 0;
+    background-color: #f9f9f9;
+    border-bottom: 5px double black;
+    z-index: 2; }
     @media screen and (min-width: 1024px) {
       body header {
-        height: 95px; } }
+        height: 90px; } }
     body header h1 {
       position: absolute;
       top: 25%;
@@ -738,10 +753,14 @@ body {
   body .indexMain {
     display: flex;
     flex-direction: column;
-    align-items: center; }
+    align-items: center;
+    margin-top: 75px; }
+    @media screen and (min-width: 1024px) {
+      body .indexMain {
+        margin-top: 90px; } }
     body .indexMain .heroText {
-      width: 50%;
-      height: 90px;
+      width: 75%;
+      height: 80px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -750,7 +769,10 @@ body {
         body .indexMain .heroText {
           width: 100%; } }
       body .indexMain .heroText p {
-        font-size: 1.2rem; }
+        font-size: 1rem; }
+        @media screen and (min-width: 768px) {
+          body .indexMain .heroText p {
+            font-size: 1.1rem; } }
     body .indexMain .indexHero {
       width: 100%;
       overflow: hidden; }
@@ -826,13 +848,13 @@ body {
         body .indexMain .indexProductContainer .indexProductDiv a {
           padding: 5px 25px;
           background-color: #2F342E;
-          color: #F9F9F9;
+          color: #f9f9f9;
           font-size: 0.8rem;
           text-decoration: none;
           text-transform: uppercase;
           border-radius: 10px; }
           body .indexMain .indexProductContainer .indexProductDiv a:hover {
-            background-color: #525252; }
+            background-color: #2f342e93; }
     body .indexMain .indexQuoteText {
       width: 80%;
       height: 140px;
@@ -861,9 +883,9 @@ body {
       width: 100%;
       display: flex;
       justify-content: space-evenly;
-      color: #F9F9F9; }
+      color: #f9f9f9; }
       body footer .footerContactDiv a {
         margin-top: 10px;
-        color: #F9F9F9; }
+        color: #f9f9f9; }
         body footer .footerContactDiv a:hover {
           color: grey; }
