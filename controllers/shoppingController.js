@@ -60,7 +60,8 @@ const addToCart = async (req, res) => {
                 cart.totalAmount = userTotal;
             }
             await cart.save();
-            res.redirect("/myShoppingCart")
+            req.flash("success_msg", "Product added to your cart.")
+            res.redirect("back")
         }
         if (cart) { // If cart exists for customer already
             let cartItem = cart.products.findIndex((p) => p.productId == productId); // <-- Map loop
@@ -89,7 +90,8 @@ const addToCart = async (req, res) => {
                 cart.products.push({ title, price, productId, quantity, blend, total });
             }
             await cart.save();
-            res.redirect("/myShoppingCart")
+            req.flash("success_msg", "Product added to your cart.")
+            res.redirect("back")
         }
     } catch (err) {
         console.log(err)
@@ -121,6 +123,21 @@ const removeFromCart = async (req, res) => {
         req.flash("warning_msg", "Product removed")
         }
         res.redirect("/myShoppingCart")
+    } catch (err) {
+        console.log(err)
+    }
+}
+
+const clearCartTotal = async (req, res) => {
+    const user = await User.findOne({ _id: req.user.user._id });
+    const userId = user;
+    const cart = await Cart.findOne({ userId });
+    try {
+        cart.products = [];
+        cart.totalAmount = 0;
+        await cart.save();
+
+        res.redirect("/myShoppingCart");
     } catch (err) {
         console.log(err)
     }
@@ -184,6 +201,7 @@ module.exports = {
     showShoppingCart,
     addToCart,
     removeFromCart,
+    clearCartTotal,
     increaseInCart,
     decreaseInCart
 }

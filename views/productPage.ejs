@@ -29,12 +29,12 @@
                 <a href="/productPage/?origin=italy">Italy</a>
             </div>
         </div>
-    </div>
-
-    <div class="productContainer">
         <div>
             <%- include("./helpers/messages") %>
         </div>
+    </div>
+
+    <div class="productContainer">
     <% if (origin == null) { %>
         <% products.forEach(product => { %>
             <div class="productDiv">
