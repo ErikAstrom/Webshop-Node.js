@@ -114,13 +114,15 @@
           color: #f9f9f9; }
 
 .loginpage {
+  background: url(../../images/logbackground.jpg) no-repeat center center/cover;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center; }
   .loginpage .loginform {
     height: 80%;
-    width: 80%;
+    width: 60%;
+    background-color: #f9f9f9;
     box-shadow: 2px 2px 4px #2F342E;
     display: flex;
     flex-direction: column;
@@ -129,7 +131,7 @@
     font-family: "Roboto", sans-serif; }
     @media screen and (min-width: 992px) {
       .loginpage .loginform {
-        width: 60%; } }
+        width: 50%; } }
     .loginpage .loginform .loginheader {
       width: 100%;
       border-bottom: 5px double #000;
@@ -354,7 +356,6 @@ body {
           body .productMain .productContainer .productDiv .modalVisible .modalContent {
             background-color: #F9F9F9;
             border: 1px solid #0F100A;
-
             max-width: 80%;
             font-weight: bold;
             text-align: center;
@@ -427,6 +428,7 @@ body {
               color: grey; }
 
 .resetformpage {
+  background: url(../../images/resetbackground.jpg) no-repeat center center/cover;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -434,6 +436,7 @@ body {
   .resetformpage .resetform {
     height: 80%;
     width: 60%;
+    background-color: #f9f9f9;
     box-shadow: 2px 2px 4px #2F342E;
     display: flex;
     flex-direction: column;
@@ -526,13 +529,15 @@ body {
           color: #f9f9f9; }
 
 .resetpasswordpage {
+  background-color: #2F342E;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center; }
   .resetpasswordpage .resetpasswordform {
     height: 80%;
-    width: 80%;
+    width: 60%;
+    background-color: #f9f9f9;
     box-shadow: 2px 2px 4px #2F342E;
     display: flex;
     flex-direction: column;
@@ -541,7 +546,7 @@ body {
     font-family: "Roboto", sans-serif; }
     @media screen and (min-width: 992px) {
       .resetpasswordpage .resetpasswordform {
-        width: 60%; } }
+        width: 50%; } }
     .resetpasswordpage .resetpasswordform .resetpasswordheader {
       width: 100%;
       border-bottom: 5px double #000;
