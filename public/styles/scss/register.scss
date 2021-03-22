@@ -2,16 +2,18 @@
 @import 'helper/variables.scss';
 
 .registerpage {
+    background: url(../../images/regbackground.jpg) no-repeat center center/cover;
     height: 100vh;
     @include flexdisplay;
     .registerform {
         height: 80%;
-        width: 80%;
+        width: 60%;
+        background-color: $bubblifylight;
         box-shadow: 2px 2px 4px #2F342E;
         @include flexcolumn;
         font-family: $fontroboto;
         @include ipad-large {
-            width: 60%;
+            width: 50%;
         }
         .registerheader {
             width: 100%;
