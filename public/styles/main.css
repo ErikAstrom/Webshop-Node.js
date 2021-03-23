@@ -349,78 +349,90 @@
         height: 100%;
         width: 100%;
         display: flex;
-        justify-content: center;
-        align-items: center; }
-        .productMain .productContainer .productDiv .modalVisible .modalContent {
-          background-color: #f9f9f9;
-          border: 1px solid #0F100A;
-          max-width: 80%;
-          font-weight: bold;
-          text-align: center;
-          padding-bottom: 15px; }
-          @media screen and (min-width: 768px) {
-            .productMain .productContainer .productDiv .modalVisible .modalContent {
-              max-width: 50%; } }
-          .productMain .productContainer .productDiv .modalVisible .modalContent .closeModal {
-            display: flex;
-            justify-content: flex-end;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 40px;
+        margin: 15px 0;
+        border-bottom: 1px solid #0F100A;
+        cursor: pointer; }
+        @media screen and (min-width: 768px) {
+          body .productMain .productContainer .productDiv {
+            width: 33%;
+            border: none; } }
+        body .productMain .productContainer .productDiv .modalHidden {
+          display: none; }
+        body .productMain .productContainer .productDiv .modalVisible {
+          height: 100%;
+          width: 100%;
+          position: fixed;
+          top: 30px;
+          left: 50%;
+          margin-left: -50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: rgba(0, 0, 0, 0.8); }
+          body .productMain .productContainer .productDiv .modalVisible .modalContent {
+            background-color: #f9f9f9;
+            border: 1px solid #0F100A;
+            max-width: 60%;
             font-weight: bold;
-            margin: 5px 5px 0 0;
-            cursor: pointer; }
-          .productMain .productContainer .productDiv .modalVisible .modalContent .productInfo {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center; }
-            .productMain .productContainer .productDiv .modalVisible .modalContent .productInfo img {
-              max-width: 90%;
-              max-height: 90%; }
-              @media screen and (min-width: 768px) {
-                .productMain .productContainer .productDiv .modalVisible .modalContent .productInfo img {
-                  max-width: 40%;
-                  max-height: 40%; } }
-              @media screen and (min-width: 1024px) {
-                .productMain .productContainer .productDiv .modalVisible .modalContent .productInfo img {
-                  max-width: 30%;
-                  max-height: 30%; } }
-            .productMain .productContainer .productDiv .modalVisible .modalContent .productInfo p {
-              font-size: 0.8rem;
-              font-weight: normal;
-              margin-bottom: 3px; }
-              @media screen and (min-width: 768px) {
-                .productMain .productContainer .productDiv .modalVisible .modalContent .productInfo p {
-                  width: 60%; } }
-              .productMain .productContainer .productDiv .modalVisible .modalContent .productInfo p:nth-of-type(1) {
-                font-style: italic;
-                margin-bottom: 10px; }
-              .productMain .productContainer .productDiv .modalVisible .modalContent .productInfo p:nth-of-type(2) {
-                margin-bottom: 4px; }
-      .productMain .productContainer .productDiv picture {
-        width: 100%;
-        display: flex;
-        justify-content: center; }
-        .productMain .productContainer .productDiv picture img {
-          width: 50%; }
-          @media screen and (min-width: 1024px) {
-            .productMain .productContainer .productDiv picture img {
-              width: 40%; } }
-      .productMain .productContainer .productDiv p {
-        font-size: 0.9rem;
-        letter-spacing: 2px;
-        text-align: center; }
-      .productMain .productContainer .productDiv a {
-        font-size: 2rem;
-        color: #CCAC00;
-        text-decoration: none; }
-        .productMain .productContainer .productDiv a:hover {
-          color: #FFE79E; }
-    .productMain .productContainer .paginationDiv {
-      margin: 0 0 30px 30px; }
-      .productMain .productContainer .paginationDiv .pagination {
-        list-style: none;
-        font-size: 0.9rem; }
-        .productMain .productContainer .paginationDiv .pagination a {
-          color: #0F100A;
+            text-align: center;
+            padding-bottom: 15px; }
+            @media screen and (min-width: 768px) {
+              body .productMain .productContainer .productDiv .modalVisible .modalContent {
+                max-width: 60%; } }
+            @media screen and (min-width: 1024px) {
+              body .productMain .productContainer .productDiv .modalVisible .modalContent {
+                max-width: 40%; } }
+            body .productMain .productContainer .productDiv .modalVisible .modalContent .closeModal {
+              display: flex;
+              justify-content: flex-end;
+              font-weight: bold;
+              margin: 5px 5px 0 0;
+              cursor: pointer; }
+            body .productMain .productContainer .productDiv .modalVisible .modalContent .productInfo {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center; }
+              body .productMain .productContainer .productDiv .modalVisible .modalContent .productInfo img {
+                max-width: 60%;
+                max-height: 60%; }
+                @media screen and (min-width: 768px) {
+                  body .productMain .productContainer .productDiv .modalVisible .modalContent .productInfo img {
+                    max-width: 40%;
+                    max-height: 40%; } }
+                @media screen and (min-width: 1024px) {
+                  body .productMain .productContainer .productDiv .modalVisible .modalContent .productInfo img {
+                    max-width: 30%;
+                    max-height: 30%; } }
+              body .productMain .productContainer .productDiv .modalVisible .modalContent .productInfo p {
+                font-size: 0.8rem;
+                font-weight: normal;
+                margin-bottom: 3px;
+                width: 80%; }
+                body .productMain .productContainer .productDiv .modalVisible .modalContent .productInfo p:nth-of-type(1) {
+                  font-style: italic;
+                  margin-bottom: 10px; }
+                body .productMain .productContainer .productDiv .modalVisible .modalContent .productInfo p:nth-of-type(2) {
+                  margin-bottom: 4px; }
+        body .productMain .productContainer .productDiv picture {
+          width: 100%;
+          display: flex;
+          justify-content: center; }
+          body .productMain .productContainer .productDiv picture img {
+            width: 50%; }
+            @media screen and (min-width: 1024px) {
+              body .productMain .productContainer .productDiv picture img {
+                width: 40%; } }
+        body .productMain .productContainer .productDiv p {
+          font-size: 0.9rem;
+          letter-spacing: 2px;
+          text-align: center; }
+        body .productMain .productContainer .productDiv a {
+          font-size: 2rem;
+          color: #CCAC00;
           text-decoration: none; }
           .productMain .productContainer .paginationDiv .pagination a:hover {
             color: grey; }
@@ -793,10 +805,8 @@ body {
         body .indexMain .heroText {
           width: 100%; } }
       body .indexMain .heroText p {
-        font-size: 1rem; }
-        @media screen and (min-width: 768px) {
-          body .indexMain .heroText p {
-            font-size: 1.1rem; } }
+        font-size: 1rem;
+        font-style: italic; }
     body .indexMain .indexHero {
       width: 100%;
       overflow: hidden; }
