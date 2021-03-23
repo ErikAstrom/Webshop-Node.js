@@ -20,7 +20,15 @@
 </div><br>
 
 <div>
-    <button type="submit">Proceed to Payment</button>
+    <button type="submit" class="checkoutBtn">Proceed to Payment</button>
 </div><br>
 
 <%- include("../partials/footer") %>
+
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+    let stripe = Stripe('pk_test_51ILlk5A4cjb7v0LJ2qQ6WPlVDhaO6qHJZDuNagUhqanLSzfA2DGKCbdULhbngJBYDRunfGv3o8kMK7Okd9yAzbG900WhYHDwz9');
+    document.querySelector(".checkoutBtn").addEventListener( "click", () => {
+        stripe.redirectToCheckout({ sessionId: "<%= sessionId %>" });
+    })
+</script>
