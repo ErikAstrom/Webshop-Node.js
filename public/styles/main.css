@@ -395,9 +395,23 @@
               width: 80%; }
               .productMain .productContainer .productDiv .modalVisible .modalContent .productInfo p:nth-of-type(1) {
                 font-style: italic;
-                margin-bottom: 10px; }
+                margin-bottom: 10px;
+                margin-top: 5px; }
               .productMain .productContainer .productDiv .modalVisible .modalContent .productInfo p:nth-of-type(2) {
                 margin-bottom: 4px; }
+            .productMain .productContainer .productDiv .modalVisible .modalContent .productInfo form {
+              margin-top: 10px; }
+              .productMain .productContainer .productDiv .modalVisible .modalContent .productInfo form input {
+                width: 40px;
+                border-radius: 10px;
+                border: 1px solid #CCAC00;
+                text-align: center;
+                padding: 2px 0; }
+              .productMain .productContainer .productDiv .modalVisible .modalContent .productInfo form button {
+                border: none;
+                font-size: 0.9rem;
+                margin-bottom: 5px;
+                cursor: pointer; }
       .productMain .productContainer .productDiv picture {
         width: 100%;
         display: flex;
@@ -411,12 +425,27 @@
         font-size: 0.9rem;
         letter-spacing: 2px;
         text-align: center; }
+        .productMain .productContainer .productDiv p:nth-of-type(1) {
+          margin-top: 5px; }
       .productMain .productContainer .productDiv a {
-        font-size: 2rem;
+        font-size: 1.7rem;
         color: #CCAC00;
         text-decoration: none; }
         .productMain .productContainer .productDiv a:hover {
           color: #FFE79E; }
+      .productMain .productContainer .productDiv form {
+        margin-top: 10px; }
+        .productMain .productContainer .productDiv form input {
+          width: 40px;
+          border-radius: 10px;
+          border: 1px solid #CCAC00;
+          text-align: center;
+          padding: 2px 0; }
+        .productMain .productContainer .productDiv form button {
+          border: none;
+          font-size: 0.9rem;
+          margin-bottom: 5px;
+          cursor: pointer; }
     .productMain .productContainer .paginationDiv {
       margin: 0 0 30px 30px; }
       .productMain .productContainer .paginationDiv .pagination {
@@ -786,7 +815,7 @@ body {
       body .indexMain {
         margin-top: 90px; } }
     body .indexMain .heroText {
-      width: 75%;
+      width: 85%;
       height: 80px;
       display: flex;
       justify-content: center;
@@ -796,8 +825,15 @@ body {
         body .indexMain .heroText {
           width: 100%; } }
       body .indexMain .heroText p {
-        font-size: 1rem;
-        font-style: italic; }
+        color: #CCAC00;
+        font-size: 0.9rem;
+        font-style: italic;
+        text-shadow: 0.9px -0.7px #ccad0052;
+        letter-spacing: 2.5px; }
+        @media screen and (min-width: 768px) {
+          body .indexMain .heroText p {
+            font-size: 1rem;
+            letter-spacing: 3.5px; } }
     body .indexMain .indexHero {
       width: 100%;
       overflow: hidden; }
@@ -879,7 +915,7 @@ body {
           text-transform: uppercase;
           border-radius: 10px; }
           body .indexMain .indexProductContainer .indexProductDiv a:hover {
-            background-color: #2f342e93; }
+            background-color: #0F100A; }
     body .indexMain .indexQuoteText {
       width: 80%;
       height: 140px;
@@ -895,7 +931,7 @@ body {
         font-style: italic; }
         @media screen and (min-width: 768px) {
           body .indexMain .indexQuoteText p {
-            font-size: 1.1rem; } }
+            font-size: 1rem; } }
   body footer {
     width: 100%;
     height: 100px;
@@ -909,6 +945,9 @@ body {
       display: flex;
       justify-content: space-evenly;
       color: #f9f9f9; }
+      body footer .footerContactDiv i {
+        color: #f9f9f9;
+        margin-right: 5px; }
       body footer .footerContactDiv a {
         margin-top: 10px;
         color: #f9f9f9; }
