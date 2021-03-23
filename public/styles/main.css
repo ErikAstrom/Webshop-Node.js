@@ -354,24 +354,29 @@ body {
         body .productMain .productContainer .productDiv .modalHidden {
           display: none; }
         body .productMain .productContainer .productDiv .modalVisible {
-          background-color: rgba(0, 0, 0, 0.8);
-          position: fixed;
-          top: 0;
           height: 100%;
           width: 100%;
+          position: fixed;
+          top: 30px;
+          left: 50%;
+          margin-left: -50%;
           display: flex;
           justify-content: center;
-          align-items: center; }
+          align-items: center;
+          background-color: rgba(0, 0, 0, 0.8); }
           body .productMain .productContainer .productDiv .modalVisible .modalContent {
             background-color: #f9f9f9;
             border: 1px solid #0F100A;
-            max-width: 80%;
+            max-width: 60%;
             font-weight: bold;
             text-align: center;
             padding-bottom: 15px; }
             @media screen and (min-width: 768px) {
               body .productMain .productContainer .productDiv .modalVisible .modalContent {
-                max-width: 50%; } }
+                max-width: 60%; } }
+            @media screen and (min-width: 1024px) {
+              body .productMain .productContainer .productDiv .modalVisible .modalContent {
+                max-width: 40%; } }
             body .productMain .productContainer .productDiv .modalVisible .modalContent .closeModal {
               display: flex;
               justify-content: flex-end;
@@ -384,8 +389,8 @@ body {
               justify-content: center;
               align-items: center; }
               body .productMain .productContainer .productDiv .modalVisible .modalContent .productInfo img {
-                max-width: 90%;
-                max-height: 90%; }
+                max-width: 60%;
+                max-height: 60%; }
                 @media screen and (min-width: 768px) {
                   body .productMain .productContainer .productDiv .modalVisible .modalContent .productInfo img {
                     max-width: 40%;
@@ -397,10 +402,8 @@ body {
               body .productMain .productContainer .productDiv .modalVisible .modalContent .productInfo p {
                 font-size: 0.8rem;
                 font-weight: normal;
-                margin-bottom: 3px; }
-                @media screen and (min-width: 768px) {
-                  body .productMain .productContainer .productDiv .modalVisible .modalContent .productInfo p {
-                    width: 60%; } }
+                margin-bottom: 3px;
+                width: 80%; }
                 body .productMain .productContainer .productDiv .modalVisible .modalContent .productInfo p:nth-of-type(1) {
                   font-style: italic;
                   margin-bottom: 10px; }
@@ -775,10 +778,8 @@ body {
         body .indexMain .heroText {
           width: 100%; } }
       body .indexMain .heroText p {
-        font-size: 1rem; }
-        @media screen and (min-width: 768px) {
-          body .indexMain .heroText p {
-            font-size: 1.1rem; } }
+        font-size: 1rem;
+        font-style: italic; }
     body .indexMain .indexHero {
       width: 100%;
       overflow: hidden; }

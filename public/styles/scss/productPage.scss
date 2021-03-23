@@ -161,24 +161,29 @@ body {
                 }
                 
                 .modalVisible {
-                    background-color: rgba(0, 0, 0, 0.8);
-                    position: fixed;
-                    top: 0;
                     height: 100%;
                     width: 100%;
+                    position: fixed;
+                    top: 30px;
+                    left: 50%;
+                    margin-left: -50%;
                     display: flex;
                     justify-content: center;
                     align-items: center; 
+                    background-color: rgba(0, 0, 0, 0.8);
 
                     .modalContent {
                         background-color: $bubblifylight;
                         border: 1px solid $bubblifyblack;
-                        max-width: 80%;
+                        max-width: 60%;
                         font-weight: bold;
                         text-align: center;
                         padding-bottom: 15px;
                         @media screen and (min-width: 768px) {
-                            max-width: 50%;
+                            max-width: 60%;
+                        }
+                        @media screen and (min-width: 1024px) {
+                            max-width: 40%;
                         }
 
                         .closeModal {
@@ -196,8 +201,8 @@ body {
                             align-items: center;
 
                             img {
-                                max-width: 90%;
-                                max-height: 90%; 
+                                max-width: 60%;
+                                max-height: 60%; 
                                 @media screen and (min-width: 768px) {
                                     max-width: 40%;
                                     max-height: 40%;
@@ -212,9 +217,7 @@ body {
                                 font-size: 0.8rem;
                                 font-weight: normal;
                                 margin-bottom: 3px;
-                                @media screen and (min-width: 768px) {
-                                    width: 60%;
-                                }
+                                width: 80%;
         
                                 &:nth-of-type(1) {
                                     font-style: italic;
