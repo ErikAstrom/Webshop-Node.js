@@ -1,5 +1,5 @@
 .registerpage {
-  background: url(../../images/regbackground.jpg) no-repeat center center/cover;
+  background: url(../../images/regibackground.jpg) no-repeat center center/cover;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -231,115 +231,123 @@
           background-color: #2F342E;
           color: #f9f9f9; }
 
-* {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box; }
-
-body {
-  width: 100%;
-  background-color: #f9f9f9;
-  color: #0F100A;
-  font-family: 'Roboto', sans-serif;
-  font-size: 1rem; }
-  body .productMain {
+.productMain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 75px; }
+  @media screen and (min-width: 1024px) {
+    .productMain {
+      margin-top: 90px; } }
+  .productMain .heroText {
+    width: 50%;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; }
+    @media screen and (min-width: 768px) {
+      .productMain .heroText {
+        width: 100%; } }
+    .productMain .heroText p {
+      font-size: 1.2rem; }
+  .productMain .productHero {
+    width: 100%;
+    height: 440px;
+    background-image: url(/../images/hero2.jpg);
+    background-position: center;
+    background-size: cover; }
+    @media screen and (min-width: 1024px) {
+      .productMain .productHero {
+        height: 650px; } }
+  .productMain .ourProductsDiv {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; }
+    .productMain .ourProductsDiv .ourProductsText {
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold; }
+  .productMain .sortContainer {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #9e9e9e; }
+    .productMain .sortContainer .sortDropdown {
+      width: 25%;
+      position: relative;
+      display: inline-block;
+      text-align: center; }
+      @media screen and (min-width: 768px) {
+        .productMain .sortContainer .sortDropdown {
+          width: 15%; } }
+      .productMain .sortContainer .sortDropdown .sortBtn {
+        border: none;
+        border-radius: 5px;
+        background-color: transparent;
+        font-size: 0.8rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        padding: 3px 7px 2px 7px;
+        margin-top: 10px; }
+        .productMain .sortContainer .sortDropdown .sortBtn:hover {
+          font-weight: lighter;
+          background-color: #0F100A;
+          color: #f9f9f9; }
+      .productMain .sortContainer .sortDropdown .sortLinks {
+        width: 100%;
+        display: none;
+        position: absolute;
+        z-index: 1; }
+        .productMain .sortContainer .sortDropdown .sortLinks a {
+          display: block;
+          width: 100%;
+          font-size: 0.8rem;
+          color: #0F100A;
+          text-decoration: none; }
+          .productMain .sortContainer .sortDropdown .sortLinks a:hover {
+            text-decoration: underline; }
+  .productMain .sortDropdown:hover .sortLinks {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 75px; }
-    @media screen and (min-width: 1024px) {
-      body .productMain {
-        margin-top: 90px; } }
-    body .productMain .heroText {
-      width: 50%;
-      height: 90px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center; }
-      @media screen and (min-width: 768px) {
-        body .productMain .heroText {
-          width: 100%; } }
-      body .productMain .heroText p {
-        font-size: 1.2rem; }
-    body .productMain .productHero {
-      width: 100%;
-      height: 440px;
-      background-image: url(/../images/hero2.jpg);
-      background-position: center;
-      background-size: cover; }
-      @media screen and (min-width: 1024px) {
-        body .productMain .productHero {
-          height: 650px; } }
-    body .productMain .ourProductsDiv {
-      width: 100%;
-      height: 80px;
-      display: flex;
-      justify-content: center;
-      align-items: flex-end; }
-      body .productMain .ourProductsDiv .ourProductsText {
-        text-align: center;
-        font-size: 1.5rem;
-        font-weight: bold; }
-    body .productMain .sortContainer {
-      width: 100%;
-      height: 90px;
-      display: flex;
-      justify-content: center;
-      border-bottom: 1px solid #9e9e9e; }
-      body .productMain .sortContainer .sortDropdown {
-        width: 25%;
-        position: relative;
-        display: inline-block;
-        text-align: center; }
-        @media screen and (min-width: 768px) {
-          body .productMain .sortContainer .sortDropdown {
-            width: 15%; } }
-        body .productMain .sortContainer .sortDropdown .sortBtn {
-          border: none;
-          border-radius: 5px;
-          background-color: transparent;
-          font-size: 0.8rem;
-          font-weight: bold;
-          text-transform: uppercase;
-          padding: 3px 7px 2px 7px;
-          margin-top: 10px; }
-          body .productMain .sortContainer .sortDropdown .sortBtn:hover {
-            font-weight: lighter;
-            background-color: #0F100A;
-            color: #f9f9f9; }
-        body .productMain .sortContainer .sortDropdown .sortLinks {
-          width: 100%;
-          display: none;
-          position: absolute;
-          z-index: 1; }
-          body .productMain .sortContainer .sortDropdown .sortLinks a {
-            display: block;
-            width: 100%;
-            font-size: 0.8rem;
-            color: #0F100A;
-            text-decoration: none; }
-            body .productMain .sortContainer .sortDropdown .sortLinks a:hover {
-              text-decoration: underline; }
-    body .productMain .sortDropdown:hover .sortLinks {
+    margin-top: 5px; }
+  .productMain .productContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 20px; }
+    @media screen and (min-width: 768px) {
+      .productMain .productContainer {
+        flex-direction: row;
+        flex-wrap: wrap; } }
+    .productMain .productContainer .productDiv {
+      width: 90%;
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-top: 5px; }
-    body .productMain .productContainer {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      font-size: 1.2rem;
-      font-weight: bold;
-      margin-top: 20px; }
+      padding-bottom: 40px;
+      margin: 15px 0;
+      border-bottom: 1px solid #0F100A;
+      cursor: pointer; }
       @media screen and (min-width: 768px) {
-        body .productMain .productContainer {
-          flex-direction: row;
-          flex-wrap: wrap; } }
-      body .productMain .productContainer .productDiv {
-        width: 90%;
+        .productMain .productContainer .productDiv {
+          width: 33%;
+          border: none; } }
+      .productMain .productContainer .productDiv .modalHidden {
+        display: none; }
+      .productMain .productContainer .productDiv .modalVisible {
+        background-color: rgba(0, 0, 0, 0.8);
+        position: fixed;
+        top: 0;
+        height: 100%;
+        width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -426,18 +434,8 @@ body {
           font-size: 2rem;
           color: #CCAC00;
           text-decoration: none; }
-          body .productMain .productContainer .productDiv a:hover {
-            color: #FFE79E; }
-      body .productMain .productContainer .paginationDiv {
-        margin: 0 0 30px 30px; }
-        body .productMain .productContainer .paginationDiv .pagination {
-          list-style: none;
-          font-size: 0.9rem; }
-          body .productMain .productContainer .paginationDiv .pagination a {
-            color: #0F100A;
-            text-decoration: none; }
-            body .productMain .productContainer .paginationDiv .pagination a:hover {
-              color: grey; }
+          .productMain .productContainer .paginationDiv .pagination a:hover {
+            color: grey; }
 
 .resetformpage {
   background: url(../../images/resetbackground.jpg) no-repeat center center/cover;
@@ -618,39 +616,68 @@ body {
           background-color: #CCAC00;
           color: #f9f9f9; }
 
+#wishMenu {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 120px 0px 0px 20px; }
+  #wishMenu #msgSpan {
+    text-align: center;
+    letter-spacing: 1px; }
+  #wishMenu h3 {
+    text-align: center;
+    padding: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase; }
+  #wishMenu a {
+    text-decoration: none;
+    color: black; }
+    #wishMenu a:hover {
+      opacity: 0.7; }
+
 #wishWrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   justify-content: flex-start;
-  margin-top: 75px; }
-  @media screen and (min-width: 1024px) {
-    #wishWrapper {
-      margin-top: 90px; } }
+  margin: 75px 0px 75px 0px;
+  min-height: 700px; }
+  #wishWrapper #wishClear {
+    width: 100%;
+    text-align: center;
+    margin-left: 20px; }
   #wishWrapper a {
     text-decoration: none;
     color: black; }
     #wishWrapper a:hover {
       opacity: 0.7; }
-  #wishWrapper #wishMenu {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    width: 100%;
-    margin: 30px; }
-    #wishWrapper #wishMenu h3 {
-      text-align: center; }
   #wishWrapper .wishItem {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 70%;
+    width: 90%;
     border-bottom: 1px solid black;
-    margin-bottom: 10px; }
+    margin-bottom: 30px;
+    letter-spacing: 2px; }
     #wishWrapper .wishItem img {
       width: 187.5px;
       height: 312.5px; }
+    #wishWrapper .wishItem a {
+      margin-bottom: 5px;
+      align-self: flex-end;
+      margin-right: 40px; }
+    #wishWrapper .wishItem p {
+      font-weight: bold; }
+    #wishWrapper .wishItem button {
+      border: none;
+      margin: 10px;
+      background-color: #f9f9f9;
+      cursor: pointer;
+      width: 100px;
+      height: 30px;
+      font-size: medium; }
   @media screen and (min-width: 768px) {
     #wishWrapper {
       flex-direction: row;

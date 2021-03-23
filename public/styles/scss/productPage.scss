@@ -1,20 +1,6 @@
 @import 'helper/mixins';
 @import 'helper/variables';
 
-* {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box; 
-}
-
-body {
-    width: 100%;
-    background-color: $bubblifylight;
-    color: $bubblifyblack;
-    font-family: 'Roboto', sans-serif;
-    font-size: 1rem;
-
-    //Productpage styling
     .productMain {
         display: flex;
         flex-direction: column;
@@ -281,4 +267,3 @@ body {
             }
         }
     }
-}

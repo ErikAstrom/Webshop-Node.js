@@ -26,10 +26,10 @@
 <br>
 <div>
     <% if (totalAmount >= 1) { %>
-        <p>Total amount in cart: <strong><%= totalAmount %></strong> sek</p>
+        <p>Total amount in cart: <strong><%= totalAmount %></strong> sek</p><br>
+        <div><a href="/clearCartTotal">Cleart your cart</a></div><br>
     <% } %>
 </div><br>
-<div><a href="/clearCartTotal">Cleart your cart</a></div><br>
 <div>
     <a href="/customerCheckout">To Checkout</a>
 </div>
