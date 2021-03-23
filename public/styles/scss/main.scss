@@ -122,7 +122,7 @@ body {
     }
 
     .heroText {
-      width: 75%;
+      width: 85%;
       height: 80px;
       display: flex;
       justify-content: center;
@@ -133,8 +133,15 @@ body {
       }
 
       p {
-        font-size: 1rem;
+        color: $bubblifygold;
+        font-size: 0.9rem;
         font-style: italic;
+        text-shadow: 0.9px -0.7px #ccad0052;
+        letter-spacing: 2.5px;
+        @media screen and (min-width: 768px) {
+          font-size: 1rem;
+          letter-spacing: 3.5px;
+        }
       }
     }
 
@@ -243,7 +250,7 @@ body {
           border-radius: 10px;
     
           &:hover {
-            background-color: #2f342e93;
+            background-color: $bubblifyblack;
           }
         }
       }
@@ -264,7 +271,7 @@ body {
         font-size: 0.9rem;
         font-style: italic;
         @media screen and (min-width: 768px) {
-          font-size: 1.1rem;
+          font-size: 1rem;
         }
       }
     }
@@ -285,6 +292,11 @@ body {
       display: flex;
       justify-content: space-evenly;
       color: $bubblifylight;
+
+      i {
+        color: $bubblifylight;
+        margin-right: 5px;
+      }
 
       a {
         margin-top: 10px;
