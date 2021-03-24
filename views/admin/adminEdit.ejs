@@ -1,30 +1,25 @@
-<%- include("../partials/header") %>
-<h1>HELLO ADMIN</h1>
-
-<form action="/admin" method="POST" enctype="multipart/form-data">
-
-    <input type="text" name="title" id="" placeholder="product name" required />
-    <input type="file" name="image" id="image" value="" required>
-    <input type="text" name="description" id="" placeholder="product description" required />
-    <input type="number" name="price" id="" placeholder="product price" required />
-    <input type="text" name="origin" id="" placeholder="product origin country" required />
-    <input type="text" name="blend" id="" placeholder="product grape blend" required />
-    <button type="submit">Add</button>
-
-</form>
-
-<!-- Edit form -->
-<form action="/adminEdit" method="post" enctype="multipart/form-data">
-    <input type="text" name="title" id="" value="<%= product.title %>" required />
-    <input type="text" name="description" id="" value="<%= product.description %>" required />
-    <input type="number" name="price" id="" value="<%= product.price %>" required/>
-    <input type="text" name="origin" id="" value="<%= product.origin %>" required/>
-    <input type="text" name="blend" id="" value="<%= product.blend %>" required/>
-    <input type="text" name="id" value="<%= product._id %>" hidden>
-    <input type="file" name="image" id="image" value="" required>
-    <button type="submit">OK</button>
-</form>
-
-<div><a href="/admin">Back to admin</a></div>
-
-<%- include("../partials/footer") %>
+<%- include("../partials/secondheader") %>
+<div class="admineditpage">
+    <div class="admineditform">
+        <form action="/adminEdit" method="post" enctype="multipart/form-data" class="adminedit">
+            <img src="data:image/<%=product.img.contentType%>;base64,<%=product.img.data.toString('base64')%>" alt="" />
+            <label type="button" class="productloadimg">Change image
+            <input type="file" name="image" style="display: none;" required>
+            </label>
+            <p class="producttext"><span class="headlineproduct">Title:</span></p>
+            <input type="text" name="title" id="" value="<%= product.title %>" class="productform" required />
+            <p class="producttext"><span class="headlineproduct">Origin:</span></p>
+            <input type="text" name="origin" id="" value="<%= product.origin %>" class="productform" required/>
+            <p class="producttext"><span class="headlineproduct">Blend:</span></p>
+            <input type="text" name="blend" id="" value="<%= product.blend %>" class="productform" required/>
+            <p class="producttext"><span class="headlineproduct">Description:</span></p>
+            <input type="text" name="description" id="" value="<%= product.description %>" class="productform" required />
+            <p class="producttext"><span class="headlineproduct">Price:</span></p>
+            <input type="number" name="price" id="" value="<%= product.price %>" class="productform" required/>
+            <input type="text" name="id" value="<%= product._id %>" hidden>
+            <button type="submit" class="editproductbtn">Add changes</button>
+        </form>
+        <div class="backtoadmindiv"><a href="/admin" class="backtoadminbtn">Back to adminpage</a></div>
+    </div>
+</div>
+<%- include("../partials/secondfooter") %>

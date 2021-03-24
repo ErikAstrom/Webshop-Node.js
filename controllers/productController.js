@@ -110,6 +110,7 @@ const submitEdit = async (req, res) => {
           blend: req.body.blend,
         });
   
+      req.flash("success_msg", "Product updated!")
       res.redirect("/admin");
     } catch (err) {
       console.log(err);

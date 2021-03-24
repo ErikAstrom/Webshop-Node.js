@@ -57,6 +57,9 @@
                     background-color: $bubblifygold;
                     color: $bubblifylight;
                 }
+                &:focus {
+                    outline: none;
+                }
             }
         }
         .registerandresetbtn {
