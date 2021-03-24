@@ -20,15 +20,6 @@
             <div>
                 <p class="originBlend"><%= products[10].origin %></p> | <p class="originBlend"><%= products[10].blend %></p>
             </div>
-            <a href="/productPage">Browse</a>
-        </div>
-        <div class="indexProductDiv">
-            <img src="data:image/<%=products[11].img.contentType%>;base64,<%=products[11].img.data.toString('base64')%>" alt="Image of a sparkling wine bottle." />
-            <p class="productTitle"><%= products[11].title %></p>
-            <div>
-                <p class="originBlend"><%= products[11].origin %></p> | <p class="originBlend"><%= products[11].blend %></p>
-            </div>
-            <a href="/productPage">Browse</a>
         </div>
         <div class="indexProductDiv">
             <img src="data:image/<%=products[2].img.contentType%>;base64,<%=products[2].img.data.toString('base64')%>" alt="Image of a sparkling wine bottle." />
@@ -36,10 +27,20 @@
             <div>
                 <p class="originBlend"><%= products[2].origin %></p> | <p class="originBlend"><%= products[2].blend %></p>
             </div>
-            <a href="/productPage">Browse</a>
+        </div>
+        <div class="indexProductDiv">
+            <img src="data:image/<%=products[11].img.contentType%>;base64,<%=products[11].img.data.toString('base64')%>" alt="Image of a sparkling wine bottle." />
+            <p class="productTitle"><%= products[11].title %></p>
+            <div>
+                <p class="originBlend"><%= products[11].origin %></p> | <p class="originBlend"><%= products[11].blend %></p>
+            </div>
         </div>
     </div>
     
+    <div class="indexBrowse">
+        <a href="/productPage">Browse</a>
+    </div>
+
     <div class="indexQuoteText">
         <p>“We import luxury Champagne, Crémant, Prosecco and Cava made from blends of Chardonnay, Pinot Noir, Pinot Blanc, Glera, Macabeo and Xarel-lo.”</p>
     </div>

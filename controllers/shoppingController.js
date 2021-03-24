@@ -27,7 +27,6 @@ const showShoppingCart = async (req, res) => {
             })
         }
     } catch (err) {
-        console.log(err.message) // If person without a cart clicks on cart, it will throw Error. 
         req.flash("warning_msg", "You must add a product to your shopping cart first!") // This is to message customer he needs to add a product
         res.redirect("/productPage") //  And make the productpage reload instead of getting stuck to shoppingcart.
     }
@@ -64,7 +63,6 @@ const addToCart = async (req, res) => {
                 cart.totalAmount = userTotal;
             }
             await cart.save();
-            req.flash("success_msg", "The product has been added to your cart.")
             res.redirect("back")
         }
         if (cart) { // If cart exists for customer already
@@ -94,7 +92,6 @@ const addToCart = async (req, res) => {
                 cart.products.push({ title, price, productId, quantity, blend, total });
             }
             await cart.save();
-            req.flash("success_msg", "The product has been added to your cart.")
             res.redirect("back")
         }
     } catch (err) {

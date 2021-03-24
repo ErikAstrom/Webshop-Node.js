@@ -96,6 +96,12 @@ flex-wrap: wrap;
     }
 }
 
+@mixin ipad-xl {
+    @media screen and (min-width: 1024px) {
+        @content;
+    }
+}
+
 @mixin desktop {
     @media screen and (min-width: 1200px) {
         @content;

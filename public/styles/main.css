@@ -261,13 +261,54 @@
     background-size: cover; }
     @media screen and (min-width: 1024px) {
       .productMain .productHero {
-        height: 650px; } }
+        height: 700px; } }
+    @media screen and (min-width: 1200px) {
+      .productMain .productHero {
+        height: 870px; } }
+  .productMain .productMessage {
+    width: 70%;
+    height: 150px;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9af;
+    box-shadow: 0 0 10px black;
+    z-index: 1; }
+    @media screen and (min-width: 768px) {
+      .productMain .productMessage {
+        top: 20%;
+        width: 50%; } }
+    @media screen and (min-width: 1024px) {
+      .productMain .productMessage {
+        top: 40%;
+        width: 45%; } }
+    .productMain .productMessage p {
+      font-size: 1rem;
+      font-weight: bold;
+      text-align: center; }
+      @media screen and (min-width: 1024px) {
+        .productMain .productMessage p {
+          font-size: 1.15rem; } }
+    .productMain .productMessage a {
+      text-decoration: none;
+      background-color: #0F100A;
+      color: #f9f9f9;
+      padding: 5px 15px;
+      margin-top: 15px; }
   .productMain .ourProductsDiv {
     width: 100%;
     height: 80px;
     display: flex;
     justify-content: center;
     align-items: flex-end; }
+    @media screen and (min-width: 1024px) {
+      .productMain .ourProductsDiv {
+        height: 50px; } }
     .productMain .ourProductsDiv .ourProductsText {
       text-align: center;
       font-size: 1.5rem;
@@ -329,8 +370,11 @@
       .productMain .productContainer {
         flex-direction: row;
         flex-wrap: wrap; } }
+    @media screen and (min-width: 1200px) {
+      .productMain .productContainer {
+        width: 80%; } }
     .productMain .productContainer .productDiv {
-      width: 90%;
+      width: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -341,14 +385,15 @@
       @media screen and (min-width: 768px) {
         .productMain .productContainer .productDiv {
           width: 33%;
-          border: none; } }
+          border: none;
+          margin: 15px 0 0 0; } }
       .productMain .productContainer .productDiv .modalHidden {
         display: none; }
       .productMain .productContainer .productDiv .modalVisible {
         height: 100%;
         width: 100%;
         position: fixed;
-        top: 30px;
+        top: 50px;
         left: 50%;
         margin-left: -50%;
         display: flex;
@@ -422,7 +467,7 @@
           width: 50%; }
           @media screen and (min-width: 1024px) {
             .productMain .productContainer .productDiv picture img {
-              width: 40%; } }
+              width: 45%; } }
       .productMain .productContainer .productDiv p {
         font-size: 0.9rem;
         letter-spacing: 2px;
@@ -449,7 +494,13 @@
           margin-bottom: 5px;
           cursor: pointer; }
     .productMain .productContainer .paginationDiv {
-      margin: 0 0 30px 30px; }
+      margin: 0 0 20px 0; }
+      @media screen and (min-width: 768px) {
+        .productMain .productContainer .paginationDiv {
+          margin: 0 0 20px 30px; } }
+      @media screen and (min-width: 1024px) {
+        .productMain .productContainer .paginationDiv {
+          margin: 0 0 20px 30px; } }
       .productMain .productContainer .paginationDiv .pagination {
         list-style: none;
         font-size: 0.9rem; }
@@ -1162,9 +1213,26 @@ body {
     @media screen and (min-width: 1024px) {
       body header {
         height: 90px; } }
+    body header .sparkles {
+      position: absolute;
+      bottom: 16%;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #2F342E;
+      font-size: 0.6rem;
+      letter-spacing: 1.5px;
+      padding-right: 5px; }
+      @media screen and (min-width: 768px) {
+        body header .sparkles {
+          font-size: 0.65rem; } }
+      @media screen and (min-width: 1024px) {
+        body header .sparkles {
+          bottom: 20%;
+          font-size: 0.85rem;
+          letter-spacing: 2px; } }
     body header h1 {
       position: absolute;
-      top: 25%;
+      top: 20%;
       left: 50%;
       margin-left: -77px;
       font-family: 'Abhaya Libre', serif;
@@ -1172,8 +1240,8 @@ body {
       letter-spacing: 5px; }
       @media screen and (min-width: 1024px) {
         body header h1 {
-          font-size: 2rem;
-          top: 30%; } }
+          font-size: 2.15rem;
+          top: 20%; } }
       body header h1 a {
         color: black;
         text-decoration: none;
@@ -1249,7 +1317,7 @@ body {
         margin-top: 90px; } }
     body .indexMain .heroText {
       width: 85%;
-      height: 80px;
+      height: 75px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -1258,7 +1326,7 @@ body {
         body .indexMain .heroText {
           width: 100%; } }
       body .indexMain .heroText p {
-        color: #CCAC00;
+        color: #0F100A;
         font-size: 0.9rem;
         font-style: italic;
         text-shadow: 0.9px -0.7px #ccad0052;
@@ -1271,7 +1339,7 @@ body {
       width: 100%;
       overflow: hidden; }
       body .indexMain .indexHero img {
-        height: 650px; }
+        height: 665px; }
         @media screen and (min-width: 768px) {
           body .indexMain .indexHero img {
             width: 100%;
@@ -1287,13 +1355,15 @@ body {
         font-weight: bold; }
     body .indexMain .indexProductContainer {
       width: 100%;
-      height: 330px;
+      height: 240px;
       display: flex;
-      justify-content: center;
-      border-bottom: 2px solid #2F342E; }
+      justify-content: center; }
+      @media screen and (min-width: 768px) {
+        body .indexMain .indexProductContainer {
+          width: 80%; } }
       @media screen and (min-width: 1024px) {
         body .indexMain .indexProductContainer {
-          height: 450px; } }
+          height: 330px; } }
       body .indexMain .indexProductContainer .indexProductDiv {
         width: 100%;
         display: flex;
@@ -1302,31 +1372,29 @@ body {
         justify-content: center; }
         @media screen and (min-width: 768px) {
           body .indexMain .indexProductContainer .indexProductDiv {
-            width: 50%;
-            display: flex; } }
-        @media screen and (min-width: 1024px) {
-          body .indexMain .indexProductContainer .indexProductDiv {
-            width: 30%; } }
+            width: 35%;
+            display: flex;
+            margin-top: 10px; } }
         body .indexMain .indexProductContainer .indexProductDiv:nth-of-type(2) {
           display: none; }
-          @media screen and (min-width: 1024px) {
+          @media screen and (min-width: 768px) {
             body .indexMain .indexProductContainer .indexProductDiv:nth-of-type(2) {
-              width: 30%;
+              width: 35%;
               display: flex; } }
         body .indexMain .indexProductContainer .indexProductDiv:nth-of-type(3) {
           display: none; }
           @media screen and (min-width: 768px) {
             body .indexMain .indexProductContainer .indexProductDiv:nth-of-type(3) {
-              width: 50%;
+              width: 35%;
               display: flex; } }
-          @media screen and (min-width: 1024px) {
-            body .indexMain .indexProductContainer .indexProductDiv:nth-of-type(3) {
-              width: 30%; } }
         body .indexMain .indexProductContainer .indexProductDiv img {
-          width: 20%; }
+          width: 22%; }
           @media screen and (min-width: 768px) {
             body .indexMain .indexProductContainer .indexProductDiv img {
-              width: 30%; } }
+              width: 40%; } }
+          @media screen and (min-width: 1024px) {
+            body .indexMain .indexProductContainer .indexProductDiv img {
+              width: 50%; } }
         body .indexMain .indexProductContainer .indexProductDiv .productTitle {
           font-weight: bold; }
         body .indexMain .indexProductContainer .indexProductDiv div {
@@ -1335,36 +1403,40 @@ body {
           justify-content: center;
           font-size: 0.8rem;
           font-weight: bold;
-          text-transform: uppercase;
-          margin-bottom: 20px; }
+          text-transform: uppercase; }
           body .indexMain .indexProductContainer .indexProductDiv div .originBlend {
             margin: 0 5px; }
-        body .indexMain .indexProductContainer .indexProductDiv a {
-          padding: 5px 25px;
-          background-color: #2F342E;
-          color: #f9f9f9;
-          font-size: 0.8rem;
-          text-decoration: none;
-          text-transform: uppercase;
-          border-radius: 10px; }
-          body .indexMain .indexProductContainer .indexProductDiv a:hover {
-            background-color: #0F100A; }
+    body .indexMain .indexBrowse {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding-bottom: 30px; }
+      body .indexMain .indexBrowse a {
+        padding: 5px 20px;
+        background-color: #2F342E;
+        color: #f9f9f9;
+        font-size: 0.8rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        border-radius: 10px; }
+        body .indexMain .indexBrowse a:hover {
+          background-color: #0F100A; }
     body .indexMain .indexQuoteText {
-      width: 80%;
+      width: 100%;
       height: 140px;
       display: flex;
       justify-content: center;
       align-items: center;
-      text-align: center; }
-      @media screen and (min-width: 768px) {
-        body .indexMain .indexQuoteText {
-          width: 60%; } }
+      text-align: center;
+      border-top: 2px solid #2F342E; }
       body .indexMain .indexQuoteText p {
+        width: 80%;
         font-size: 0.9rem;
         font-style: italic; }
         @media screen and (min-width: 768px) {
           body .indexMain .indexQuoteText p {
-            font-size: 1rem; } }
+            font-size: 1rem;
+            width: 60%; } }
   body footer {
     width: 100%;
     height: 100px;
