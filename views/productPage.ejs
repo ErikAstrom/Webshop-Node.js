@@ -3,6 +3,13 @@
 <main class="productMain">
     <div class="productHero"></div>
 
+    <% if (warning_msg != '') { %>
+        <div class="productMessage">
+            <%- include("./helpers/messages") %>
+            <a href="/productPage">OK</a>
+        </div>
+    <% } %>
+
     <div class="ourProductsDiv">
         <p class="ourProductsText">Our products</p>
     </div>
@@ -26,9 +33,6 @@
     </div>
 
     <div class="productContainer">
-        <div>
-            <%- include("./helpers/messages") %>
-        </div>
     <% if (origin == null) { %>
         <% products.forEach(product => { %>
             <div class="productDiv">
@@ -151,11 +155,12 @@
             productPicture[i].previousElementSibling.classList.toggle('modalVisible')
         })
     }
+
     let closeModal = document.getElementsByClassName('closeModal');
     for (let i = 0; i < closeModal.length; i++) {
         
         closeModal[i].addEventListener('click', ()=>{
             closeModal[i].closest('div').classList.toggle('modalVisible')
         })
-    }
+    }    
 </script>

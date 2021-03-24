@@ -31,21 +31,40 @@ body {
     background-color: $bubblifylight;
     border-bottom: 5px double black;
     z-index: 2;
-    @media screen and (min-width: 1024px) {
+    @include ipad-xl {
       height: 90px;
+    }
+
+    .sparkles {
+      position: absolute;
+      bottom: 16%;
+      left: 50%;
+      transform: translateX(-50%);
+      color: $bubblifygrey;
+      font-size: 0.6rem;
+      letter-spacing: 1.5px;
+      padding-right: 5px;
+      @include ipad-small {
+        font-size: 0.65rem;
+      }
+      @include ipad-xl {
+        bottom: 20%;
+        font-size: 0.85rem;
+        letter-spacing: 2px;
+      }
     }
     
     h1 {
       position: absolute;
-      top: 25%;
+      top: 20%;
       left: 50%;
       margin-left: -77px;
       font-family: 'Abhaya Libre', serif;
       font-size: 2rem;
       letter-spacing: 5px;
-      @media screen and (min-width: 1024px) {
-        font-size: 2rem;
-        top: 30%;
+      @include ipad-xl {
+        font-size: 2.15rem;
+        top: 20%;
       }
 
       a {
@@ -62,7 +81,7 @@ body {
       margin-top: -6.5px;
       margin-left: 15px;
       font-size: 0.7rem;
-      @media screen and (min-width: 768px) {
+      @include ipad-small {
         font-size: 0.8rem;    
       }
 
@@ -88,7 +107,7 @@ body {
       justify-content: center;
       float: right;
       margin-right: 15px;
-      @media screen and (min-width: 768px) {
+      @include ipad-small {
         flex-direction: row; 
         align-items: center;
       }
@@ -103,12 +122,12 @@ body {
         text-align: center;
         font-size: 0.5rem;
         font-weight: bold;
-        @media screen and (min-width: 768px) {
+        @include ipad-small {
           font-size: 0.6rem;
           top: 17px;
           right: 83px;
         }
-        @media screen and (min-width: 1024px) {
+        @include ipad-xl {
           padding: 1.5px 5px 2px 5px;
           top: 22px;
         }
@@ -121,7 +140,7 @@ body {
         text-transform: uppercase;
         text-align: end;
         cursor: pointer;
-        @media screen and (min-width: 768px) {
+        @include ipad-small {
           font-size: 0.8rem;    
           margin: 0 7px;
         }
@@ -139,28 +158,28 @@ body {
     flex-direction: column;
     align-items: center;
     margin-top: 75px;
-    @media screen and (min-width: 1024px) {
+    @include ipad-xl {
       margin-top: 90px;
     }
 
     .heroText {
       width: 85%;
-      height: 80px;
+      height: 75px;
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
-      @media screen and (min-width: 768px) {
+      @include ipad-small {
         width: 100%;
       }
 
       p {
-        color: $bubblifygold;
+        color: $bubblifyblack;
         font-size: 0.9rem;
         font-style: italic;
         text-shadow: 0.9px -0.7px #ccad0052;
         letter-spacing: 2.5px;
-        @media screen and (min-width: 768px) {
+        @include ipad-small {
           font-size: 1rem;
           letter-spacing: 3.5px;
         }
@@ -172,8 +191,8 @@ body {
       overflow: hidden;
   
       img {
-        height: 650px;
-        @media screen and (min-width: 768px) {
+        height: 665px;
+        @include ipad-small {
           width: 100%;
           height: 100%;
         }
@@ -195,12 +214,14 @@ body {
 
     .indexProductContainer {
       width: 100%;
-      height: 330px;
+      height: 240px;
       display: flex;
       justify-content: center;
-      border-bottom: 2px solid $bubblifygrey;
-      @media screen and (min-width: 1024px) {
-        height: 450px;
+      @include ipad-small {
+        width: 80%;
+      }
+      @include ipad-xl {
+        height: 330px;
       }
 
       
@@ -210,37 +231,35 @@ body {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        @media screen and (min-width: 768px) {
-          width: 50%;
+        @include ipad-small {
+          width: 35%;
           display: flex;
-        }
-        @media screen and (min-width: 1024px) {
-          width: 30%;
+          margin-top: 10px;
         }
 
         &:nth-of-type(2) {
           display: none;
-          @media screen and (min-width: 1024px) {
-            width: 30%;
+          @include ipad-small {
+            width: 35%;
             display: flex;
           }
         }
 
         &:nth-of-type(3) {
           display: none;
-          @media screen and (min-width: 768px) {
-            width: 50%;
+          @include ipad-small {
+            width: 35%;
             display: flex;
-          }
-          @media screen and (min-width: 1024px) {
-            width: 30%;
           }
         }
     
         img {
-          width: 20%;
-          @media screen and (min-width: 768px) {
-            width: 30%;
+          width: 22%;
+          @include ipad-small {
+            width: 40%;
+          }
+          @include ipad-xl {
+            width: 50%;
           }
         }
         
@@ -255,45 +274,51 @@ body {
           font-size: 0.8rem;
           font-weight: bold;
           text-transform: uppercase;
-          margin-bottom: 20px;
 
           .originBlend {
             margin: 0 5px;
           }
         }
-    
-        a {
-          padding: 5px 25px;
-          background-color: $bubblifygrey;
-          color: $bubblifylight;
-          font-size: 0.8rem;
-          text-decoration: none;
-          text-transform: uppercase;
-          border-radius: 10px;
-    
-          &:hover {
-            background-color: $bubblifyblack;
-          }
+      }
+    }
+
+    .indexBrowse {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding-bottom: 30px;
+
+      a {
+        padding: 5px 20px;
+        background-color: $bubblifygrey;
+        color: $bubblifylight;
+        font-size: 0.8rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        border-radius: 10px;
+  
+        &:hover {
+          background-color: $bubblifyblack;
         }
       }
     }
   
     .indexQuoteText {
-      width: 80%;
+      width: 100%;
       height: 140px;
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
-      @media screen and (min-width: 768px) {
-        width: 60%;
-      }
+      border-top: 2px solid $bubblifygrey;
   
       p {
+        width: 80%;
         font-size: 0.9rem;
         font-style: italic;
-        @media screen and (min-width: 768px) {
+        @include ipad-small {
           font-size: 1rem;
+          width: 60%;
         }
       }
     }

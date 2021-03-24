@@ -6,7 +6,7 @@
         flex-direction: column;
         align-items: center;
         margin-top: 75px;
-        @media screen and (min-width: 1024px) {
+        @include ipad-xl {
           margin-top: 90px;
         }
 
@@ -17,7 +17,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            @media screen and (min-width: 768px) {
+            @include ipad-small {
                 width: 100%;
             }
 
@@ -32,8 +32,52 @@
             background-image: url(/../images/hero2.jpg);
             background-position: center;
             background-size: cover;
-            @media screen and (min-width: 1024px) {
-                height: 650px;
+            @include ipad-xl {
+                height: 700px;
+            }
+            @include desktop {
+                height: 870px;
+            }
+        }
+
+        .productMessage {
+            width: 70%;
+            height: 150px;
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #f9f9f9af;
+            box-shadow: 0 0 10px black;
+            z-index: 1;
+            @include ipad-small {
+                top: 20%;
+                width: 50%;
+            }
+            @include ipad-xl {
+                top: 40%;
+                width: 45%;
+            }
+
+            p {
+                font-size: 1rem;
+                font-weight: bold;
+                text-align: center;
+                @include ipad-xl {
+                    font-size: 1.15rem;
+                }
+            }
+
+            a {
+                text-decoration: none;
+                background-color: $bubblifyblack;
+                color: $bubblifylight;
+                padding: 5px 15px;
+                margin-top: 15px;
             }
         }
 
@@ -43,6 +87,9 @@
             display: flex;
             justify-content: center;
             align-items: flex-end;
+            @include ipad-xl {
+                height: 50px;
+            }
       
             .ourProductsText {
                 text-align: center;
@@ -63,7 +110,7 @@
                 position: relative;
                 display: inline-block;
                 text-align: center;
-                @media screen and (min-width: 768px) {
+                @include ipad-small {
                   width: 15%;  
                 }
 
@@ -123,13 +170,16 @@
             font-size: 1.2rem;
             font-weight: bold;
             margin-top: 20px;
-            @media screen and (min-width: 768px) {
+            @include ipad-small {
                 flex-direction: row;
                 flex-wrap: wrap;
             }
+            @include desktop {
+                width: 80%;
+            }
 
             .productDiv {
-                width: 90%;
+                width: 100%;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -137,9 +187,10 @@
                 margin: 15px 0;
                 border-bottom: 1px solid $bubblifyblack;
                 cursor: pointer;
-                @media screen and (min-width: 768px) {
+                @include ipad-small {
                    width: 33%;
                    border: none;
+                   margin: 15px 0 0 0;
                 }
 
                 .modalHidden {
@@ -150,7 +201,7 @@
                     height: 100%;
                     width: 100%;
                     position: fixed;
-                    top: 30px;
+                    top: 50px;
                     left: 50%;
                     margin-left: -50%;
                     display: flex;
@@ -165,10 +216,10 @@
                         font-weight: bold;
                         text-align: center;
                         padding-bottom: 15px;
-                        @media screen and (min-width: 768px) {
+                        @include ipad-small {
                             max-width: 60%;
                         }
-                        @media screen and (min-width: 1024px) {
+                        @include ipad-xl {
                             max-width: 40%;
                         }
 
@@ -189,11 +240,11 @@
                             img {
                                 max-width: 60%;
                                 max-height: 60%; 
-                                @media screen and (min-width: 768px) {
+                                @include ipad-small {
                                     max-width: 40%;
                                     max-height: 40%;
                                 }
-                                @media screen and (min-width: 1024px) {
+                                @include ipad-xl {
                                     max-width: 30%;
                                     max-height: 30%;
                                 }
@@ -244,8 +295,8 @@
 
                     img {
                         width: 50%;
-                        @media screen and (min-width: 1024px) {
-                            width: 40%;
+                        @include ipad-xl {
+                            width: 45%;
                         }
                     }
                 }
@@ -290,7 +341,13 @@
             }
 
             .paginationDiv {
-                margin: 0 0 30px 30px;
+                margin: 0 0 20px 0;
+                @include ipad-small {
+                    margin: 0 0 20px 30px;
+                }
+                @include ipad-xl {
+                    margin: 0 0 20px 30px;
+                }
 
                 .pagination {
                     list-style: none;
