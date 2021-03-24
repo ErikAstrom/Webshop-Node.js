@@ -4,7 +4,6 @@ const Cart = require("../models/cart");
 const adminRender = async (req, res) => {
   try {
     const userCart = await Cart.findOne({ userId: req.user.user._id });
-
     const userList = await User.find();
     const adminProduct = await User.findOne({ _id: req.user.user._id}).populate(
         "adminProducts"
@@ -25,6 +24,7 @@ const adminRender = async (req, res) => {
 const deleteUser = async (req, res) => {
   try {
     await User.deleteOne({ _id: req.params.id });
+    req.flash("success_msg", "User has been deleted");
     res.redirect("/admin");
   } catch (err) {
       console.log(err);

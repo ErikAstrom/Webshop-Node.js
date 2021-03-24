@@ -52,10 +52,7 @@
             }
             .editproductbtn {
                 margin-top: 0.5rem;
-                width: 100%;
-                @include mobile-large {
-                    width: 60%;
-                }
+                width: 200px;
                 background-color: $bubblifygrey;
                 border: 1px solid transparent;
                 // border-radius: 10px;
@@ -85,10 +82,7 @@
     width: 90%;
     .backtoadminbtn {
     text-decoration: none;
-    width: 100%;
-    @include mobile-large {
-        width: 60%;
-    }
+    width: 200px;
     background-color: $bubblifygrey;
     border: 1px solid transparent;
     // border-radius: 10px;

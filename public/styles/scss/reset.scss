@@ -7,7 +7,7 @@
     @include flexdisplay;
     .resetform {
         height: 80%;
-        width: 60%;
+        width: 70%;
         background-color: $bubblifylight;
         box-shadow: 2px 2px 4px #2F342E;
         @include flexcolumn;
@@ -57,6 +57,9 @@
                     background-color: $bubblifygold;
                     color: $bubblifylight;
                 }
+                &:focus {
+                    outline: none;
+                }
             }
         }
         .tologin {
@@ -79,6 +82,9 @@
                     transition: all 0.5s ease;
                     background-color: $bubblifygrey;
                     color: $bubblifylight;
+                }
+                &:focus {
+                    outline: none;
                 }
             }
         }
