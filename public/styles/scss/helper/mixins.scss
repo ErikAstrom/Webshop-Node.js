@@ -38,6 +38,16 @@
     text-align: center;
     margin-bottom: 1rem;
 }
+//Mixin for a tags
+@mixin anchorTags {
+    a{
+        text-decoration: none;
+        color:black;
+        &:hover {
+            opacity:0.7;
+        }
+    }
+}
 
 // Mixin for Wishlist
 @mixin wishListWrap {
