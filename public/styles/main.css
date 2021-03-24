@@ -6,7 +6,7 @@
   align-items: center; }
   .registerpage .registerform {
     height: 80%;
-    width: 60%;
+    width: 70%;
     background-color: #f9f9f9;
     box-shadow: 2px 2px 4px #2F342E;
     display: flex;
@@ -93,6 +93,8 @@
           border: 1px solid #CCAC00;
           background-color: #CCAC00;
           color: #f9f9f9; }
+        .registerpage .registerform .register .registerbtn:focus {
+          outline: none; }
     .registerpage .registerform .tologin {
       margin: 1.5rem 0 3rem 0; }
       .registerpage .registerform .tologin .tologinbtn {
@@ -112,6 +114,8 @@
           transition: all 0.5s ease;
           background-color: #2F342E;
           color: #f9f9f9; }
+        .registerpage .registerform .tologin .tologinbtn:focus {
+          outline: none; }
 
 .loginpage {
   background: url(../../images/logbackground.jpg) no-repeat center center/cover;
@@ -121,7 +125,7 @@
   align-items: center; }
   .loginpage .loginform {
     height: 80%;
-    width: 60%;
+    width: 70%;
     background-color: #f9f9f9;
     box-shadow: 2px 2px 4px #2F342E;
     display: flex;
@@ -215,6 +219,8 @@
           transition: all 0.5s ease;
           background-color: #2F342E;
           color: #f9f9f9; }
+        .loginpage .loginform .registerandresetbtn .toregisterbtn:focus {
+          outline: none; }
       .loginpage .loginform .registerandresetbtn .toresetbtn {
         text-align: center;
         width: 100%;
@@ -232,6 +238,8 @@
           transition: all 0.5s ease;
           background-color: #2F342E;
           color: #f9f9f9; }
+        .loginpage .loginform .registerandresetbtn .toresetbtn:focus {
+          outline: none; }
 
 .productMain {
   display: flex;
@@ -518,7 +526,7 @@
   align-items: center; }
   .resetformpage .resetform {
     height: 80%;
-    width: 60%;
+    width: 70%;
     background-color: #f9f9f9;
     box-shadow: 2px 2px 4px #2F342E;
     display: flex;
@@ -587,6 +595,8 @@
           border: 1px solid #CCAC00;
           background-color: #CCAC00;
           color: #f9f9f9; }
+        .resetformpage .resetform .reset .resetbtn:focus {
+          outline: none; }
     .resetformpage .resetform .tologin {
       margin: 1.5rem 0 3rem 0;
       display: flex;
@@ -610,6 +620,8 @@
           transition: all 0.5s ease;
           background-color: #2F342E;
           color: #f9f9f9; }
+        .resetformpage .resetform .tologin .tologinbtn:focus {
+          outline: none; }
 
 .resetpasswordpage {
   background-color: #2F342E;
@@ -619,7 +631,7 @@
   align-items: center; }
   .resetpasswordpage .resetpasswordform {
     height: 80%;
-    width: 60%;
+    width: 70%;
     background-color: #f9f9f9;
     box-shadow: 2px 2px 4px #2F342E;
     display: flex;
@@ -688,6 +700,8 @@
           border: 1px solid #CCAC00;
           background-color: #CCAC00;
           color: #f9f9f9; }
+        .resetpasswordpage .resetpasswordform .resetpassword .resetpasswordbtn:focus {
+          outline: none; }
 
 #wishMenu {
   display: flex;
@@ -850,7 +864,7 @@
         color: #CCAC00; }
     .uploadproducts .adminform .addadminproduct {
       margin-top: 0.5rem;
-      width: 100%;
+      width: 200px;
       background-color: #2F342E;
       border: 1px solid transparent;
       color: #f9f9f9;
@@ -966,7 +980,7 @@
   text-align: center; }
   .backtotopdiv .backtotopbtn {
     text-decoration: none;
-    width: 50%;
+    width: 200px;
     background-color: #2F342E;
     border: 1px solid transparent;
     color: #f9f9f9;
@@ -1042,7 +1056,7 @@
           font-weight: bold; }
       .admineditpage .admineditform .adminedit .editproductbtn {
         margin-top: 0.5rem;
-        width: 100%;
+        width: 200px;
         background-color: #2F342E;
         border: 1px solid transparent;
         color: #f9f9f9;
@@ -1050,9 +1064,6 @@
         cursor: pointer;
         letter-spacing: 0.3ch;
         font-family: "Roboto", sans-serif; }
-        @media screen and (min-width: 576px) {
-          .admineditpage .admineditform .adminedit .editproductbtn {
-            width: 60%; } }
         .admineditpage .admineditform .adminedit .editproductbtn:hover {
           transition: all 0.5s ease;
           border: 1px solid #CCAC00;
@@ -1070,7 +1081,7 @@
   width: 90%; }
   .backtoadmindiv .backtoadminbtn {
     text-decoration: none;
-    width: 100%;
+    width: 200px;
     background-color: #2F342E;
     border: 1px solid transparent;
     color: #f9f9f9;
@@ -1079,9 +1090,6 @@
     font-size: 0.8rem;
     letter-spacing: 0.3ch;
     font-family: "Roboto", sans-serif; }
-    @media screen and (min-width: 576px) {
-      .backtoadmindiv .backtoadminbtn {
-        width: 60%; } }
     .backtoadmindiv .backtoadminbtn:hover {
       transition: all 0.5s ease;
       border: 1px solid #CCAC00;

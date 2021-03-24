@@ -120,7 +120,6 @@ const submitEdit = async (req, res) => {
 const deleteProduct = async (req, res) => {
   try {
     await Product.deleteOne({ _id: req.params.id });
-
     const user = await User.findOne({ _id: req.user.user._id });
     user.removeProduct(req.params.id);
 

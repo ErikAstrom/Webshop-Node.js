@@ -7,7 +7,7 @@
     @include flexdisplay;
     .loginform {
         height: 80%;
-        width: 60%;
+        width: 70%;
         background-color: $bubblifylight;
         box-shadow: 2px 2px 4px #2F342E;
         @include flexcolumn;
@@ -83,6 +83,9 @@
                     background-color: $bubblifygrey;
                     color: $bubblifylight;
                 }
+                &:focus {
+                    outline: none;
+                }
             }
             .toresetbtn {
                 text-align: center;
@@ -101,6 +104,9 @@
                     transition: all 0.5s ease;
                     background-color: $bubblifygrey;
                     color: $bubblifylight;
+                }
+                &:focus {
+                    outline: none;
                 }
             }
         }
