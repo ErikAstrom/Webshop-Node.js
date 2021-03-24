@@ -1,34 +1,42 @@
 <%- include("../partials/header") %>
-<h1>HELLO ADMIN <%= user.username %></h1>
+<div class="adminheader">
+<h1 class="adminstarttext">Admin page for <span class="adminname"><%= user.username %></span></h1>
+<div class="admintasks">
+    <a href="#" class="touploadproduct">Upload Product</a>
+    <a href="#" class="todeleteuser">Delete User</a>
+</div>
+</div>
 
-<form action="/admin" method="POST" enctype="multipart/form-data">
-
-    <input type="text" name="title" placeholder="product name" required />
-    <input type="text" name="description" placeholder="product description" required />
-    <input type="number" name="price" placeholder="product price" required />
-    <input type="text" name="origin" placeholder="product origin country" required />
-    <input type="text" name="blend" placeholder="product grape blend" required />
-    <input type="file" name="image" id="image" value="" required>
-    <button type="submit">Add</button>
-
-</form>
-
-<%- include("../helpers/messages") %>
-
+<div class="uploadproducts">
+    <div class="adminmessage"><%- include("../helpers/messages") %></div>
+        <form action="/admin" method="POST" enctype="multipart/form-data" class="adminform">
+            <input type="text" name="title" placeholder="Product title" class="productform" required />
+            <input type="text" name="description" placeholder="Product description" class="productform" required />
+            <input type="number" name="price" placeholder="Product price" class="productform" required />
+            <input type="text" name="origin" placeholder="Product origin country" class="productform" required />
+            <input type="text" name="blend" placeholder="Product grape blend" class="productform" required />
+            <label type="button" class="productloadimg">Product image upload
+            <i class="fas fa-file-image" aria-hidden="true"></i>
+            <input type="file" name="image" style="display: none;" required>
+            </label>
+            <button type="submit" class="addadminproduct">Add Product</button>
+        </form>
+</div>
+<div class="adminproducts"> 
 <% products.forEach(product => { %>
     
-    <div>
-        <p><%= product.title %></p>
+        <div class="showproduct">
         <img src="data:image/<%=product.img.contentType%>;base64,<%=product.img.data.toString('base64')%>" alt="" />
-        <p><%= product.description %></p>
+        <p><%= product.title %></p>
         <p><%= product.origin %></p>
         <p><%= product.blend %></p>
+        <p><%= product.description %></p>
         <p><%= product.price %></p>
         <a href="/adminEdit/<%= product.id %>">Edit</a>
         <a href="/adminDelete/<%= product.id %>">Delete</a>
-    </div>
-
+        </div>
 <% }) %>
+</div>
 
 <% userList.forEach(user => { %>
     

@@ -49,6 +49,19 @@
     }
 }
 
+// Mixin for adminpage
+@mixin productforms {
+    width: 100%;
+    margin-bottom: 0.4rem;
+    padding: 3px 0 2px 3px;
+    background-color: #f9f9f9;
+    border: none;
+    border-bottom: 1px solid #CCAC00;
+        &:focus {
+            outline: none;
+        }
+}
+
 // Media Query
 @mixin mobile-large {
     @media screen and (min-width: 576px) {

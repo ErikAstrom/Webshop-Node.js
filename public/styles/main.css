@@ -726,6 +726,98 @@
       #wishWrapper .wishItem {
         width: 22%; } }
 
+.adminheader {
+  margin-top: 7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .adminheader .adminstarttext .adminname {
+    text-transform: capitalize; }
+  .adminheader .admintasks {
+    margin-top: 1rem; }
+    .adminheader .admintasks .touploadproduct {
+      text-decoration: none;
+      color: #0F100A;
+      margin-right: 0.5rem; }
+      .adminheader .admintasks .touploadproduct:hover {
+        opacity: 0.7; }
+    .adminheader .admintasks .todeleteuser {
+      text-decoration: none;
+      color: #0F100A;
+      margin-left: 0.5rem; }
+      .adminheader .admintasks .todeleteuser:hover {
+        opacity: 0.7; }
+
+.uploadproducts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 1rem; }
+  .uploadproducts .adminmessage {
+    margin-top: 0.5rem;
+    min-height: 1.5rem; }
+  .uploadproducts .adminform {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    .uploadproducts .adminform .productform {
+      width: 100%;
+      margin-bottom: 0.4rem;
+      padding: 3px 0 2px 3px;
+      background-color: #f9f9f9;
+      border: none;
+      border-bottom: 1px solid #CCAC00; }
+      .uploadproducts .adminform .productform:focus {
+        outline: none; }
+    .uploadproducts .adminform .productloadimg {
+      width: 100%;
+      margin-bottom: 0.4rem;
+      padding: 3px 0 2px 3px;
+      background-color: #f9f9f9;
+      border: none;
+      border-bottom: 1px solid #CCAC00;
+      cursor: pointer;
+      font: 400 13.3333px Arial;
+      color: #808080; }
+      .uploadproducts .adminform .productloadimg .fas {
+        color: #CCAC00; }
+    .uploadproducts .adminform .addadminproduct {
+      margin-top: 0.5rem;
+      width: 100%;
+      background-color: #2F342E;
+      border: 1px solid transparent;
+      color: #f9f9f9;
+      padding: 0.4rem;
+      cursor: pointer;
+      letter-spacing: 0.3ch;
+      font-family: "Roboto", sans-serif; }
+      .uploadproducts .adminform .addadminproduct:hover {
+        transition: all 0.5s ease;
+        border: 1px solid #CCAC00;
+        background-color: #CCAC00;
+        color: #f9f9f9; }
+      .uploadproducts .adminform .addadminproduct:focus {
+        outline: none; }
+
+.adminproducts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .adminproducts .showproduct {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%; }
+    .adminproducts .showproduct img {
+      height: 250px;
+      width: 150px; }
+
 * {
   margin: 0px;
   padding: 0px;
