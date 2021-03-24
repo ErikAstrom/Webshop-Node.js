@@ -885,6 +885,25 @@ body {
         body header .headerLinksDiv {
           flex-direction: row;
           align-items: center; } }
+      body header .headerLinksDiv .totalInCart {
+        position: absolute;
+        top: 13px;
+        right: 6px;
+        background-color: #CCAC00;
+        border-radius: 10px;
+        padding: 1px 4px 1.5px 4px;
+        text-align: center;
+        font-size: 0.5rem;
+        font-weight: bold; }
+        @media screen and (min-width: 768px) {
+          body header .headerLinksDiv .totalInCart {
+            font-size: 0.6rem;
+            top: 17px;
+            right: 83px; } }
+        @media screen and (min-width: 1024px) {
+          body header .headerLinksDiv .totalInCart {
+            padding: 1.5px 5px 2px 5px;
+            top: 22px; } }
       body header .headerLinksDiv a {
         color: #0F100A;
         font-size: 0.7rem;

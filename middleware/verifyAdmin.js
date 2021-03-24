@@ -2,20 +2,18 @@ const jwt = require("jsonwebtoken");
 
 require("dotenv").config();
 
-const verifyAdmin = (req,res,next)=>{
+const verifyAdmin = async (req, res, next) => {
+    const token = req.cookies.jwtToken;
 
-const token = req.cookies.jwtToken;
+    if (!token) return res.redirect("/login")
 
-if(!token) return res.redirect("/login")
+    const validUser = jwt.verify(token, process.env.SECRET_KEY);
 
-const validUser = jwt.verify(token, process.env.SECRET_KEY);
+    if (validUser.user.role !== "admin") return res.redirect("/login");
 
-if(validUser.user.role !== "admin") return res.redirect("/login");
+    req.user = validUser;
 
-req.user = validUser;
-next();
-
-
+    next();
 }
 
 module.exports = verifyAdmin;
