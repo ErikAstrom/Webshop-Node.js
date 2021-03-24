@@ -1,23 +1,25 @@
-const { User } = require("../models/user");
-const Product = require("../models/product");
+const {User} = require("../models/user");
+const Cart = require("../models/cart");
 
 const renderWishlist= async (req, res) => {
     let errors = [];
     try {
-      const user = await User.findOne({ _id: req.user.user._id }).populate(
-        "wishList"
-      );
+      const userCart = await Cart.findOne({ userId: req.user.user._id });
+
+      const user = await User.findOne({ _id: req.user.user._id }).populate("wishList");
       if (user.wishList.length == 0) {
           return errors.push({msg: "Your wishlist is empty!"}),
             res.render("user/wishlist.ejs", {
             errors,
             wishes: user.wishList,
             user: req.user.user,
+            userCart: userCart
           });
       } else {
             res.render("user/wishlist.ejs", {
             wishes: user.wishList,
             user: req.user.user,
+            userCart: userCart
         });
       }
     } catch (err) {
