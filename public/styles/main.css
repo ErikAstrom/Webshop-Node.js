@@ -190,6 +190,8 @@
           border: 1px solid #CCAC00;
           background-color: #CCAC00;
           color: #f9f9f9; }
+        .loginpage .loginform .login .loginbtn:focus {
+          outline: none; }
     .loginpage .loginform .registerandresetbtn {
       margin: 1.5rem 0 3rem 0;
       display: flex;
@@ -736,17 +738,17 @@
     text-transform: capitalize; }
   .adminheader .admintasks {
     margin-top: 1rem; }
-    .adminheader .admintasks .touploadproduct {
-      text-decoration: none;
-      color: #0F100A;
-      margin-right: 0.5rem; }
-      .adminheader .admintasks .touploadproduct:hover {
-        opacity: 0.7; }
     .adminheader .admintasks .todeleteuser {
       text-decoration: none;
       color: #0F100A;
-      margin-left: 0.5rem; }
+      margin-right: 0.5rem; }
       .adminheader .admintasks .todeleteuser:hover {
+        opacity: 0.7; }
+    .adminheader .admintasks .toproducts {
+      text-decoration: none;
+      color: #0F100A;
+      margin-left: 0.5rem; }
+      .adminheader .admintasks .toproducts:hover {
         opacity: 0.7; }
 
 .uploadproducts {
@@ -757,13 +759,20 @@
   margin-top: 2rem;
   margin-bottom: 1rem; }
   .uploadproducts .adminmessage {
+    width: 60%;
+    height: 20px;
+    font-size: 0.9rem;
     margin-top: 0.5rem;
     min-height: 1.5rem; }
+    @media screen and (min-width: 768px) {
+      .uploadproducts .adminmessage {
+        width: 40%; } }
   .uploadproducts .adminform {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; }
+    align-items: center;
+    width: 60%; }
     .uploadproducts .adminform .productform {
       width: 100%;
       margin-bottom: 0.4rem;
@@ -773,6 +782,9 @@
       border-bottom: 1px solid #CCAC00; }
       .uploadproducts .adminform .productform:focus {
         outline: none; }
+    @media screen and (min-width: 768px) {
+      .uploadproducts .adminform {
+        width: 40%; } }
     .uploadproducts .adminform .productloadimg {
       width: 100%;
       margin-bottom: 0.4rem;
@@ -807,16 +819,225 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  margin-top: 2rem; }
+  @media screen and (min-width: 576px) {
+    .adminproducts {
+      flex-direction: row;
+      flex-wrap: wrap; } }
   .adminproducts .showproduct {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 90%; }
+    box-shadow: 2px 2px 4px #2F342E;
+    width: 85%;
+    height: 600px;
+    overflow: hidden;
+    padding: 1rem 1rem;
+    margin-bottom: 0.5rem; }
+    @media screen and (min-width: 576px) {
+      .adminproducts .showproduct {
+        width: 45%;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem; } }
+    @media screen and (min-width: 768px) {
+      .adminproducts .showproduct {
+        width: 30%;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem; } }
     .adminproducts .showproduct img {
       height: 250px;
       width: 150px; }
+    .adminproducts .showproduct .producttext {
+      margin: 0.1rem; }
+      .adminproducts .showproduct .producttext .headlineproduct {
+        font-weight: bold; }
+    .adminproducts .showproduct .editdeletebtn {
+      margin: 0.5rem 0;
+      font-size: 1.3rem; }
+      .adminproducts .showproduct .editdeletebtn .editbtn {
+        padding-right: 1rem; }
+        .adminproducts .showproduct .editdeletebtn .editbtn .fas {
+          color: #2F342E; }
+          .adminproducts .showproduct .editdeletebtn .editbtn .fas:hover {
+            color: #CCAC00; }
+      .adminproducts .showproduct .editdeletebtn .deletebtn {
+        padding-left: 1rem; }
+        .adminproducts .showproduct .editdeletebtn .deletebtn .fas {
+          color: #2F342E; }
+          .adminproducts .showproduct .editdeletebtn .deletebtn .fas:hover {
+            color: #CC0000; }
+
+#removeusersection {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  #removeusersection .removeuserdiv {
+    margin: 1rem 1rem;
+    width: 90%;
+    display: flex;
+    flex-direction: column; }
+    @media screen and (min-width: 576px) {
+      #removeusersection .removeuserdiv {
+        width: 70%; } }
+    @media screen and (min-width: 768px) {
+      #removeusersection .removeuserdiv {
+        width: 50%; } }
+    #removeusersection .removeuserdiv .removeuserheader {
+      text-align: center;
+      margin-bottom: 0.2rem; }
+    #removeusersection .removeuserdiv .removeuserwarning {
+      font-size: 0.6rem;
+      margin-bottom: 0.5rem; }
+    #removeusersection .removeuserdiv .removeuser {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      box-shadow: 2px 2px 4px #2F342E;
+      margin-bottom: 0.5rem;
+      padding: 0.5rem; }
+      #removeusersection .removeuserdiv .removeuser .usertoremove {
+        text-transform: capitalize;
+        font-size: 0.9rem; }
+        #removeusersection .removeuserdiv .removeuser .usertoremove .headlineuser {
+          font-weight: bold; }
+      #removeusersection .removeuserdiv .removeuser .removeuserbtn {
+        color: #2F342E; }
+        #removeusersection .removeuserdiv .removeuser .removeuserbtn:hover {
+          color: #CC0000; }
+
+.backtotopdiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  text-align: center; }
+  .backtotopdiv .backtotopbtn {
+    text-decoration: none;
+    width: 50%;
+    background-color: #2F342E;
+    border: 1px solid transparent;
+    color: #f9f9f9;
+    padding: 0.4rem;
+    cursor: pointer;
+    font-size: 0.8rem;
+    letter-spacing: 0.3ch;
+    font-family: "Roboto", sans-serif; }
+    .backtotopdiv .backtotopbtn:hover {
+      transition: all 0.5s ease;
+      border: 1px solid #CCAC00;
+      background-color: #CCAC00;
+      color: #f9f9f9; }
+    .backtotopdiv .backtotopbtn:focus {
+      outline: none; }
+
+.admineditpage {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2F342E; }
+  .admineditpage .admineditform {
+    height: 90%;
+    width: 90%;
+    background-color: #f9f9f9;
+    box-shadow: 2px 2px 4px #2F342E;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto", sans-serif; }
+    @media screen and (min-width: 576px) {
+      .admineditpage .admineditform {
+        width: 70%; } }
+    @media screen and (min-width: 992px) {
+      .admineditpage .admineditform {
+        width: 50%; } }
+    .admineditpage .admineditform .adminedit {
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+      .admineditpage .admineditform .adminedit .productform {
+        width: 100%;
+        margin-bottom: 0.4rem;
+        padding: 3px 0 2px 3px;
+        background-color: #f9f9f9;
+        border: none;
+        border-bottom: 1px solid #CCAC00; }
+        .admineditpage .admineditform .adminedit .productform:focus {
+          outline: none; }
+      .admineditpage .admineditform .adminedit .productloadimg {
+        width: 100%;
+        margin-bottom: 0.4rem;
+        padding: 3px 0 2px 3px;
+        background-color: #f9f9f9;
+        border: none;
+        border-bottom: 1px solid #CCAC00;
+        cursor: pointer;
+        font: 400 13.3333px Arial;
+        color: #000; }
+        .admineditpage .admineditform .adminedit .productloadimg .fas {
+          color: #CCAC00; }
+      .admineditpage .admineditform .adminedit img {
+        height: 250px;
+        width: 150px; }
+      .admineditpage .admineditform .adminedit .producttext {
+        margin: 0.1rem; }
+        .admineditpage .admineditform .adminedit .producttext .headlineproduct {
+          font-weight: bold; }
+      .admineditpage .admineditform .adminedit .editproductbtn {
+        margin-top: 0.5rem;
+        width: 100%;
+        background-color: #2F342E;
+        border: 1px solid transparent;
+        color: #f9f9f9;
+        padding: 0.4rem;
+        cursor: pointer;
+        letter-spacing: 0.3ch;
+        font-family: "Roboto", sans-serif; }
+        @media screen and (min-width: 576px) {
+          .admineditpage .admineditform .adminedit .editproductbtn {
+            width: 60%; } }
+        .admineditpage .admineditform .adminedit .editproductbtn:hover {
+          transition: all 0.5s ease;
+          border: 1px solid #CCAC00;
+          background-color: #CCAC00;
+          color: #f9f9f9; }
+        .admineditpage .admineditform .adminedit .editproductbtn:focus {
+          outline: none; }
+
+.backtoadmindiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.5rem 0;
+  text-align: center;
+  width: 90%; }
+  .backtoadmindiv .backtoadminbtn {
+    text-decoration: none;
+    width: 100%;
+    background-color: #2F342E;
+    border: 1px solid transparent;
+    color: #f9f9f9;
+    padding: 0.4rem;
+    cursor: pointer;
+    font-size: 0.8rem;
+    letter-spacing: 0.3ch;
+    font-family: "Roboto", sans-serif; }
+    @media screen and (min-width: 576px) {
+      .backtoadmindiv .backtoadminbtn {
+        width: 60%; } }
+    .backtoadmindiv .backtoadminbtn:hover {
+      transition: all 0.5s ease;
+      border: 1px solid #CCAC00;
+      background-color: #CCAC00;
+      color: #f9f9f9; }
+    .backtoadmindiv .backtoadminbtn:focus {
+      outline: none; }
 
 #cartHeader {
   display: flex;

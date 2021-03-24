@@ -1,0 +1,111 @@
+@import 'helper/mixins.scss';
+@import 'helper/variables.scss';
+
+.admineditpage {
+    height: 100vh;
+    @include flexdisplay;
+    background-color: $bubblifygrey;
+    .admineditform {
+        height: 90%;
+        width: 90%;
+        background-color: $bubblifylight;
+        box-shadow: 2px 2px 4px #2F342E;
+        padding: 0.5rem;
+        @include flexcolumn;
+        font-family: $fontroboto;
+        @include mobile-large {
+            width: 70%;
+        }
+        @include ipad-large {
+            width: 50%;
+        }
+        .adminedit {
+            width: 90%;
+            @include flexcolumn;
+            .productform {
+                @include productforms;
+            }
+            .productloadimg {
+                width: 100%;
+                margin-bottom: 0.4rem;
+                padding: 3px 0 2px 3px;
+                background-color: #f9f9f9;
+                border: none;
+                border-bottom: 1px solid #CCAC00;
+                cursor: pointer;
+                font: 400 13.3333px Arial;
+                color: #000;
+                
+                .fas {
+                    color: $bubblifygold;
+                }
+            }
+            img {
+                height: 250px;
+                width: 150px;
+            }
+            .producttext {
+                margin: 0.1rem;
+                .headlineproduct {
+                    font-weight: bold;
+                }           
+            }
+            .editproductbtn {
+                margin-top: 0.5rem;
+                width: 100%;
+                @include mobile-large {
+                    width: 60%;
+                }
+                background-color: $bubblifygrey;
+                border: 1px solid transparent;
+                // border-radius: 10px;
+                color: $bubblifylight;
+                padding: 0.4rem;
+                cursor: pointer;
+                letter-spacing: 0.3ch;
+                font-family: $fontroboto;
+                &:hover {
+                    transition: all 0.5s ease;
+                    border: 1px solid $bubblifygold;
+                    background-color: $bubblifygold;
+                    color: $bubblifylight;
+                }
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+    }
+}
+
+.backtoadmindiv {
+    @include flexdisplay;
+    margin: 1.5rem 0;
+    text-align: center;
+    width: 90%;
+    .backtoadminbtn {
+    text-decoration: none;
+    width: 100%;
+    @include mobile-large {
+        width: 60%;
+    }
+    background-color: $bubblifygrey;
+    border: 1px solid transparent;
+    // border-radius: 10px;
+    color: $bubblifylight;
+    padding: 0.4rem;
+    cursor: pointer;
+    font-size: 0.8rem;
+    letter-spacing: 0.3ch;
+    font-family: $fontroboto;
+        &:hover {
+            transition: all 0.5s ease;
+            border: 1px solid $bubblifygold;
+            background-color: $bubblifygold;
+            color: $bubblifylight;
+        }
+        &:focus {
+            outline: none;
+        }
+    }
+}
