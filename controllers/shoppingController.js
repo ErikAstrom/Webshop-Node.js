@@ -6,6 +6,8 @@ const showShoppingCart = async (req, res) => {
     const userId = user;
     let errors = [];
     try {
+        const userCart = await Cart.findOne({ userId: req.user.user._id });
+        
         const cart = await Cart.findOne({ userId }).populate('userId');
         if (cart.products.length == 0) {
         return errors.push({msg: "Your cart is empty."}), 
@@ -13,13 +15,15 @@ const showShoppingCart = async (req, res) => {
                 cartitems: cart.products,
                 user: req.user.user,
                 totalAmount: cart.totalAmount,
-                errors
+                errors,
+                userCart: userCart
             })
         } else {
             res.render("user/shoppingCart.ejs", {
                 cartitems: cart.products,
                 user: req.user.user,
                 totalAmount: cart.totalAmount,
+                userCart: userCart
             })
         }
     } catch (err) {

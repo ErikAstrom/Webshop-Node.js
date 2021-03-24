@@ -1,10 +1,14 @@
-const { User } = require("../models/user");
+const {User} = require("../models/user");
 const Product = require("../models/product");
+const Cart = require("../models/cart");
+
 const fs = require("fs");
 const path = require("path");
 
 const renderProducts = async (req, res) => {
   try {
+    const userCart = await Cart.findOne({ userId: req.user.user._id });
+
     const spain = await Product.find({"origin": 'spain'}).collation({locale: "en", strength: 2});
     const italy = await Product.find({"origin": 'italy'}).collation({locale: "en", strength: 2});
     const france = await Product.find({"origin": 'france'}).collation({locale: "en", strength: 2});
@@ -39,7 +43,8 @@ const renderProducts = async (req, res) => {
       productsToShow,
       products,
       sortPrice,
-      origin
+      origin,
+      userCart: userCart
     })
   } catch (err) {
       console.log(err)
@@ -77,9 +82,13 @@ const renderProducts = async (req, res) => {
 
 const editProduct = async (req, res) => {
   try {
+    const userCart = await Cart.findOne({ userId: req.user.user._id });
     const product = await Product.findOne({ _id: req.params.id });
 
-    res.render("admin/adminEdit.ejs", { product: product });
+    res.render("admin/adminEdit.ejs", { 
+      product: product, 
+      userCart: userCart
+    });
   } catch (err) {
     console.log(err);
   }
