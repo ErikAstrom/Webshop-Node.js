@@ -92,6 +92,27 @@ body {
         align-items: center;
       }
 
+      .totalInCart {
+        position: absolute;
+        top: 13px;
+        right: 6px;
+        background-color: $bubblifygold;
+        border-radius: 10px;
+        padding: 1px 4px 1.5px 4px;
+        text-align: center;
+        font-size: 0.5rem;
+        font-weight: bold;
+        @media screen and (min-width: 768px) {
+          font-size: 0.6rem;
+          top: 17px;
+          right: 83px;
+        }
+        @media screen and (min-width: 1024px) {
+          padding: 1.5px 5px 2px 5px;
+          top: 22px;
+        }
+      }
+
       a {
         color: $bubblifyblack;
         font-size: 0.7rem;
