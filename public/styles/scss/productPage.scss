@@ -5,33 +5,20 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: 75px;
+        margin-top: 90px;
         @include ipad-xl {
-          margin-top: 90px;
-        }
-
-        .heroText {
-            width: 50%;
-            height: 90px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            @include ipad-small {
-                width: 100%;
-            }
-
-            p {
-                font-size: 1.2rem;
-            }
+          margin-top: 100px;
         }
 
         .productHero {
             width: 100%;
-            height: 440px;
+            height: 580px;
             background-image: url(/../images/hero2.jpg);
-            background-position: center;
+            background-position-x: 57%;
             background-size: cover;
+            @include ipad-small {
+                height: 450px;
+            }
             @include ipad-xl {
                 height: 700px;
             }
@@ -53,6 +40,7 @@
             justify-content: center;
             background-color: #f9f9f9af;
             box-shadow: 0 0 10px black;
+            border-radius: 5px;
             z-index: 1;
             @include ipad-small {
                 top: 20%;
@@ -78,6 +66,7 @@
                 color: $bubblifylight;
                 padding: 5px 15px;
                 margin-top: 15px;
+                border-radius: 10px;
             }
         }
 

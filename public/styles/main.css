@@ -245,28 +245,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 75px; }
+  margin-top: 90px; }
   @media screen and (min-width: 1024px) {
     .productMain {
-      margin-top: 90px; } }
-  .productMain .heroText {
-    width: 50%;
-    height: 90px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center; }
-    @media screen and (min-width: 768px) {
-      .productMain .heroText {
-        width: 100%; } }
-    .productMain .heroText p {
-      font-size: 1.2rem; }
+      margin-top: 100px; } }
   .productMain .productHero {
     width: 100%;
-    height: 440px;
+    height: 580px;
     background-image: url(/../images/hero2.jpg);
-    background-position: center;
+    background-position-x: 57%;
     background-size: cover; }
+    @media screen and (min-width: 768px) {
+      .productMain .productHero {
+        height: 450px; } }
     @media screen and (min-width: 1024px) {
       .productMain .productHero {
         height: 700px; } }
@@ -286,6 +277,7 @@
     justify-content: center;
     background-color: #f9f9f9af;
     box-shadow: 0 0 10px black;
+    border-radius: 5px;
     z-index: 1; }
     @media screen and (min-width: 768px) {
       .productMain .productMessage {
@@ -307,7 +299,8 @@
       background-color: #0F100A;
       color: #f9f9f9;
       padding: 5px 15px;
-      margin-top: 15px; }
+      margin-top: 15px;
+      border-radius: 10px; }
   .productMain .ourProductsDiv {
     width: 100%;
     height: 80px;
@@ -1212,7 +1205,7 @@ body {
   font-size: 1rem; }
   body header {
     width: 100%;
-    height: 75px;
+    height: 90px;
     position: fixed;
     top: 0;
     background-color: #f9f9f9;
@@ -1220,27 +1213,27 @@ body {
     z-index: 2; }
     @media screen and (min-width: 1024px) {
       body header {
-        height: 90px; } }
+        height: 100px; } }
     body header .sparkles {
       position: absolute;
-      bottom: 16%;
+      bottom: 24%;
       left: 50%;
       transform: translateX(-50%);
       color: #2F342E;
       font-size: 0.6rem;
-      letter-spacing: 1.5px;
+      letter-spacing: 1.3px;
       padding-right: 5px; }
       @media screen and (min-width: 768px) {
         body header .sparkles {
-          font-size: 0.65rem; } }
+          font-size: 0.7rem; } }
       @media screen and (min-width: 1024px) {
         body header .sparkles {
-          bottom: 20%;
+          bottom: 23%;
           font-size: 0.85rem;
           letter-spacing: 2px; } }
     body header h1 {
       position: absolute;
-      top: 20%;
+      top: 25%;
       left: 50%;
       margin-left: -77px;
       font-family: 'Abhaya Libre', serif;
@@ -1248,8 +1241,7 @@ body {
       letter-spacing: 5px; }
       @media screen and (min-width: 1024px) {
         body header h1 {
-          font-size: 2.15rem;
-          top: 20%; } }
+          font-size: 2.15rem; } }
       body header h1 a {
         color: black;
         text-decoration: none;
@@ -1258,7 +1250,7 @@ body {
       float: left;
       position: absolute;
       top: 50%;
-      margin-top: -6.5px;
+      transform: translateY(-25%);
       margin-left: 15px;
       font-size: 0.7rem; }
       @media screen and (min-width: 768px) {
@@ -1285,7 +1277,7 @@ body {
           align-items: center; } }
       body header .headerLinksDiv .totalInCart {
         position: absolute;
-        top: 13px;
+        top: 21px;
         right: 6px;
         background-color: #CCAC00;
         border-radius: 10px;
@@ -1296,12 +1288,12 @@ body {
         @media screen and (min-width: 768px) {
           body header .headerLinksDiv .totalInCart {
             font-size: 0.6rem;
-            top: 17px;
+            top: 24px;
             right: 83px; } }
         @media screen and (min-width: 1024px) {
           body header .headerLinksDiv .totalInCart {
             padding: 1.5px 5px 2px 5px;
-            top: 22px; } }
+            top: 28px; } }
       body header .headerLinksDiv a {
         color: #0F100A;
         font-size: 0.7rem;
@@ -1323,26 +1315,6 @@ body {
     @media screen and (min-width: 1024px) {
       body .indexMain {
         margin-top: 90px; } }
-    body .indexMain .heroText {
-      width: 85%;
-      height: 75px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center; }
-      @media screen and (min-width: 768px) {
-        body .indexMain .heroText {
-          width: 100%; } }
-      body .indexMain .heroText p {
-        color: #0F100A;
-        font-size: 0.9rem;
-        font-style: italic;
-        text-shadow: 0.9px -0.7px #ccad0052;
-        letter-spacing: 2.5px; }
-        @media screen and (min-width: 768px) {
-          body .indexMain .heroText p {
-            font-size: 1rem;
-            letter-spacing: 3.5px; } }
     body .indexMain .indexHero {
       width: 100%;
       overflow: hidden; }
@@ -1403,6 +1375,9 @@ body {
           @media screen and (min-width: 1024px) {
             body .indexMain .indexProductContainer .indexProductDiv img {
               width: 50%; } }
+          @media screen and (min-width: 1200px) {
+            body .indexMain .indexProductContainer .indexProductDiv img {
+              width: 30%; } }
         body .indexMain .indexProductContainer .indexProductDiv .productTitle {
           font-weight: bold; }
         body .indexMain .indexProductContainer .indexProductDiv div {
