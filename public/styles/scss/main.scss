@@ -27,30 +27,30 @@ body {
   //Header styling, all pages
   header {
     width: 100%;
-    height: 75px;
+    height: 90px;
     position: fixed;
     top: 0;
     background-color: $bubblifylight;
     border-bottom: 5px double black;
     z-index: 2;
     @include ipad-xl {
-      height: 90px;
+      height: 100px;
     }
 
     .sparkles {
       position: absolute;
-      bottom: 16%;
+      bottom: 24%;
       left: 50%;
       transform: translateX(-50%);
       color: $bubblifygrey;
       font-size: 0.6rem;
-      letter-spacing: 1.5px;
+      letter-spacing: 1.3px;
       padding-right: 5px;
       @include ipad-small {
-        font-size: 0.65rem;
+        font-size: 0.7rem;
       }
       @include ipad-xl {
-        bottom: 20%;
+        bottom: 23%;
         font-size: 0.85rem;
         letter-spacing: 2px;
       }
@@ -58,7 +58,7 @@ body {
     
     h1 {
       position: absolute;
-      top: 20%;
+      top: 25%;
       left: 50%;
       margin-left: -77px;
       font-family: 'Abhaya Libre', serif;
@@ -66,7 +66,6 @@ body {
       letter-spacing: 5px;
       @include ipad-xl {
         font-size: 2.15rem;
-        top: 20%;
       }
 
       a {
@@ -80,7 +79,7 @@ body {
       float: left;
       position: absolute;
       top: 50%;
-      margin-top: -6.5px;
+      transform: translateY(-25%);
       margin-left: 15px;
       font-size: 0.7rem;
       @include ipad-small {
@@ -116,7 +115,7 @@ body {
 
       .totalInCart {
         position: absolute;
-        top: 13px;
+        top: 21px;
         right: 6px;
         background-color: $bubblifygold;
         border-radius: 10px;
@@ -126,12 +125,12 @@ body {
         font-weight: bold;
         @include ipad-small {
           font-size: 0.6rem;
-          top: 17px;
+          top: 24px;
           right: 83px;
         }
         @include ipad-xl {
           padding: 1.5px 5px 2px 5px;
-          top: 22px;
+          top: 28px;
         }
       }
 
@@ -162,30 +161,6 @@ body {
     margin-top: 75px;
     @include ipad-xl {
       margin-top: 90px;
-    }
-
-    .heroText {
-      width: 85%;
-      height: 75px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      @include ipad-small {
-        width: 100%;
-      }
-
-      p {
-        color: $bubblifyblack;
-        font-size: 0.9rem;
-        font-style: italic;
-        text-shadow: 0.9px -0.7px #ccad0052;
-        letter-spacing: 2.5px;
-        @include ipad-small {
-          font-size: 1rem;
-          letter-spacing: 3.5px;
-        }
-      }
     }
 
     .indexHero {
@@ -262,6 +237,9 @@ body {
           }
           @include ipad-xl {
             width: 50%;
+          }
+          @include desktop {
+            width: 30%;
           }
         }
         
