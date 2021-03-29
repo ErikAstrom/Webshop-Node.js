@@ -1,0 +1,73 @@
+@import 'helper/mixins';
+@import 'helper/variables';
+
+.thankYouMain {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 90px;
+    @include ipad-xl {
+        margin-top: 100px;
+    }
+
+    .thankYouDiv {
+        width: 65%;
+        position: absolute;
+        top: 30%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        text-align: center;
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        .mail {
+            font-style: italic;
+        }
+    }
+
+    .thankYouImg {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        filter: opacity(5%);
+        margin-top: 40%;
+        @include mobile-large {
+            margin-top: 30%;
+        }
+        @include ipad-small {
+            margin-top: 25%;
+        }
+        @include desktop {
+            margin-top: 5%;
+        }
+
+        img {
+            width: 100%;
+            @include mobile-large {
+                width: 80%;
+            }
+            @include ipad-small {
+                width: 60%;
+            }
+            @include desktop {
+                width: 30%;
+            }
+        }
+    }
+
+    .thankYouNavigation {
+        width: 85%;
+        position: absolute;
+        top: 3%;
+        @include anchorTags;
+    }
+}
