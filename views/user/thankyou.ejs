@@ -1,16 +1,17 @@
 <%- include("../partials/header") %>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
-<h1>Thank you</h1>
-<p>You've got mail</p>
+<div class="thankYouMain">
+    <div class="thankYouDiv">
+        <h1>Thank you!</h1>
+        <p>Your order confirmation has been sent to:</p>
+        <p class="mail"><%= user.email %></p>
+    </div>
+
+    <div class="thankYouImg"><img src="images/cheers.png"></div>
+
+    <div class="thankYouNavigation">
+        <a href="/">Go to Start</a>
+    </div>
+</div>
 
 <%- include("../partials/footer") %>

@@ -1282,6 +1282,68 @@
       border: none;
       cursor: pointer; }
 
+.thankYouMain {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 90px; }
+  @media screen and (min-width: 1024px) {
+    .thankYouMain {
+      margin-top: 100px; } }
+  .thankYouMain .thankYouDiv {
+    width: 65%;
+    position: absolute;
+    top: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    text-align: center; }
+    .thankYouMain .thankYouDiv h1 {
+      margin-bottom: 10px; }
+    .thankYouMain .thankYouDiv .mail {
+      font-style: italic; }
+  .thankYouMain .thankYouImg {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    filter: opacity(5%);
+    margin-top: 40%; }
+    @media screen and (min-width: 576px) {
+      .thankYouMain .thankYouImg {
+        margin-top: 30%; } }
+    @media screen and (min-width: 768px) {
+      .thankYouMain .thankYouImg {
+        margin-top: 25%; } }
+    @media screen and (min-width: 1200px) {
+      .thankYouMain .thankYouImg {
+        margin-top: 5%; } }
+    .thankYouMain .thankYouImg img {
+      width: 100%; }
+      @media screen and (min-width: 576px) {
+        .thankYouMain .thankYouImg img {
+          width: 80%; } }
+      @media screen and (min-width: 768px) {
+        .thankYouMain .thankYouImg img {
+          width: 60%; } }
+      @media screen and (min-width: 1200px) {
+        .thankYouMain .thankYouImg img {
+          width: 30%; } }
+  .thankYouMain .thankYouNavigation {
+    width: 85%;
+    position: absolute;
+    top: 3%; }
+    .thankYouMain .thankYouNavigation a {
+      text-decoration: none;
+      color: black; }
+      .thankYouMain .thankYouNavigation a:hover {
+        opacity: 0.7; }
+
 * {
   margin: 0px;
   padding: 0px;
