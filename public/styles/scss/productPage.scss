@@ -2,6 +2,8 @@
 @import 'helper/variables';
 
     .productMain {
+        width: 100%;
+        min-height: 100vh;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -283,7 +285,13 @@
                     justify-content: center;
 
                     img {
-                        width: 50%;
+                        width: 40%;
+                        @include mobile-large {
+                            width: 25%;
+                        }
+                        @include ipad-small {
+                            width: 35%;
+                        }
                         @include ipad-xl {
                             width: 45%;
                         }

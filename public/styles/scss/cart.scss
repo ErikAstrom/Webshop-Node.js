@@ -23,7 +23,7 @@
 }
 
 #cartContainer {
-min-height:500px;
+min-height: 100vh;
 align-items: center;
 justify-content: center;
 display:flex;
@@ -96,32 +96,32 @@ flex-direction: column;
         justify-content: flex-start;
         width:70%;
         padding-bottom: 15px;
-        margin-bottom:70px;
+        margin-bottom:110px;
         border-bottom: 10px double $bubblifygold;
         @media screen and (max-width: 576px) {
             width:80%;
         }
-            a {
-                font-size: large;
-                color:$bubblifygold;
-                background-color: $bubblifygrey;
-                display:flex;
-                padding:15px;
-                margin-right: 10px;
-                border-radius: 10px;
-                max-height: 54px;
-                
+        a {
+            font-size: large;
+            color:$bubblifygold;
+            background-color: $bubblifygrey;
+            display:flex;
+            padding:15px;
+            margin-right: 10px;
+            border-radius: 10px;
+            max-height: 54px;
+            
+            i {
+                margin-left: 5px; 
+                transition: transform .7s ease-in-out;
+            }
+            &:hover {
+                opacity: 1;
                 i {
-                    margin-left: 5px; 
-                    transition: transform .7s ease-in-out;
-                }
-                &:hover {
-                    opacity: 1;
-                    i {
-                        transform: rotate(360deg)
-                    }
+                    transform: rotate(360deg)
                 }
             }
+        }
     }
 }
 

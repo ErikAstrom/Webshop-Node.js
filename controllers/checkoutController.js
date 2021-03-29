@@ -47,7 +47,6 @@ const customerCheckout = async (req, res) => {
 }
 
 const thankYou = async (req, res) => {
-  const userCart = await Cart.findOne({ userId: req.user.user._id });
   const user = await User.findOne({ _id: req.user.user._id });
   const userId = user;
   const cart = await Cart.findOne({ userId });
@@ -59,7 +58,6 @@ const thankYou = async (req, res) => {
 
     res.render("user/thankyou.ejs", {
       user: req.user.user,
-      userCart: userCart
     })
     
     const msg = await {

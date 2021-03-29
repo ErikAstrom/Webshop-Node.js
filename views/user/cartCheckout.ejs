@@ -1,27 +1,35 @@
 <%- include("../partials/header") %>
 
-<a href="/myShoppingCart">Back to Shopping Cart</a>
 
-<h1>Welcome to the checkout, <%= user.username %></h1>
-<h4>Please make sure everything is in order. If you need to change anything, you can return to the shopping cart <a href="/myShoppingCart">here.</a></h4>
-<br>
-<h2>Order Summary</h2><br>
-<% cartitems.forEach( product => { %>
-    <div>
-        <p><strong><%= product.title %></strong></p>
-        <p>Price per bottle: <%= product.price %> sek</p>
-        <p>Quantity: <%= product.quantity %></p>
-        <p>Totalprice: <%= product.total %> sek</p>
-    </div><br>
-<% }) %>
+<div class="checkoutMain">
+    <div class="navBtn">
+        <a href="/myShoppingCart">Back to Shopping Cart</a>
+    </div>
 
-<div>
-    <h4>Total Amount for all items: <%= totalAmount %> sek</h4>
-</div><br>
+    <h1>Order summary</h1>
 
-<div>
-    <button type="submit" class="checkoutBtn">Proceed to Payment</button>
-</div><br>
+    <div class="orderDiv">
+        <div class="orderDetailsContainer">
+            <% cartitems.forEach( product => { %>
+                <div class="orderDetails">
+                    <p><strong><%= product.title %></strong></p>
+                    <p>Price: <%= product.price %> SEK<span>/btl</span></p>
+                    <p>Quantity: <%= product.quantity %></p>
+                    <p><strong>Total:</strong> <%= product.total %> SEK</p>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+
+    <div class="totalPrice">
+        <p><strong>Order total:</strong> <%= totalAmount %> SEK</p>
+    </div>
+
+    <div class="payBtnDiv">
+        <button type="submit" class="checkoutBtn">Proceed to Payment</button>
+    </div>
+</div>
+
 
 <%- include("../partials/footer") %>
 
