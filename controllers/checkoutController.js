@@ -33,7 +33,8 @@ const customerCheckout = async (req, res) => {
         }),
         mode: "payment"
       });
-
+      user.purchased = true;
+      user.save();
       res.render("user/cartCheckout.ejs", {
         cartitems: cart.products,
         user: req.user.user,
@@ -68,6 +69,9 @@ const thankYou = async (req, res) => {
     };
     sgMail
     .send(msg)
+
+    user.purchased = false;
+    user.save();
   } catch (err) {
     console.log(err);
   }
