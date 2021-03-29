@@ -708,8 +708,8 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  width: 95%;
-  margin: 120px 0px 0px 20px; }
+  width: 100%;
+  padding: 120px 0px 0px 15px; }
   #wishMenu #msgSpan {
     text-align: center;
     letter-spacing: 1px; }
@@ -733,9 +733,8 @@
   margin: 75px 0px 75px 0px;
   min-height: 100vh; }
   #wishWrapper #wishClear {
-    width: 95%;
-    text-align: center;
-    margin-left: 20px; }
+    width: 100%;
+    text-align: center; }
   #wishWrapper a {
     text-decoration: none;
     color: black; }
@@ -1103,8 +1102,8 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  width: 95%;
-  margin: 120px 0px 0px 15px; }
+  width: 100%;
+  padding: 120px 0px 0px 15px; }
   #cartHeader h3 {
     text-align: center;
     padding: 15px;
