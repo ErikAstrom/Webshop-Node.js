@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-
+const verifyPurchase = require("../middleware/thankYouMiddleWare");
 const verifyUser = require("../middleware/verifyUser");
 const { addToCart, showShoppingCart, removeFromCart, clearCartTotal, increaseInCart, decreaseInCart } = require("../controllers/shoppingController");
 const { customerCheckout, thankYou } = require("../controllers/checkoutController");
@@ -21,6 +21,6 @@ router.get("/decreaseInCart/:id", verifyUser, decreaseInCart);
 
 // Checkout pages (Go to payment and Thank you page)
 router.get("/customerCheckout", verifyUser, customerCheckout);
-router.get("/thankyou", verifyUser, thankYou);
+router.get("/thankyou", verifyPurchase, thankYou);
 
 module.exports = router;

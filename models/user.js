@@ -6,6 +6,7 @@ const userSchema = new mongoose.Schema({
   email: { type: String, unique: true },
   password: { type: String },
   password2: {type: String },
+  purchased: {type:Boolean, default:false},
   mailToken: String,
   mailExpiration: Date,
   role: { type: String, default: "customer" },

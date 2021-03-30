@@ -33,7 +33,8 @@ const customerCheckout = async (req, res) => {
         }),
         mode: "payment"
       });
-
+      user.purchased = true;
+      user.save();
       res.render("user/cartCheckout.ejs", {
         cartitems: cart.products,
         user: req.user.user,
@@ -62,12 +63,15 @@ const thankYou = async (req, res) => {
     
     const msg = await {
       to: user.email, 
-      from: "eckedevelopments@gmail.com", 
+      from: "bubblifyinfo@gmail.com", 
       subject: "Order confirmation",
       html: `<h2>Thank you<h2>`
     };
     sgMail
     .send(msg)
+
+    user.purchased = false;
+    user.save();
   } catch (err) {
     console.log(err);
   }
