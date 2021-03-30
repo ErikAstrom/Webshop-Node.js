@@ -32,7 +32,7 @@ const addToWishlist = async (req, res) => {
         const productId = req.params.id;
         const user = await User.findOne({ _id: req.user.user._id });
         user.addWish(productId, user);
-
+        req.flash("warning_msg", "The product was added to your wishlist.")
         res.redirect("back");
          
     } catch (err) {
