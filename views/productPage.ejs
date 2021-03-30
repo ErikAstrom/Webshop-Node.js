@@ -101,24 +101,25 @@
             <div class="productDiv">
                 <div class ="modalHidden">
                     <section class="modalContent">
-                        <span class="closeModal"> &#9747; </span>
-                        <img src="data:image/<%=item.img.contentType%>;base64,<%=item.img.data.toString('base64')%>" alt="Picture of a bottle." />
-                        <%= item.title %>
-                        <p><%= item.description %></p>
-                        <p>Origin: <%= item.origin %></p>
-                        <p>Blend: <%= item.blend %></p>
-                        <p>Price: <%= item.price %> SEK</p>
-                        <% if (locals.user) { %> 
-                            <form action="/addToCart" method="post" >
-                                <input type="text" name="title" value="<%= item.title %>" hidden>
-                                <input type="number" name="quantity" value="1" min="1">
-                                <input type="text" name="productId" value="<%= item._id %>" hidden>
-                                <input type="number" name="price" value="<%= item.price %>" hidden>
-                                <input type="text" name="blend" value="<%= item.blend %>" hidden>
-                                <button type="submit"><i class="fas fa-shopping-cart"></i></button>
-                            </form>
-                        <% } %>
-
+                        <span class="closeModal"><i class="fas fa-times"></i></span>
+                        <div class="productInfo">
+                            <img src="data:image/<%=item.img.contentType%>;base64,<%=item.img.data.toString('base64')%>" alt="Picture of a bottle." />
+                            <%= item.title %>
+                            <p><%= item.description %></p>
+                            <p>Origin: <%= item.origin %></p>
+                            <p>Blend: <%= item.blend %></p>
+                            <p>Price: <%= item.price %> SEK</p>
+                            <% if (locals.user) { %> 
+                                <form action="/addToCart" method="post" >
+                                    <input type="text" name="title" value="<%= item.title %>" hidden>
+                                    <input type="number" name="quantity" value="1" min="1">
+                                    <input type="text" name="productId" value="<%= item._id %>" hidden>
+                                    <input type="number" name="price" value="<%= item.price %>" hidden>
+                                    <input type="text" name="blend" value="<%= item.blend %>" hidden>
+                                    <button type="submit"><i class="fas fa-shopping-cart"></i></button>
+                                </form>
+                            <% } %>
+                        </div>
                     </section>
                 </div>
                 
