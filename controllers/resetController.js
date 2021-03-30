@@ -77,12 +77,12 @@ const submitReset = async (req,res) => {
     try {
     const user = await User.findOne({ email: email });
     if (password !== password2) {
-      req.flash( "warning_msg", "Passwords do not match"),
-      res.redirect('back');
+      req.flash( "warning_msg", "Passwords do not match")
+      return res.redirect('back');
     }
     if (password.length < 3) {
-      req.flash( "warning_msg", "Password must be atleast 3 characters long."),
-      res.redirect('back');
+      req.flash( "warning_msg", "Password must be atleast 3 characters long.")
+      return res.redirect('back');
     }
     
     const salt = await bcrypt.genSalt(12);

@@ -70,11 +70,11 @@ const addToCart = async (req, res) => {
 
             if (cartItem >- 1) { 
                 let productItem = cart.products[cartItem]; // If product exist in cart, update the quantity 
-                productItem.quantity = quantity;
+                productItem.quantity += +quantity;
                 cart.products[cartItem] = productItem;
 
                 let productTotalPrice = cart.products[cartItem]; // if product exists in cart, update the total price
-                productTotalPrice.total = total;
+                productTotalPrice.total += +total;
                 cart.products[cartItem] = productTotalPrice;
 
                 for (i = 0; i < cart.products.length; i++) { // If product exists in cart, update the total amount
