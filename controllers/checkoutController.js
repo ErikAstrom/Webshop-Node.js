@@ -63,7 +63,7 @@ const thankYou = async (req, res) => {
     
     const msg = await {
       to: user.email, 
-      from: "eckedevelopments@gmail.com", 
+      from: "bubblifyinfo@gmail.com", 
       subject: "Order confirmation",
       html: `<h2>Thank you<h2>`
     };

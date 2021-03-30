@@ -32,8 +32,8 @@ const submitReset = async (req,res) => {
 
     const msg = await {
         to: user.email, 
-        from: "eckedevelopments@gmail.com", 
-        subject: "Daytell reset password link",
+        from: "bubblifyinfo@gmail.com", 
+        subject: "Bubblify",
         text: "Instructions for creating a new password",
         html: `<h2> Click  <a href="http://localhost:${process.env.PORT}/reset/${user.mailToken}"> <b>here</b></a> to create a new password </h2>`,
       };
