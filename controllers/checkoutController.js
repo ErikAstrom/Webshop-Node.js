@@ -23,8 +23,8 @@ const customerCheckout = async (req, res) => {
     }
 
     const session = await stripe.checkout.sessions.create({
-      success_url: `http://localhost:${process.env.PORT}/thankyou`,
-      cancel_url: `http://localhost:${process.env.PORT}/customerCheckout`,
+      success_url: `https://bubblifywebshop.herokuapp.com/thankyou`,
+      cancel_url: `https://bubblifywebshop.herokuapp.com/customerCheckout`,
       payment_method_types: ["card"],
       billing_address_collection: "required",
       line_items: cart.products.map((product) => {
