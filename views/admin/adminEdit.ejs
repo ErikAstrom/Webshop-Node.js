@@ -3,7 +3,7 @@
     <div class="admineditform">
         <form action="/adminEdit" method="post" enctype="multipart/form-data" class="adminedit">
             <img src="data:image/<%=product.img.contentType%>;base64,<%=product.img.data.toString('base64')%>" alt="" />
-            <label type="button" class="productloadimg">Change image
+            <label type="button" class="productloadimg">Change image (required)
             <input type="file" name="image" style="display: none;" required>
             </label>
             <p class="producttext"><span class="headlineproduct">Title:</span></p>
@@ -19,7 +19,7 @@
             <input type="text" name="id" value="<%= product._id %>" hidden>
             <button type="submit" class="editproductbtn">Add changes</button>
         </form>
-        <div class="backtoadmindiv"><a href="/admin" class="backtoadminbtn">Back to adminpage</a></div>
+        <div class="backtoadmindiv"><a href="/admin" class="backtoadminbtn">Cancel without changes</a></div>
     </div>
 </div>
 <%- include("../partials/secondfooter") %>
