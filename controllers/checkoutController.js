@@ -23,6 +23,7 @@ const customerCheckout = async (req, res) => {
         success_url: `http://localhost:${process.env.PORT}/thankyou`,
         cancel_url: `http://localhost:${process.env.PORT}/customerCheckout`,
         payment_method_types: ["card"],
+        billing_address_collection: 'required',
         line_items: cart.products.map((product) => {
           return {
             name: product.title,
