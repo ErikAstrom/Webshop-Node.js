@@ -1,0 +1,226 @@
+@import "helper/mixins.scss";
+@import "helper/variables.scss";
+
+.adminheader {
+  margin-top: 7rem;
+  @include flexcolumn;
+  .adminstarttext {
+    .adminname {
+      text-transform: capitalize;
+    }
+  }
+  .admintasks {
+    margin-top: 1rem;
+    .todeleteuser {
+      text-decoration: none;
+      color: $bubblifyblack;
+      margin-right: 0.5rem;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+    .toproducts {
+      text-decoration: none;
+      color: $bubblifyblack;
+      margin-left: 0.5rem;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+.uploadproducts {
+  @include flexcolumn;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  .adminmessage {
+    width: 60%;
+    height: 20px;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    min-height: 1.5rem;
+    @include ipad-small {
+      width: 40%;
+    }
+  }
+  .adminform {
+    @include flexcolumn;
+    width: 60%;
+    .productform {
+      @include productforms;
+    }
+    @include ipad-small {
+      width: 40%;
+    }
+    .productloadimg {
+      width: 100%;
+      margin-bottom: 0.4rem;
+      padding: 3px 0 2px 3px;
+      background-color: #f9f9f9;
+      border: none;
+      border-bottom: 1px solid #ccac00;
+      cursor: pointer;
+      font: 400 13.3333px Arial;
+      color: #808080;
+
+      .fas {
+        color: $bubblifygold;
+      }
+    }
+    .addadminproduct {
+      margin-top: 0.5rem;
+      width: 200px;
+      background-color: $bubblifygrey;
+      border: 1px solid transparent;
+      // border-radius: 10px;
+      color: $bubblifylight;
+      padding: 0.4rem;
+      cursor: pointer;
+      letter-spacing: 0.3ch;
+      font-family: $fontroboto;
+      &:hover {
+        transition: all 0.5s ease;
+        border: 1px solid $bubblifygold;
+        background-color: $bubblifygold;
+        color: $bubblifylight;
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+
+.adminproducts {
+  @include flexcolumn;
+  @include mobile-large {
+    @include adminshowproducts;
+  }
+  margin-top: 2rem;
+  .showproduct {
+    @include flexcolumn;
+    box-shadow: 2px 2px 4px #2f342e;
+    width: 85%;
+    height: 600px;
+    overflow: hidden;
+    @include mobile-large {
+      width: 45%;
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+    }
+    @include ipad-small {
+      width: 30%;
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+    }
+    padding: 1rem 1rem;
+    margin-bottom: 0.5rem;
+    img {
+      height: 250px;
+      width: 150px;
+    }
+    .producttext {
+      margin: 0.1rem;
+      .headlineproduct {
+        font-weight: bold;
+      }
+    }
+    .editdeletebtn {
+      margin: 0.5rem 0;
+      font-size: 1.3rem;
+      .editbtn {
+        padding-right: 1rem;
+        .fas {
+          color: $bubblifygrey;
+          &:hover {
+            color: $bubblifygold;
+          }
+        }
+      }
+      .deletebtn {
+        padding-left: 1rem;
+        .fas {
+          color: $bubblifygrey;
+          &:hover {
+            color: #cc0000;
+          }
+        }
+      }
+    }
+  }
+}
+
+#removeusersection {
+  @include flexdisplay;
+  .removeuserdiv {
+    margin: 1rem 1rem;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    // justify-content: flex-start;
+    @include mobile-large {
+      width: 70%;
+    }
+    @include ipad-small {
+      width: 50%;
+    }
+    .removeuserheader {
+      text-align: center;
+      margin-bottom: 0.2rem;
+    }
+    .removeuserwarning {
+      font-size: 0.6rem;
+      margin-bottom: 0.5rem;
+    }
+    .removeuser {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      box-shadow: 2px 2px 4px #2f342e;
+      margin-bottom: 0.5rem;
+      padding: 0.5rem;
+      .usertoremove {
+        text-transform: capitalize;
+        font-size: 0.9rem;
+        .headlineuser {
+          font-weight: bold;
+        }
+      }
+      .removeuserbtn {
+        color: $bubblifygrey;
+        &:hover {
+          color: #cc0000;
+        }
+      }
+    }
+  }
+}
+
+.backtotopdiv {
+  @include flexdisplay;
+  margin-bottom: 1rem;
+  text-align: center;
+  .backtotopbtn {
+    text-decoration: none;
+    width: 200px;
+    background-color: $bubblifygrey;
+    border: 1px solid transparent;
+    // border-radius: 10px;
+    color: $bubblifylight;
+    padding: 0.4rem;
+    cursor: pointer;
+    font-size: 0.8rem;
+    letter-spacing: 0.3ch;
+    font-family: $fontroboto;
+    &:hover {
+      transition: all 0.5s ease;
+      border: 1px solid $bubblifygold;
+      background-color: $bubblifygold;
+      color: $bubblifylight;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}

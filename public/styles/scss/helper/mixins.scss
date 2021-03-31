@@ -1,0 +1,109 @@
+// Global Mixins
+@mixin flexdisplay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexcolumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexspacearound {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+// Mixins for Register, Login, Reset pages.
+@mixin registerandloginform {
+  width: 100%;
+  margin-bottom: 0.4rem;
+  padding: 3px 0 2px 3px;
+  background-color: #f9f9f9;
+  border: none;
+  border-bottom: 1px solid #ccac00;
+  &:focus {
+    outline: none;
+  }
+}
+
+@mixin formmessages {
+  max-width: 50%;
+  font-size: 0.6rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+//Mixin for a tags
+@mixin anchorTags {
+  a {
+    text-decoration: none;
+    color: black;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+// Mixin for Wishlist
+@mixin wishListWrap {
+  flex-direction: row;
+  flex-wrap: wrap;
+  .wishItem {
+    border-bottom: none;
+    margin-bottom: 10px;
+  }
+}
+
+// Mixin for adminpage
+@mixin productforms {
+  width: 100%;
+  margin-bottom: 0.4rem;
+  padding: 3px 0 2px 3px;
+  background-color: #f9f9f9;
+  border: none;
+  border-bottom: 1px solid #ccac00;
+  &:focus {
+    outline: none;
+  }
+}
+
+@mixin adminshowproducts {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+// Media Query
+@mixin mobile-large {
+  @media screen and (min-width: 576px) {
+    @content;
+  }
+}
+
+@mixin ipad-small {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin ipad-large {
+  @media screen and (min-width: 992px) {
+    @content;
+  }
+}
+
+@mixin ipad-xl {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: 1200px) {
+    @content;
+  }
+}

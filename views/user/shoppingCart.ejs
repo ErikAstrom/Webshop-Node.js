@@ -1,0 +1,64 @@
+<%- include("../partials/header") %>
+    <div id="cartHeader">
+        <span><a href="/productPage">Continue Shopping</a></span>
+        <h3>
+            <%= user.username %>'s cart:
+        </h3>
+        <span id="msgSpan">
+            <%- include("../helpers/errorMessage") %>
+                <%- include("../helpers/messages") %>
+        </span>
+    </div>
+    <div id="cartContainer">
+
+        <% if (cartitems.length> 0) { %>
+            <table id="cartTable">
+                <tr>
+                    <th>Title</th>
+                    <th>Blend</th>
+                    <th>PPU</th>
+                    <th>Quantity</th>
+                    <th>Item total</th>
+                </tr>
+                <% cartitems.forEach(product=> { %>
+                    <tr>
+                        <td><b>
+                                <%= product.title %>
+                            </b></td>
+                        <td>
+                            <%= product.blend %>
+                        </td>
+                        <td>
+                            <%= product.price %> SEK
+                        </td>
+                        <td>
+                            <a href="/decreaseInCart/<%= product.id %>"><i class="fas fa-minus-square"></i></a>
+                            <%= product.quantity %>
+                                <a href="/increaseInCart/<%= product.id %>"><i class="fas fa-plus-square"></i></a>
+                        </td>
+                        <td>
+                            <%= product.total %> SEK
+                                <a href="/removeFromCart/<%= product.id %>"> <i class="fas fa-times-circle "></i></a>
+                        </td>
+                    </tr>
+                    <% }) %>
+
+
+
+                        <% if (totalAmount>= 1) { %>
+                            <th id="thTotal">Cart total: <%= totalAmount %> SEK </th>
+                            <% } %>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th> <a href="/clearCartTotal">Clear all <i class="fas fa-times-circle"></i></a></th>
+            </table>
+
+            <div id="cartFooter">
+                <a href="/customerCheckout">Checkout <i class="fas fa-cash-register"></i></a>
+
+
+            </div>
+            <% } %>
+    </div>
+    <%- include("../partials/footer") %>

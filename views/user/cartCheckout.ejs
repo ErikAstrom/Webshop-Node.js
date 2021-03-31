@@ -1,0 +1,49 @@
+<%- include("../partials/header") %>
+
+
+    <div class="checkoutMain">
+        <div class="navBtn">
+            <a href="/myShoppingCart">Back to Shopping Cart</a>
+        </div>
+
+        <h1>Order summary</h1>
+
+        <div class="orderDiv">
+            <div class="orderDetailsContainer">
+                <% cartitems.forEach( product=> { %>
+                    <div class="orderDetails">
+                        <p><strong>
+                                <%= product.title %>
+                            </strong></p>
+                        <p>Price: <%= product.price %> SEK<span>/btl</span></p>
+                        <p>Quantity: <%= product.quantity %>
+                        </p>
+                        <p><strong>Total:</strong>
+                            <%= product.total %> SEK
+                        </p>
+                    </div>
+                    <% }) %>
+            </div>
+        </div>
+
+        <div class="totalPrice">
+            <p><strong>Order total:</strong>
+                <%= totalAmount %> SEK
+            </p>
+        </div>
+
+        <div class="payBtnDiv">
+            <button type="submit" class="checkoutBtn">Proceed to Payment</button>
+        </div>
+    </div>
+
+
+    <%- include("../partials/footer") %>
+
+        <script src="https://js.stripe.com/v3/"></script>
+        <script>
+            let stripe = Stripe('pk_test_51ILlk5A4cjb7v0LJ2qQ6WPlVDhaO6qHJZDuNagUhqanLSzfA2DGKCbdULhbngJBYDRunfGv3o8kMK7Okd9yAzbG900WhYHDwz9');
+            document.querySelector(".checkoutBtn").addEventListener("click", () => {
+                stripe.redirectToCheckout({ sessionId: "<%= sessionId %>" });
+            })
+        </script>

@@ -1,2 +1,15 @@
 node_modules
 .env
+login.css
+register.css
+productPage.css
+reset.css
+mixins.css
+variables.css
+wishlist.css
+resetpassword.css
+admin.css
+adminEdit.css
+cart.css
+checkout.css
+thankyou.css

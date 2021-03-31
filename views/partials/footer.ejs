@@ -1,3 +1,16 @@
+<footer>
+    <div class="footerContactDiv">
+        <p><span><i class="fas fa-phone-square-alt"></i></span> +46-123 456 78</p>
+        <p><strong>Bubblify</strong></p>
+        <p><span><i class="fas fa-envelope"></i></span> info@bubblify.se</p>
+    </div>
 
+    <div class="footerContactDiv">
+        <% if (locals.user) { %>
+            <a href="/logout">Log Out</a>
+            <% } %>
+    </div>
+</footer>
 </body>
+
 </html>

@@ -1,9 +1,25 @@
-<%- include("../partials/header") %>
+<%- include("../partials/secondheader") %>
 
-<form action="/register" method="post">
-    <input type="text" name="username" placeholder="Username">
-    <input type="password" name="password" placeholder="Password">
-    <input type="email" name="email" placeholder="E-mail">
-    <button type="submit">Go</button>
-</form>
-<%- include("../partials/footer") %>
+    <div class="registerpage">
+        <div class="registerform">
+            <div class="registerheader">
+                <h1 class="registerlogo">bubblify</h1>
+            </div>
+            <div class="registererror">
+                <%- include("../helpers/errorMessage") %>
+            </div>
+            <form action="/register" method="post" class="register">
+                <input type="text" name="username" class="registername" placeholder="Username">
+                <input type="email" name="email" class="registeremail" placeholder="Email">
+                <input type="password" name="password" class="registerpassword" placeholder="Create Password">
+                <input type="password" name="password2" class="registerpassword2" placeholder="Confirm Password">
+                <button type="submit" class="registerbtn">Register</button>
+            </form>
+
+            <div class="tologin">
+                <a href="/login" class="tologinbtn">I am already a member</a>
+            </div>
+
+        </div>
+    </div>
+    <%- include("../partials/secondfooter") %>
