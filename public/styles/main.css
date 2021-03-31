@@ -8,7 +8,7 @@
     height: 80%;
     width: 70%;
     background-color: #f9f9f9;
-    box-shadow: 2px 2px 4px #2F342E;
+    box-shadow: 2px 2px 4px #2f342e;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -29,7 +29,7 @@
         margin-bottom: 1rem;
         font-size: 3rem;
         letter-spacing: 0.1ch;
-        color: #0F100A;
+        color: #0f100a;
         font-family: "Abhaya Libre", serif;
         font-weight: bold; }
     .registerpage .registerform .registererror {
@@ -48,7 +48,7 @@
         padding: 3px 0 2px 3px;
         background-color: #f9f9f9;
         border: none;
-        border-bottom: 1px solid #CCAC00; }
+        border-bottom: 1px solid #ccac00; }
         .registerpage .registerform .register .registername:focus {
           outline: none; }
       .registerpage .registerform .register .registeremail {
@@ -57,7 +57,7 @@
         padding: 3px 0 2px 3px;
         background-color: #f9f9f9;
         border: none;
-        border-bottom: 1px solid #CCAC00; }
+        border-bottom: 1px solid #ccac00; }
         .registerpage .registerform .register .registeremail:focus {
           outline: none; }
       .registerpage .registerform .register .registerpassword {
@@ -66,7 +66,7 @@
         padding: 3px 0 2px 3px;
         background-color: #f9f9f9;
         border: none;
-        border-bottom: 1px solid #CCAC00; }
+        border-bottom: 1px solid #ccac00; }
         .registerpage .registerform .register .registerpassword:focus {
           outline: none; }
       .registerpage .registerform .register .registerpassword2 {
@@ -75,13 +75,13 @@
         padding: 3px 0 2px 3px;
         background-color: #f9f9f9;
         border: none;
-        border-bottom: 1px solid #CCAC00; }
+        border-bottom: 1px solid #ccac00; }
         .registerpage .registerform .register .registerpassword2:focus {
           outline: none; }
       .registerpage .registerform .register .registerbtn {
         margin-top: 0.5rem;
         width: 100%;
-        background-color: #2F342E;
+        background-color: #2f342e;
         border: 1px solid transparent;
         color: #f9f9f9;
         padding: 0.4rem;
@@ -90,8 +90,8 @@
         cursor: pointer; }
         .registerpage .registerform .register .registerbtn:hover {
           transition: all 0.5s ease;
-          border: 1px solid #CCAC00;
-          background-color: #CCAC00;
+          border: 1px solid #ccac00;
+          background-color: #ccac00;
           color: #f9f9f9; }
         .registerpage .registerform .register .registerbtn:focus {
           outline: none; }
@@ -105,14 +105,14 @@
         font-size: 0.5rem;
         font-weight: bold;
         letter-spacing: 0.2ch;
-        color: #2F342E;
+        color: #2f342e;
         background-color: #f9f9f9;
-        border: 1px solid #2F342E;
+        border: 1px solid #2f342e;
         padding: 0.3rem 0.5rem 0.3rem 0.5rem;
         transition: background-color 0.5s ease; }
         .registerpage .registerform .tologin .tologinbtn:hover {
           transition: all 0.5s ease;
-          background-color: #2F342E;
+          background-color: #2f342e;
           color: #f9f9f9; }
         .registerpage .registerform .tologin .tologinbtn:focus {
           outline: none; }
@@ -127,7 +127,7 @@
     height: 80%;
     width: 70%;
     background-color: #f9f9f9;
-    box-shadow: 2px 2px 4px #2F342E;
+    box-shadow: 2px 2px 4px #2f342e;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -148,7 +148,7 @@
         margin-bottom: 1rem;
         font-size: 3rem;
         letter-spacing: 0.1ch;
-        color: #0F100A;
+        color: #0f100a;
         font-family: "Abhaya Libre", serif;
         font-weight: bold; }
     .loginpage .loginform .loginmessages {
@@ -167,7 +167,7 @@
         padding: 3px 0 2px 3px;
         background-color: #f9f9f9;
         border: none;
-        border-bottom: 1px solid #CCAC00; }
+        border-bottom: 1px solid #ccac00; }
         .loginpage .loginform .login .loginemail:focus {
           outline: none; }
       .loginpage .loginform .login .loginpassword {
@@ -176,13 +176,13 @@
         padding: 3px 0 2px 3px;
         background-color: #f9f9f9;
         border: none;
-        border-bottom: 1px solid #CCAC00; }
+        border-bottom: 1px solid #ccac00; }
         .loginpage .loginform .login .loginpassword:focus {
           outline: none; }
       .loginpage .loginform .login .loginbtn {
         margin-top: 0.5rem;
         width: 100%;
-        background-color: #2F342E;
+        background-color: #2f342e;
         border: 1px solid transparent;
         color: #f9f9f9;
         padding: 0.4rem;
@@ -191,8 +191,8 @@
         cursor: pointer; }
         .loginpage .loginform .login .loginbtn:hover {
           transition: all 0.5s ease;
-          border: 1px solid #CCAC00;
-          background-color: #CCAC00;
+          border: 1px solid #ccac00;
+          background-color: #ccac00;
           color: #f9f9f9; }
         .loginpage .loginform .login .loginbtn:focus {
           outline: none; }
@@ -210,14 +210,14 @@
         font-size: 0.5rem;
         font-weight: bold;
         letter-spacing: 0.2ch;
-        color: #2F342E;
+        color: #2f342e;
         background-color: #f9f9f9;
-        border: 1px solid #2F342E;
+        border: 1px solid #2f342e;
         padding: 0.3rem 0.5rem 0.3rem 0.5rem;
         transition: background-color 0.5s ease; }
         .loginpage .loginform .registerandresetbtn .toregisterbtn:hover {
           transition: all 0.5s ease;
-          background-color: #2F342E;
+          background-color: #2f342e;
           color: #f9f9f9; }
         .loginpage .loginform .registerandresetbtn .toregisterbtn:focus {
           outline: none; }
@@ -229,14 +229,14 @@
         font-size: 0.5rem;
         font-weight: bold;
         letter-spacing: 0.2ch;
-        color: #2F342E;
+        color: #2f342e;
         background-color: #f9f9f9;
-        border: 1px solid #2F342E;
+        border: 1px solid #2f342e;
         padding: 0.3rem 0.5rem 0.3rem 0.5rem;
         transition: background-color 0.5s ease; }
         .loginpage .loginform .registerandresetbtn .toresetbtn:hover {
           transition: all 0.5s ease;
-          background-color: #2F342E;
+          background-color: #2f342e;
           color: #f9f9f9; }
         .loginpage .loginform .registerandresetbtn .toresetbtn:focus {
           outline: none; }
@@ -298,7 +298,7 @@
           font-size: 1.15rem; } }
     .productMain .productMessage a {
       text-decoration: none;
-      background-color: #0F100A;
+      background-color: #0f100a;
       color: #f9f9f9;
       padding: 5px 15px;
       margin-top: 15px;
@@ -341,7 +341,7 @@
         margin-top: 10px; }
         .productMain .sortContainer .sortDropdown .sortBtn:hover {
           font-weight: lighter;
-          background-color: #0F100A;
+          background-color: #0f100a;
           color: #f9f9f9; }
       .productMain .sortContainer .sortDropdown .sortLinks {
         width: 100%;
@@ -352,7 +352,7 @@
           display: block;
           width: 100%;
           font-size: 0.8rem;
-          color: #0F100A;
+          color: #0f100a;
           text-decoration: none; }
           .productMain .sortContainer .sortDropdown .sortLinks a:hover {
             text-decoration: underline; }
@@ -383,7 +383,7 @@
       align-items: center;
       padding-bottom: 40px;
       margin: 15px 0;
-      border-bottom: 1px solid #0F100A;
+      border-bottom: 1px solid #0f100a;
       cursor: pointer; }
       @media screen and (min-width: 768px) {
         .productMain .productContainer .productDiv {
@@ -405,7 +405,7 @@
         background-color: rgba(0, 0, 0, 0.8); }
         .productMain .productContainer .productDiv .modalVisible .modalContent {
           background-color: #f9f9f9;
-          border: 1px solid #0F100A;
+          border: 1px solid #0f100a;
           max-width: 60%;
           font-weight: bold;
           text-align: center;
@@ -454,7 +454,7 @@
               .productMain .productContainer .productDiv .modalVisible .modalContent .productInfo form input {
                 width: 40px;
                 border-radius: 10px;
-                border: 1px solid #CCAC00;
+                border: 1px solid #ccac00;
                 text-align: center;
                 padding: 2px 0; }
               .productMain .productContainer .productDiv .modalVisible .modalContent .productInfo form button {
@@ -485,16 +485,16 @@
           margin-top: 5px; }
       .productMain .productContainer .productDiv a {
         font-size: 1.7rem;
-        color: #CCAC00;
+        color: #ccac00;
         text-decoration: none; }
         .productMain .productContainer .productDiv a:hover {
-          color: #FFE79E; }
+          color: #ffe79e; }
       .productMain .productContainer .productDiv form {
         margin-top: 10px; }
         .productMain .productContainer .productDiv form input {
           width: 40px;
           border-radius: 10px;
-          border: 1px solid #CCAC00;
+          border: 1px solid #ccac00;
           text-align: center;
           padding: 2px 0; }
         .productMain .productContainer .productDiv form button {
@@ -514,7 +514,7 @@
         list-style: none;
         font-size: 0.9rem; }
         .productMain .productContainer .paginationDiv .pagination a {
-          color: #0F100A;
+          color: #0f100a;
           text-decoration: none; }
           .productMain .productContainer .paginationDiv .pagination a:hover {
             color: grey; }
@@ -529,7 +529,7 @@
     height: 80%;
     width: 70%;
     background-color: #f9f9f9;
-    box-shadow: 2px 2px 4px #2F342E;
+    box-shadow: 2px 2px 4px #2f342e;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -550,7 +550,7 @@
         margin-bottom: 1rem;
         font-size: 3rem;
         letter-spacing: 0.1ch;
-        color: #0F100A;
+        color: #0f100a;
         font-family: "Abhaya Libre", serif;
         font-weight: bold; }
     .resetformpage .resetform .resetmessages {
@@ -569,7 +569,7 @@
         padding: 3px 0 2px 3px;
         background-color: #f9f9f9;
         border: none;
-        border-bottom: 1px solid #CCAC00; }
+        border-bottom: 1px solid #ccac00; }
         .resetformpage .resetform .reset .resetemail:focus {
           outline: none; }
       .resetformpage .resetform .reset .resetpassword {
@@ -578,13 +578,13 @@
         padding: 3px 0 2px 3px;
         background-color: #f9f9f9;
         border: none;
-        border-bottom: 1px solid #CCAC00; }
+        border-bottom: 1px solid #ccac00; }
         .resetformpage .resetform .reset .resetpassword:focus {
           outline: none; }
       .resetformpage .resetform .reset .resetbtn {
         margin-top: 0.5rem;
         width: 100%;
-        background-color: #2F342E;
+        background-color: #2f342e;
         border: 1px solid transparent;
         color: #f9f9f9;
         padding: 0.4rem;
@@ -593,8 +593,8 @@
         cursor: pointer; }
         .resetformpage .resetform .reset .resetbtn:hover {
           transition: all 0.5s ease;
-          border: 1px solid #CCAC00;
-          background-color: #CCAC00;
+          border: 1px solid #ccac00;
+          background-color: #ccac00;
           color: #f9f9f9; }
         .resetformpage .resetform .reset .resetbtn:focus {
           outline: none; }
@@ -612,20 +612,20 @@
         font-size: 0.5rem;
         font-weight: bold;
         letter-spacing: 0.2ch;
-        color: #2F342E;
+        color: #2f342e;
         background-color: #f9f9f9;
-        border: 1px solid #2F342E;
+        border: 1px solid #2f342e;
         padding: 0.3rem 0.5rem 0.3rem 0.5rem;
         transition: background-color 0.5s ease; }
         .resetformpage .resetform .tologin .tologinbtn:hover {
           transition: all 0.5s ease;
-          background-color: #2F342E;
+          background-color: #2f342e;
           color: #f9f9f9; }
         .resetformpage .resetform .tologin .tologinbtn:focus {
           outline: none; }
 
 .resetpasswordpage {
-  background-color: #2F342E;
+  background-color: #2f342e;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -634,7 +634,7 @@
     height: 80%;
     width: 70%;
     background-color: #f9f9f9;
-    box-shadow: 2px 2px 4px #2F342E;
+    box-shadow: 2px 2px 4px #2f342e;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -655,7 +655,7 @@
         margin-bottom: 1rem;
         font-size: 3rem;
         letter-spacing: 0.1ch;
-        color: #0F100A;
+        color: #0f100a;
         font-family: "Abhaya Libre", serif;
         font-weight: bold; }
     .resetpasswordpage .resetpasswordform .resetpasswordmessages {
@@ -674,7 +674,7 @@
         padding: 3px 0 2px 3px;
         background-color: #f9f9f9;
         border: none;
-        border-bottom: 1px solid #CCAC00; }
+        border-bottom: 1px solid #ccac00; }
         .resetpasswordpage .resetpasswordform .resetpassword .resetpassword1:focus {
           outline: none; }
       .resetpasswordpage .resetpasswordform .resetpassword .resetpassword2 {
@@ -683,13 +683,13 @@
         padding: 3px 0 2px 3px;
         background-color: #f9f9f9;
         border: none;
-        border-bottom: 1px solid #CCAC00; }
+        border-bottom: 1px solid #ccac00; }
         .resetpasswordpage .resetpasswordform .resetpassword .resetpassword2:focus {
           outline: none; }
       .resetpasswordpage .resetpasswordform .resetpassword .resetpasswordbtn {
         margin-top: 0.5rem;
         width: 100%;
-        background-color: #2F342E;
+        background-color: #2f342e;
         border: 1px solid transparent;
         color: #f9f9f9;
         padding: 0.4rem;
@@ -698,8 +698,8 @@
         cursor: pointer; }
         .resetpasswordpage .resetpasswordform .resetpassword .resetpasswordbtn:hover {
           transition: all 0.5s ease;
-          border: 1px solid #CCAC00;
-          background-color: #CCAC00;
+          border: 1px solid #ccac00;
+          background-color: #ccac00;
           color: #f9f9f9; }
         .resetpasswordpage .resetpasswordform .resetpassword .resetpasswordbtn:focus {
           outline: none; }
@@ -805,13 +805,13 @@
     margin-top: 1rem; }
     .adminheader .admintasks .todeleteuser {
       text-decoration: none;
-      color: #0F100A;
+      color: #0f100a;
       margin-right: 0.5rem; }
       .adminheader .admintasks .todeleteuser:hover {
         opacity: 0.7; }
     .adminheader .admintasks .toproducts {
       text-decoration: none;
-      color: #0F100A;
+      color: #0f100a;
       margin-left: 0.5rem; }
       .adminheader .admintasks .toproducts:hover {
         opacity: 0.7; }
@@ -844,7 +844,7 @@
       padding: 3px 0 2px 3px;
       background-color: #f9f9f9;
       border: none;
-      border-bottom: 1px solid #CCAC00; }
+      border-bottom: 1px solid #ccac00; }
       .uploadproducts .adminform .productform:focus {
         outline: none; }
     @media screen and (min-width: 768px) {
@@ -856,16 +856,16 @@
       padding: 3px 0 2px 3px;
       background-color: #f9f9f9;
       border: none;
-      border-bottom: 1px solid #CCAC00;
+      border-bottom: 1px solid #ccac00;
       cursor: pointer;
       font: 400 13.3333px Arial;
       color: #808080; }
       .uploadproducts .adminform .productloadimg .fas {
-        color: #CCAC00; }
+        color: #ccac00; }
     .uploadproducts .adminform .addadminproduct {
       margin-top: 0.5rem;
       width: 200px;
-      background-color: #2F342E;
+      background-color: #2f342e;
       border: 1px solid transparent;
       color: #f9f9f9;
       padding: 0.4rem;
@@ -874,8 +874,8 @@
       font-family: "Roboto", sans-serif; }
       .uploadproducts .adminform .addadminproduct:hover {
         transition: all 0.5s ease;
-        border: 1px solid #CCAC00;
-        background-color: #CCAC00;
+        border: 1px solid #ccac00;
+        background-color: #ccac00;
         color: #f9f9f9; }
       .uploadproducts .adminform .addadminproduct:focus {
         outline: none; }
@@ -895,7 +895,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    box-shadow: 2px 2px 4px #2F342E;
+    box-shadow: 2px 2px 4px #2f342e;
     width: 85%;
     height: 600px;
     overflow: hidden;
@@ -924,15 +924,15 @@
       .adminproducts .showproduct .editdeletebtn .editbtn {
         padding-right: 1rem; }
         .adminproducts .showproduct .editdeletebtn .editbtn .fas {
-          color: #2F342E; }
+          color: #2f342e; }
           .adminproducts .showproduct .editdeletebtn .editbtn .fas:hover {
-            color: #CCAC00; }
+            color: #ccac00; }
       .adminproducts .showproduct .editdeletebtn .deletebtn {
         padding-left: 1rem; }
         .adminproducts .showproduct .editdeletebtn .deletebtn .fas {
-          color: #2F342E; }
+          color: #2f342e; }
           .adminproducts .showproduct .editdeletebtn .deletebtn .fas:hover {
-            color: #CC0000; }
+            color: #cc0000; }
 
 #removeusersection {
   display: flex;
@@ -959,7 +959,7 @@
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      box-shadow: 2px 2px 4px #2F342E;
+      box-shadow: 2px 2px 4px #2f342e;
       margin-bottom: 0.5rem;
       padding: 0.5rem; }
       #removeusersection .removeuserdiv .removeuser .usertoremove {
@@ -968,9 +968,9 @@
         #removeusersection .removeuserdiv .removeuser .usertoremove .headlineuser {
           font-weight: bold; }
       #removeusersection .removeuserdiv .removeuser .removeuserbtn {
-        color: #2F342E; }
+        color: #2f342e; }
         #removeusersection .removeuserdiv .removeuser .removeuserbtn:hover {
-          color: #CC0000; }
+          color: #cc0000; }
 
 .backtotopdiv {
   display: flex;
@@ -981,7 +981,7 @@
   .backtotopdiv .backtotopbtn {
     text-decoration: none;
     width: 200px;
-    background-color: #2F342E;
+    background-color: #2f342e;
     border: 1px solid transparent;
     color: #f9f9f9;
     padding: 0.4rem;
@@ -991,8 +991,8 @@
     font-family: "Roboto", sans-serif; }
     .backtotopdiv .backtotopbtn:hover {
       transition: all 0.5s ease;
-      border: 1px solid #CCAC00;
-      background-color: #CCAC00;
+      border: 1px solid #ccac00;
+      background-color: #ccac00;
       color: #f9f9f9; }
     .backtotopdiv .backtotopbtn:focus {
       outline: none; }
@@ -1002,12 +1002,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #2F342E; }
+  background-color: #2f342e; }
   .admineditpage .admineditform {
     height: 90%;
     width: 90%;
     background-color: #f9f9f9;
-    box-shadow: 2px 2px 4px #2F342E;
+    box-shadow: 2px 2px 4px #2f342e;
     padding: 0.5rem;
     display: flex;
     flex-direction: column;
@@ -1032,7 +1032,7 @@
         padding: 3px 0 2px 3px;
         background-color: #f9f9f9;
         border: none;
-        border-bottom: 1px solid #CCAC00; }
+        border-bottom: 1px solid #ccac00; }
         .admineditpage .admineditform .adminedit .productform:focus {
           outline: none; }
       .admineditpage .admineditform .adminedit .productloadimg {
@@ -1041,12 +1041,12 @@
         padding: 3px 0 2px 3px;
         background-color: #f9f9f9;
         border: none;
-        border-bottom: 1px solid #CCAC00;
+        border-bottom: 1px solid #ccac00;
         cursor: pointer;
         font: 400 13.3333px Arial;
         color: #000; }
         .admineditpage .admineditform .adminedit .productloadimg .fas {
-          color: #CCAC00; }
+          color: #ccac00; }
       .admineditpage .admineditform .adminedit img {
         height: 250px;
         width: 150px; }
@@ -1057,7 +1057,7 @@
       .admineditpage .admineditform .adminedit .editproductbtn {
         margin-top: 0.5rem;
         width: 200px;
-        background-color: #2F342E;
+        background-color: #2f342e;
         border: 1px solid transparent;
         color: #f9f9f9;
         padding: 0.4rem;
@@ -1066,8 +1066,8 @@
         font-family: "Roboto", sans-serif; }
         .admineditpage .admineditform .adminedit .editproductbtn:hover {
           transition: all 0.5s ease;
-          border: 1px solid #CCAC00;
-          background-color: #CCAC00;
+          border: 1px solid #ccac00;
+          background-color: #ccac00;
           color: #f9f9f9; }
         .admineditpage .admineditform .adminedit .editproductbtn:focus {
           outline: none; }
@@ -1082,7 +1082,7 @@
   .backtoadmindiv .backtoadminbtn {
     text-decoration: none;
     width: 200px;
-    background-color: #2F342E;
+    background-color: #2f342e;
     border: 1px solid transparent;
     color: #f9f9f9;
     padding: 0.4rem;
@@ -1092,8 +1092,8 @@
     font-family: "Roboto", sans-serif; }
     .backtoadmindiv .backtoadminbtn:hover {
       transition: all 0.5s ease;
-      border: 1px solid #CCAC00;
-      background-color: #CCAC00;
+      border: 1px solid #ccac00;
+      background-color: #ccac00;
       color: #f9f9f9; }
     .backtoadmindiv .backtoadminbtn:focus {
       outline: none; }
@@ -1141,7 +1141,7 @@
     margin: 0 auto;
     width: 70%;
     min-height: 500px;
-    border-top: 10px double #CCAC00;
+    border-top: 10px double #ccac00;
     padding-top: 20px;
     margin-top: 15px; }
     #cartContainer #cartTable i {
@@ -1179,14 +1179,14 @@
     width: 70%;
     padding-bottom: 15px;
     margin-bottom: 110px;
-    border-bottom: 10px double #CCAC00; }
+    border-bottom: 10px double #ccac00; }
     @media screen and (max-width: 576px) {
       #cartContainer #cartFooter {
         width: 80%; } }
     #cartContainer #cartFooter a {
       font-size: large;
-      color: #CCAC00;
-      background-color: #2F342E;
+      color: #ccac00;
+      background-color: #2f342e;
       display: flex;
       padding: 15px;
       margin-right: 10px;
@@ -1194,7 +1194,7 @@
       max-height: 54px; }
       #cartContainer #cartFooter a i {
         margin-left: 5px;
-        transition: transform .7s ease-in-out; }
+        transition: transform 0.7s ease-in-out; }
       #cartContainer #cartFooter a:hover {
         opacity: 1; }
         #cartContainer #cartFooter a:hover i {
@@ -1228,8 +1228,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-top: 10px double #CCAC00;
-    border-bottom: 10px double #CCAC00;
+    border-top: 10px double #ccac00;
+    border-bottom: 10px double #ccac00;
     margin: 20px 0;
     padding-bottom: 40px; }
     @media screen and (min-width: 1200px) {
@@ -1275,8 +1275,8 @@
   .checkoutMain .payBtnDiv {
     margin-bottom: 20px; }
     .checkoutMain .payBtnDiv button {
-      color: #CCAC00;
-      background-color: #2F342E;
+      color: #ccac00;
+      background-color: #2f342e;
       padding: 10px;
       border-radius: 10px;
       border: none;
@@ -1352,8 +1352,8 @@
 body {
   width: 100%;
   background-color: #f9f9f9;
-  color: #0F100A;
-  font-family: 'Roboto', sans-serif;
+  color: #0f100a;
+  font-family: "Roboto", sans-serif;
   font-size: 1rem; }
   body header {
     width: 100%;
@@ -1371,7 +1371,7 @@ body {
       bottom: 22%;
       left: 50%;
       transform: translateX(-50%);
-      color: #2F342E;
+      color: #2f342e;
       font-size: 0.6rem;
       letter-spacing: 1.2px;
       padding-right: 5px; }
@@ -1388,7 +1388,7 @@ body {
       top: 25%;
       left: 50%;
       margin-left: -77px;
-      font-family: 'Abhaya Libre', serif;
+      font-family: "Abhaya Libre", serif;
       font-size: 2rem;
       letter-spacing: 5px; }
       @media screen and (min-width: 1024px) {
@@ -1411,7 +1411,7 @@ body {
       body header .nameOrAdminDiv p {
         text-transform: uppercase; }
       body header .nameOrAdminDiv a {
-        color: #0F100A;
+        color: #0f100a;
         text-transform: uppercase;
         cursor: pointer; }
         body header .nameOrAdminDiv a:hover {
@@ -1431,7 +1431,7 @@ body {
         position: absolute;
         top: 21px;
         right: 6px;
-        background-color: #CCAC00;
+        background-color: #ccac00;
         border-radius: 10px;
         padding: 1px 4px 1.5px 4px;
         text-align: center;
@@ -1447,7 +1447,7 @@ body {
             padding: 1.5px 5px 2px 5px;
             top: 28px; } }
       body header .headerLinksDiv a {
-        color: #0F100A;
+        color: #0f100a;
         font-size: 0.7rem;
         text-decoration: none;
         text-transform: uppercase;
@@ -1552,14 +1552,14 @@ body {
       padding-bottom: 30px; }
       body .indexMain .indexBrowse a {
         padding: 5px 20px;
-        background-color: #2F342E;
+        background-color: #2f342e;
         color: #f9f9f9;
         font-size: 0.8rem;
         text-decoration: none;
         text-transform: uppercase;
         border-radius: 10px; }
         body .indexMain .indexBrowse a:hover {
-          background-color: #0F100A; }
+          background-color: #0f100a; }
     body .indexMain .indexQuoteText {
       width: 100%;
       height: 140px;
@@ -1567,7 +1567,7 @@ body {
       justify-content: center;
       align-items: center;
       text-align: center;
-      border-top: 2px solid #2F342E; }
+      border-top: 2px solid #2f342e; }
       body .indexMain .indexQuoteText p {
         width: 80%;
         font-size: 0.9rem;
@@ -1584,7 +1584,7 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-    background-color: #2F342E; }
+    background-color: #2f342e; }
     body footer .footerContactDiv {
       width: 100%;
       display: flex;

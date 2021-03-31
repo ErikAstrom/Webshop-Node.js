@@ -1,25 +1,31 @@
 <%- include("../partials/secondheader") %>
-<div class="admineditpage">
-    <div class="admineditform">
-        <form action="/adminEdit" method="post" enctype="multipart/form-data" class="adminedit">
-            <img src="data:image/<%=product.img.contentType%>;base64,<%=product.img.data.toString('base64')%>" alt="" />
-            <label type="button" class="productloadimg">Change image (required)
-            <input type="file" name="image" style="display: none;" required>
-            </label>
-            <p class="producttext"><span class="headlineproduct">Title:</span></p>
-            <input type="text" name="title" id="" value="<%= product.title %>" class="productform" required />
-            <p class="producttext"><span class="headlineproduct">Origin:</span></p>
-            <input type="text" name="origin" id="" value="<%= product.origin %>" class="productform" required/>
-            <p class="producttext"><span class="headlineproduct">Blend:</span></p>
-            <input type="text" name="blend" id="" value="<%= product.blend %>" class="productform" required/>
-            <p class="producttext"><span class="headlineproduct">Description:</span></p>
-            <input type="text" name="description" id="" value="<%= product.description %>" class="productform" required />
-            <p class="producttext"><span class="headlineproduct">Price:</span></p>
-            <input type="number" name="price" id="" value="<%= product.price %>" class="productform" required/>
-            <input type="text" name="id" value="<%= product._id %>" hidden>
-            <button type="submit" class="editproductbtn">Add changes</button>
-        </form>
-        <div class="backtoadmindiv"><a href="/admin" class="backtoadminbtn">Cancel without changes</a></div>
+    <div class="admineditpage">
+        <div class="admineditform">
+            <form action="/adminEdit" method="post" enctype="multipart/form-data" class="adminedit">
+                <img src="data:image/<%=product.img.contentType%>;base64,<%=product.img.data.toString('base64')%>"
+                    alt="" />
+                <label type="button" class="productloadimg">Change image (required)
+                    <input type="file" name="image" style="display: none" required />
+                </label>
+                <p class="producttext"><span class="headlineproduct">Title:</span></p>
+                <input type="text" name="title" id="" value="<%= product.title %>" class="productform" required />
+                <p class="producttext"><span class="headlineproduct">Origin:</span></p>
+                <input type="text" name="origin" id="" value="<%= product.origin %>" class="productform" required />
+                <p class="producttext"><span class="headlineproduct">Blend:</span></p>
+                <input type="text" name="blend" id="" value="<%= product.blend %>" class="productform" required />
+                <p class="producttext">
+                    <span class="headlineproduct">Description:</span>
+                </p>
+                <input type="text" name="description" id="" value="<%= product.description %>" class="productform"
+                    required />
+                <p class="producttext"><span class="headlineproduct">Price:</span></p>
+                <input type="number" name="price" id="" value="<%= product.price %>" class="productform" required />
+                <input type="text" name="id" value="<%= product._id %>" hidden />
+                <button type="submit" class="editproductbtn">Add changes</button>
+            </form>
+            <div class="backtoadmindiv">
+                <a href="/admin" class="backtoadminbtn">Cancel without changes</a>
+            </div>
+        </div>
     </div>
-</div>
-<%- include("../partials/secondfooter") %>
+    <%- include("../partials/secondfooter") %>
