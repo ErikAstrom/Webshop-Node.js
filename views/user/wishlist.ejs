@@ -1,24 +1,30 @@
 <%- include("../partials/header") %>
 
-<div id="wishMenu">
-  <span><a href="/productPage">Back to products</a></span>
-  <h3><%= user.username %>'s wishlist</h3>
-  <span id="msgSpan">
-    <%- include("../helpers/messages") %>
-    <%- include("../helpers/errorMessage") %> 
-  </span>
-</div>
+  <div id="wishMenu">
+    <span><a href="/productPage">Back to products</a></span>
+    <h3>
+      <%= user.username %>'s wishlist
+    </h3>
+    <span id="msgSpan">
+      <%- include("../helpers/messages") %>
+        <%- include("../helpers/errorMessage") %>
+    </span>
+  </div>
 
-<div id="wishWrapper">
+  <div id="wishWrapper">
 
-  <% wishes.forEach(wish => { %>
-    <div class="wishItem">
-      <a href="/wishlistDelete/<%= wish.id %>"><i class="fa fa-times" aria-hidden="true"></i>
-      </a>
+    <% wishes.forEach(wish=> { %>
+      <div class="wishItem">
+        <a href="/wishlistDelete/<%= wish.id %>"><i class="fa fa-times" aria-hidden="true"></i>
+        </a>
         <img src="data:image/<%=wish.img.contentType%>;base64,<%=wish.img.data.toString('base64')%>" alt="" />
-        <h4><%= wish.title %></h4>
-        <p><%= wish.price %> SEK</p>
-        <form action="/addToCart" method="post" >
+        <h4>
+          <%= wish.title %>
+        </h4>
+        <p>
+          <%= wish.price %> SEK
+        </p>
+        <form action="/addToCart" method="post">
           <input type="text" name="title" value="<%= wish.title %>" hidden>
           <input type="number" name="quantity" value="1" hidden>
           <input type="text" name="productId" value="<%= wish._id %>" hidden>
@@ -28,11 +34,11 @@
           </button>
         </form>
 
-    </div>
+      </div>
 
-  <% }) %>
-  <% if (wishes != '') { %>
-    <div id="wishClear"><a href="/wishlistRemoveAll">Clear your Wishlist</a></div>
-    <% } %>
-</div>
-<%- include("../partials/footer") %>
+      <% }) %>
+        <% if (wishes !='' ) { %>
+          <div id="wishClear"><a href="/wishlistRemoveAll">Clear your Wishlist</a></div>
+          <% } %>
+  </div>
+  <%- include("../partials/footer") %>

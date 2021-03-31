@@ -1,32 +1,30 @@
-@import 'register';
-@import 'login';
-@import 'productPage';  
-@import 'reset';
-@import 'resetpassword';
-@import 'wishlist';
-@import 'admin';
-@import 'adminEdit';
-@import 'helper/mixins';
-@import 'helper/variables';
-@import 'cart.scss';
-@import 'checkout.scss';
-@import 'thankyou.scss';
-
+@import "register";
+@import "login";
+@import "productPage";
+@import "reset";
+@import "resetpassword";
+@import "wishlist";
+@import "admin";
+@import "adminEdit";
+@import "helper/mixins";
+@import "helper/variables";
+@import "cart.scss";
+@import "checkout.scss";
+@import "thankyou.scss";
 
 * {
   margin: 0px;
   padding: 0px;
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 
 body {
   width: 100%;
   background-color: $bubblifylight;
   color: $bubblifyblack;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1rem;
 
-  //Header styling, all pages
   header {
     width: 100%;
     height: 90px;
@@ -57,13 +55,13 @@ body {
         letter-spacing: 2px;
       }
     }
-    
+
     h1 {
       position: absolute;
       top: 25%;
       left: 50%;
       margin-left: -77px;
-      font-family: 'Abhaya Libre', serif;
+      font-family: "Abhaya Libre", serif;
       font-size: 2rem;
       letter-spacing: 5px;
       @include ipad-xl {
@@ -85,7 +83,7 @@ body {
       margin-left: 15px;
       font-size: 0.7rem;
       @include ipad-small {
-        font-size: 0.8rem;    
+        font-size: 0.8rem;
       }
 
       p {
@@ -93,7 +91,7 @@ body {
       }
 
       a {
-        color: #0F100A;
+        color: #0f100a;
         text-transform: uppercase;
         cursor: pointer;
 
@@ -111,7 +109,7 @@ body {
       float: right;
       margin-right: 15px;
       @include ipad-small {
-        flex-direction: row; 
+        flex-direction: row;
         align-items: center;
       }
 
@@ -144,7 +142,7 @@ body {
         text-align: end;
         cursor: pointer;
         @include ipad-small {
-          font-size: 0.8rem;    
+          font-size: 0.8rem;
           margin: 0 7px;
         }
 
@@ -155,7 +153,6 @@ body {
     }
   }
 
-  //Startpage styling
   .indexMain {
     min-height: 100vh;
     display: flex;
@@ -169,7 +166,7 @@ body {
     .indexHero {
       width: 100%;
       overflow: hidden;
-  
+
       img {
         height: 660px;
         @include ipad-small {
@@ -204,7 +201,6 @@ body {
         height: 330px;
       }
 
-      
       .indexProductDiv {
         width: 100%;
         display: flex;
@@ -232,7 +228,7 @@ body {
             display: flex;
           }
         }
-    
+
         img {
           width: 22%;
           @include mobile-large {
@@ -248,11 +244,11 @@ body {
             width: 30%;
           }
         }
-        
+
         .productTitle {
           font-weight: bold;
         }
-    
+
         div {
           width: 100%;
           display: flex;
@@ -282,13 +278,13 @@ body {
         text-decoration: none;
         text-transform: uppercase;
         border-radius: 10px;
-  
+
         &:hover {
           background-color: $bubblifyblack;
         }
       }
     }
-  
+
     .indexQuoteText {
       width: 100%;
       height: 140px;
@@ -297,7 +293,7 @@ body {
       align-items: center;
       text-align: center;
       border-top: 2px solid $bubblifygrey;
-  
+
       p {
         width: 80%;
         font-size: 0.9rem;
@@ -310,7 +306,6 @@ body {
     }
   }
 
-  //Footer styling, all pages
   footer {
     width: 100%;
     height: 100px;
@@ -346,4 +341,4 @@ body {
       }
     }
   }
-}       
+}

@@ -1,116 +1,114 @@
-@import 'helper/mixins';
-@import 'helper/variables.scss';
+@import "helper/mixins";
+@import "helper/variables.scss";
 
 .loginpage {
-    background: url(../../images/logbackground.jpg) no-repeat center center/cover;
-    height: 100vh;
-    @include flexdisplay;
-    .loginform {
-        height: 80%;
-        width: 70%;
-        background-color: $bubblifylight;
-        box-shadow: 2px 2px 4px #2F342E;
-        @include flexcolumn;
-        font-family: $fontroboto;
-        @include ipad-large {
-            width: 50%;
-        }
-        .loginheader {
-            width: 100%;
-            border-bottom: 5px double #000;
-            @include flexdisplay;
-            margin-bottom: 3rem;
-            margin-top: 3rem;
-            .loginlogo {
-                margin-bottom: 1rem;
-                font-size: 3rem;
-                letter-spacing: 0.1ch;
-                color: $bubblifyblack;
-                font-family: $fontabhaya;
-                font-weight: bold;
-            }
-        }
-        .loginmessages {
-            @include formmessages;
-        }
-        .login {
-            @include flexcolumn;
-            .loginemail {
-                @include registerandloginform;
-            }
-            .loginpassword {
-                @include registerandloginform;
-            }
-            .loginbtn {
-                margin-top: 0.5rem;
-                width: 100%;
-                background-color: $bubblifygrey;
-                border: 1px solid transparent;
-                color: $bubblifylight;
-                padding: 0.4rem;
-                letter-spacing: 0.3ch;
-                font-family: $fontroboto;
-                cursor: pointer;
-                &:hover {
-                    transition: all 0.5s ease;
-                    border: 1px solid $bubblifygold;
-                    background-color: $bubblifygold;
-                    color: $bubblifylight;
-                }
-                &:focus {
-                    outline: none;
-                }
-            }
-        }
-        .registerandresetbtn {
-            margin: 1.5rem 0 3rem 0;
-            @include flexcolumn;
-            .toregisterbtn {
-                text-align: center;
-                width: 100%;
-                margin-top: 0.5rem;
-                text-decoration: none;
-                font-size: 0.5rem;
-                font-weight: bold;
-                letter-spacing: 0.2ch;
-                color: $bubblifygrey;
-                background-color: $bubblifylight;
-                border: 1px solid #2F342E;
-                padding: 0.3rem 0.5rem 0.3rem 0.5rem;
-                transition: background-color 0.5s ease;
-                &:hover { 
-                    transition: all 0.5s ease;
-                    background-color: $bubblifygrey;
-                    color: $bubblifylight;
-                }
-                &:focus {
-                    outline: none;
-                }
-            }
-            .toresetbtn {
-                text-align: center;
-                width: 100%;
-                margin-top: 0.5rem;
-                text-decoration: none;
-                font-size: 0.5rem;
-                font-weight: bold;
-                letter-spacing: 0.2ch;
-                color: $bubblifygrey;
-                background-color: $bubblifylight;
-                border: 1px solid #2F342E;
-                padding: 0.3rem 0.5rem 0.3rem 0.5rem;
-                transition: background-color 0.5s ease;
-                &:hover { 
-                    transition: all 0.5s ease;
-                    background-color: $bubblifygrey;
-                    color: $bubblifylight;
-                }
-                &:focus {
-                    outline: none;
-                }
-            }
-        }
+  background: url(../../images/logbackground.jpg) no-repeat center center/cover;
+  height: 100vh;
+  @include flexdisplay;
+  .loginform {
+    height: 80%;
+    width: 70%;
+    background-color: $bubblifylight;
+    box-shadow: 2px 2px 4px #2f342e;
+    @include flexcolumn;
+    font-family: $fontroboto;
+    @include ipad-large {
+      width: 50%;
     }
+    .loginheader {
+      width: 100%;
+      border-bottom: 5px double #000;
+      @include flexdisplay;
+      margin-bottom: 3rem;
+      margin-top: 3rem;
+      .loginlogo {
+        margin-bottom: 1rem;
+        font-size: 3rem;
+        letter-spacing: 0.1ch;
+        color: $bubblifyblack;
+        font-family: $fontabhaya;
+        font-weight: bold;
+      }
+    }
+    .loginmessages {
+      @include formmessages;
+    }
+    .login {
+      @include flexcolumn;
+      .loginemail {
+        @include registerandloginform;
+      }
+      .loginpassword {
+        @include registerandloginform;
+      }
+      .loginbtn {
+        margin-top: 0.5rem;
+        width: 100%;
+        background-color: $bubblifygrey;
+        border: 1px solid transparent;
+        color: $bubblifylight;
+        padding: 0.4rem;
+        letter-spacing: 0.3ch;
+        font-family: $fontroboto;
+        cursor: pointer;
+        &:hover {
+          transition: all 0.5s ease;
+          border: 1px solid $bubblifygold;
+          background-color: $bubblifygold;
+          color: $bubblifylight;
+        }
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+    .registerandresetbtn {
+      margin: 1.5rem 0 3rem 0;
+      @include flexcolumn;
+      .toregisterbtn {
+        text-align: center;
+        width: 100%;
+        margin-top: 0.5rem;
+        text-decoration: none;
+        font-size: 0.5rem;
+        font-weight: bold;
+        letter-spacing: 0.2ch;
+        color: $bubblifygrey;
+        background-color: $bubblifylight;
+        border: 1px solid #2f342e;
+        padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+        transition: background-color 0.5s ease;
+        &:hover {
+          transition: all 0.5s ease;
+          background-color: $bubblifygrey;
+          color: $bubblifylight;
+        }
+        &:focus {
+          outline: none;
+        }
+      }
+      .toresetbtn {
+        text-align: center;
+        width: 100%;
+        margin-top: 0.5rem;
+        text-decoration: none;
+        font-size: 0.5rem;
+        font-weight: bold;
+        letter-spacing: 0.2ch;
+        color: $bubblifygrey;
+        background-color: $bubblifylight;
+        border: 1px solid #2f342e;
+        padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+        transition: background-color 0.5s ease;
+        &:hover {
+          transition: all 0.5s ease;
+          background-color: $bubblifygrey;
+          color: $bubblifylight;
+        }
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
 }
-
-

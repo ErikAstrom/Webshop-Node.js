@@ -1,167 +1,205 @@
 <%- include("./partials/header") %>
 
-<main class="productMain">
-    <div class="productHero"></div>
+    <main class="productMain">
+        <div class="productHero"></div>
 
-    <% if (warning_msg != '') { %>
-        <div class="productMessage">
-            <%- include("./helpers/messages") %>
-            <a href="/productPage">OK</a>
-        </div>
-    <% } %>
-
-    <div class="ourProductsDiv">
-        <p class="ourProductsText">Our products</p>
-    </div>
-
-    <div class="sortContainer">
-        <div class="sortDropdown">
-            <button class="sortBtn">By price</button>
-            <div class="sortLinks">
-                <a href="/productPage/?page=<%=(productsToShow/limitPerPage)%>&&price=1">Low - High</a>
-                <a href="/productPage/?page=<%=(productsToShow/limitPerPage)%>&&price=-1">High - Low</a>
+        <% if (warning_msg !='' ) { %>
+            <div class="productMessage">
+                <%- include("./helpers/messages") %>
+                    <a href="/productPage">OK</a>
             </div>
-        </div>
-        <div class="sortDropdown">
-            <button class="sortBtn">By origin</button>
-            <div class="sortLinks">
-                <a href="/productPage/?origin=spain">Spain</a>
-                <a href="/productPage/?origin=france">France</a>
-                <a href="/productPage/?origin=italy">Italy</a>
-            </div>
-        </div>
-    </div>
+            <% } %>
 
-    <div class="productContainer">
-    <% if (origin == null) { %>
-        <% products.forEach(product => { %>
-            <div class="productDiv">
-                <div class ="modalHidden">
-                    <section class="modalContent">
-                        <span class="closeModal"><i class="fas fa-times"></i></span>
-                        <div class="productInfo">
-                            <img src="data:image/<%=product.img.contentType%>;base64,<%=product.img.data.toString('base64')%>" alt="Picture of a bottle." />
-                            <%= product.title %>
-                            <p><%= product.description %></p>
-                            <p>Origin: <%= product.origin %></p>
-                            <p>Blend: <%= product.blend %></p>
-                            <p>Price: <%= product.price %> SEK</p>
-                            <% if (locals.user) { %>
-                                <form action="/addToCart" method="post" >
-                                    <input type="text" name="title" value="<%= product.title %>" hidden>
-                                    <input type="number" name="quantity" value="1" min="1">
-                                    <input type="text" name="productId" value="<%= product._id %>" hidden>
-                                    <input type="number" name="price" value="<%= product.price %>" hidden>
-                                    <input type="text" name="blend" value="<%= product.blend %>" hidden>
-                                    <button type="submit"><i class="fas fa-shopping-cart"></i></button>
-                                </form>
-                            <% } %>
-                        </div>
-                    </section>
+                <div class="ourProductsDiv">
+                    <p class="ourProductsText">Our products</p>
                 </div>
 
-                <picture><img src="data:image/<%=product.img.contentType%>;base64,<%=product.img.data.toString('base64')%>" alt="Picture of a bottle." /></picture>
-                <%= product.title %>
-                <p>Origin: <%= product.origin %></p>
-                <p>Blend: <%= product.blend %></p>
-                <p>Price: <%= product.price %> SEK</p>
-                <% if (locals.user)  { %> 
-                    <form action="/addToCart" method="post" >
-                        <input type="text" name="title" value="<%= product.title %>" hidden>
-                        <input type="number" name="quantity" value="1" min="1">
-                        <input type="text" name="productId" value="<%= product._id %>" hidden>
-                        <input type="number" name="price" value="<%= product.price %>" hidden>
-                        <input type="text" name="blend" value="<%= product.blend %>" hidden>
-                        <button type="submit"><i class="fas fa-shopping-cart"></i></button>
-                    </form>
-                
-                    <a href="/wishlist/<%= product._id%>">&#10084</a>
-                <% } %>
-            </div>
-        <% }) %>
-
-        <% if(totalPages> 1){%>
-            <div class="paginationDiv">
-                <ul class="pagination">
-                <%if(page>1){%>
-                    <li>
-                        <a href="/productPage/?page=<%=(productsToShow/limitPerPage)-1 %>&&price=<%= sortPrice %>">&larr; Show less</a>
-                    </li>
-                <%}%>
-                <% if(totalPages !==productsToShow/limitPerPage){%>
-                    <li>
-                        <a href="/productPage/?page=<%=(productsToShow/limitPerPage)+1 %>&&price=<%= sortPrice %>">Show more &rarr;</a>
-                    </li>
-                <% } %>
-                </ul>
-            </div>
-        <%} %>
-    <% } else { %>
-        <% origin.forEach(item => { %>
-            <div class="productDiv">
-                <div class ="modalHidden">
-                    <section class="modalContent">
-                        <span class="closeModal"><i class="fas fa-times"></i></span>
-                        <div class="productInfo">
-                            <img src="data:image/<%=item.img.contentType%>;base64,<%=item.img.data.toString('base64')%>" alt="Picture of a bottle." />
-                            <%= item.title %>
-                            <p><%= item.description %></p>
-                            <p>Origin: <%= item.origin %></p>
-                            <p>Blend: <%= item.blend %></p>
-                            <p>Price: <%= item.price %> SEK</p>
-                            <% if (locals.user) { %> 
-                                <form action="/addToCart" method="post" >
-                                    <input type="text" name="title" value="<%= item.title %>" hidden>
-                                    <input type="number" name="quantity" value="1" min="1">
-                                    <input type="text" name="productId" value="<%= item._id %>" hidden>
-                                    <input type="number" name="price" value="<%= item.price %>" hidden>
-                                    <input type="text" name="blend" value="<%= item.blend %>" hidden>
-                                    <button type="submit"><i class="fas fa-shopping-cart"></i></button>
-                                </form>
-                            <% } %>
+                <div class="sortContainer">
+                    <div class="sortDropdown">
+                        <button class="sortBtn">By price</button>
+                        <div class="sortLinks">
+                            <a href="/productPage/?page=<%=(productsToShow/limitPerPage)%>&&price=1">Low - High</a>
+                            <a href="/productPage/?page=<%=(productsToShow/limitPerPage)%>&&price=-1">High - Low</a>
                         </div>
-                    </section>
+                    </div>
+                    <div class="sortDropdown">
+                        <button class="sortBtn">By origin</button>
+                        <div class="sortLinks">
+                            <a href="/productPage/?origin=spain">Spain</a>
+                            <a href="/productPage/?origin=france">France</a>
+                            <a href="/productPage/?origin=italy">Italy</a>
+                        </div>
+                    </div>
                 </div>
-                
-                <picture><img src="data:image/<%=item.img.contentType%>;base64,<%=item.img.data.toString('base64')%>" alt="Picture of a bottle." /></picture>
-                <%= item.title %>
-                <p>Origin: <%= item.origin %></p>
-                <p>Blend: <%= item.blend %></p>
-                <p>Price: <%= item.price %> SEK</p>
-                <% if (locals.user) { %> 
-                    <form action="/addToCart" method="post" >
-                        <input type="text" name="title" value="<%= item.title %>" hidden>
-                        <input type="number" name="quantity" value="1" min="1">
-                        <input type="text" name="productId" value="<%= item._id %>" hidden>
-                        <input type="number" name="price" value="<%= item.price %>" hidden>
-                        <input type="text" name="blend" value="<%= item.blend %>" hidden>
-                        <button type="submit"><i class="fas fa-shopping-cart"></i></button>
-                    </form>
-                
-                    <a href="/wishlist/<%= item._id%>">&#10084</a>
-                <% } %>
-            </div>
-        <% }) %>
-    <% } %>
-    </div>
-</main>
 
-<%- include("./partials/footer") %>
+                <div class="productContainer">
+                    <% if (origin==null) { %>
+                        <% products.forEach(product=> { %>
+                            <div class="productDiv">
+                                <div class="modalHidden">
+                                    <section class="modalContent">
+                                        <span class="closeModal"><i class="fas fa-times"></i></span>
+                                        <div class="productInfo">
+                                            <img src="data:image/<%=product.img.contentType%>;base64,<%=product.img.data.toString('base64')%>"
+                                                alt="Picture of a bottle." />
+                                            <%= product.title %>
+                                                <p>
+                                                    <%= product.description %>
+                                                </p>
+                                                <p>Origin: <%= product.origin %>
+                                                </p>
+                                                <p>Blend: <%= product.blend %>
+                                                </p>
+                                                <p>Price: <%= product.price %> SEK</p>
+                                                <% if (locals.user) { %>
+                                                    <form action="/addToCart" method="post">
+                                                        <input type="text" name="title" value="<%= product.title %>"
+                                                            hidden>
+                                                        <input type="number" name="quantity" value="1" min="1">
+                                                        <input type="text" name="productId" value="<%= product._id %>"
+                                                            hidden>
+                                                        <input type="number" name="price" value="<%= product.price %>"
+                                                            hidden>
+                                                        <input type="text" name="blend" value="<%= product.blend %>"
+                                                            hidden>
+                                                        <button type="submit"><i
+                                                                class="fas fa-shopping-cart"></i></button>
+                                                    </form>
+                                                    <% } %>
+                                        </div>
+                                    </section>
+                                </div>
+
+                                <picture><img
+                                        src="data:image/<%=product.img.contentType%>;base64,<%=product.img.data.toString('base64')%>"
+                                        alt="Picture of a bottle." /></picture>
+                                <%= product.title %>
+                                    <p>Origin: <%= product.origin %>
+                                    </p>
+                                    <p>Blend: <%= product.blend %>
+                                    </p>
+                                    <p>Price: <%= product.price %> SEK</p>
+                                    <% if (locals.user) { %>
+                                        <form action="/addToCart" method="post">
+                                            <input type="text" name="title" value="<%= product.title %>" hidden>
+                                            <input type="number" name="quantity" value="1" min="1">
+                                            <input type="text" name="productId" value="<%= product._id %>" hidden>
+                                            <input type="number" name="price" value="<%= product.price %>" hidden>
+                                            <input type="text" name="blend" value="<%= product.blend %>" hidden>
+                                            <button type="submit"><i class="fas fa-shopping-cart"></i></button>
+                                        </form>
+
+                                        <a href="/wishlist/<%= product._id%>">&#10084</a>
+                                        <% } %>
+                            </div>
+                            <% }) %>
+
+                                <% if(totalPages> 1){%>
+                                    <div class="paginationDiv">
+                                        <ul class="pagination">
+                                            <%if(page>1){%>
+                                                <li>
+                                                    <a
+                                                        href="/productPage/?page=<%=(productsToShow/limitPerPage)-1 %>&&price=<%= sortPrice %>">&larr;
+                                                        Show less</a>
+                                                </li>
+                                                <%}%>
+                                                    <% if(totalPages !==productsToShow/limitPerPage){%>
+                                                        <li>
+                                                            <a
+                                                                href="/productPage/?page=<%=(productsToShow/limitPerPage)+1 %>&&price=<%= sortPrice %>">Show
+                                                                more &rarr;</a>
+                                                        </li>
+                                                        <% } %>
+                                        </ul>
+                                    </div>
+                                    <%} %>
+                                        <% } else { %>
+                                            <% origin.forEach(item=> { %>
+                                                <div class="productDiv">
+                                                    <div class="modalHidden">
+                                                        <section class="modalContent">
+                                                            <span class="closeModal"><i class="fas fa-times"></i></span>
+                                                            <div class="productInfo">
+                                                                <img src="data:image/<%=item.img.contentType%>;base64,<%=item.img.data.toString('base64')%>"
+                                                                    alt="Picture of a bottle." />
+                                                                <%= item.title %>
+                                                                    <p>
+                                                                        <%= item.description %>
+                                                                    </p>
+                                                                    <p>Origin: <%= item.origin %>
+                                                                    </p>
+                                                                    <p>Blend: <%= item.blend %>
+                                                                    </p>
+                                                                    <p>Price: <%= item.price %> SEK</p>
+                                                                    <% if (locals.user) { %>
+                                                                        <form action="/addToCart" method="post">
+                                                                            <input type="text" name="title"
+                                                                                value="<%= item.title %>" hidden>
+                                                                            <input type="number" name="quantity"
+                                                                                value="1" min="1">
+                                                                            <input type="text" name="productId"
+                                                                                value="<%= item._id %>" hidden>
+                                                                            <input type="number" name="price"
+                                                                                value="<%= item.price %>" hidden>
+                                                                            <input type="text" name="blend"
+                                                                                value="<%= item.blend %>" hidden>
+                                                                            <button type="submit"><i
+                                                                                    class="fas fa-shopping-cart"></i></button>
+                                                                        </form>
+                                                                        <% } %>
+                                                            </div>
+                                                        </section>
+                                                    </div>
+
+                                                    <picture><img
+                                                            src="data:image/<%=item.img.contentType%>;base64,<%=item.img.data.toString('base64')%>"
+                                                            alt="Picture of a bottle." /></picture>
+                                                    <%= item.title %>
+                                                        <p>Origin: <%= item.origin %>
+                                                        </p>
+                                                        <p>Blend: <%= item.blend %>
+                                                        </p>
+                                                        <p>Price: <%= item.price %> SEK</p>
+                                                        <% if (locals.user) { %>
+                                                            <form action="/addToCart" method="post">
+                                                                <input type="text" name="title"
+                                                                    value="<%= item.title %>" hidden>
+                                                                <input type="number" name="quantity" value="1" min="1">
+                                                                <input type="text" name="productId"
+                                                                    value="<%= item._id %>" hidden>
+                                                                <input type="number" name="price"
+                                                                    value="<%= item.price %>" hidden>
+                                                                <input type="text" name="blend"
+                                                                    value="<%= item.blend %>" hidden>
+                                                                <button type="submit"><i
+                                                                        class="fas fa-shopping-cart"></i></button>
+                                                            </form>
+
+                                                            <a href="/wishlist/<%= item._id%>">&#10084</a>
+                                                            <% } %>
+                                                </div>
+                                                <% }) %>
+                                                    <% } %>
+                </div>
+    </main>
+
+    <%- include("./partials/footer") %>
 
 
-<script>
-    let productPicture = document.getElementsByTagName('picture');
-    for (let i = 0; i < productPicture.length; i++) {
-        productPicture[i].addEventListener('click', ()=>{
-            productPicture[i].previousElementSibling.classList.toggle('modalVisible')
-        })
-    }
+        <script>
+            let productPicture = document.getElementsByTagName('picture');
+            for (let i = 0; i < productPicture.length; i++) {
+                productPicture[i].addEventListener('click', () => {
+                    productPicture[i].previousElementSibling.classList.toggle('modalVisible')
+                })
+            }
 
-    let closeModal = document.getElementsByClassName('closeModal');
-    for (let i = 0; i < closeModal.length; i++) {
-        
-        closeModal[i].addEventListener('click', ()=>{
-            closeModal[i].closest('div').classList.toggle('modalVisible')
-        })
-    }    
-</script>
+            let closeModal = document.getElementsByClassName('closeModal');
+            for (let i = 0; i < closeModal.length; i++) {
+
+                closeModal[i].addEventListener('click', () => {
+                    closeModal[i].closest('div').classList.toggle('modalVisible')
+                })
+            }
+        </script>

@@ -5,8 +5,8 @@ const userSchema = new mongoose.Schema({
   username: { type: String, unique: true },
   email: { type: String, unique: true },
   password: { type: String },
-  password2: {type: String },
-  purchased: {type:Boolean, default:false},
+  password2: { type: String },
+  purchased: { type: Boolean, default: false },
   mailToken: String,
   mailExpiration: Date,
   role: { type: String, default: "customer" },
@@ -14,19 +14,19 @@ const userSchema = new mongoose.Schema({
   adminProducts: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'product'
-    }
+      ref: "product",
+    },
   ],
-  wishList: [ // NEW
+  wishList: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'product',
+      ref: "product",
     },
   ],
 });
 
 userSchema.methods.addProduct = async function (productId) {
-  this.adminProducts.push(productId)
+  this.adminProducts.push(productId);
   await this.save();
 };
 
@@ -35,7 +35,7 @@ userSchema.methods.removeProduct = async function (productId) {
   await this.save();
 };
 
-userSchema.methods.addWish = async function (wishId, user) { // New
+userSchema.methods.addWish = async function (wishId, user) {
   for (i = 0; i < user.wishList.length; i++) {
     if (user.wishList[i] == wishId) return;
   }
@@ -44,22 +44,18 @@ userSchema.methods.addWish = async function (wishId, user) { // New
 };
 
 function validateUser(user) {
-
   const schema = Joi.object({
     username: Joi.string().min(5).max(25).required(),
     email: Joi.string().min(2).max(100).required().email(),
     password: Joi.string().min(3).max(35).required(),
-    password2: Joi.string().min(3).max(35)
-
+    password2: Joi.string().min(3).max(35),
   });
-  return schema.validate(user)
-
-};
+  return schema.validate(user);
+}
 
 const User = mongoose.model("user", userSchema);
 
-module.exports = 
-{
+module.exports = {
   User,
-  validateUser
-}
+  validateUser,
+};

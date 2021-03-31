@@ -1,15 +1,19 @@
 <%- include("../partials/header") %>
-<div class="adminheader">
-<h1 class="adminstarttext">Admin page for <span class="adminname"><%= user.username %></span></h1>
-<div class="admintasks">
-    <a href="#removeusersection" class="todeleteuser">Delete User</a>
-    <a href="/productPage" class="toproducts">To Productpage</a>
-</div>
-</div>
+    <div class="adminheader">
+        <h1 class="adminstarttext">Admin page for <span class="adminname">
+                <%= user.username %>
+            </span></h1>
+        <div class="admintasks">
+            <a href="#removeusersection" class="todeleteuser">Delete User</a>
+            <a href="/productPage" class="toproducts">To Productpage</a>
+        </div>
+    </div>
 
-<div class="uploadproducts">
-    <h4 class="addproductheader">Add New Product</h4>
-    <div class="adminmessage"><%- include("../helpers/messages") %></div>
+    <div class="uploadproducts">
+        <h4 class="addproductheader">Add New Product</h4>
+        <div class="adminmessage">
+            <%- include("../helpers/messages") %>
+        </div>
         <form action="/admin" method="POST" enctype="multipart/form-data" class="adminform">
             <input type="text" name="title" placeholder="Product title" class="productform" required />
             <input type="text" name="description" placeholder="Product description" class="productform" required />
@@ -17,49 +21,65 @@
             <input type="text" name="origin" placeholder="Product origin country" class="productform" required />
             <input type="text" name="blend" placeholder="Product grape blend" class="productform" required />
             <label type="button" class="productloadimg">Product image upload (required)
-            <i class="fas fa-file-image" aria-hidden="true"></i>
-            <input type="file" name="image" style="display: none;" required>
+                <i class="fas fa-file-image" aria-hidden="true"></i>
+                <input type="file" name="image" style="display: none;" required>
             </label>
             <button type="submit" class="addadminproduct">Add Product</button>
         </form>
-</div>
-<div class="adminproducts"> 
-<% products.forEach(product => { %>
-    
-        <div class="showproduct">
-            <img src="data:image/<%=product.img.contentType%>;base64,<%=product.img.data.toString('base64')%>" alt="" />
-            <p class="producttext"><span class="headlineproduct">Title:</span> <%= product.title %></p>
-            <p class="producttext"><span class="headlineproduct">Origin:</span> <%= product.origin %></p>
-            <p class="producttext"><span class="headlineproduct">Blend:</span> <%= product.blend %></p>
-            <p class="producttext"><span class="headlineproduct">Description:</span><p><%= product.description %></p></p>
-            <p class="producttext"><span class="headlineproduct">Price:</span> <%= product.price %> SEK</p>
-            <div class="editdeletebtn">
-            <a href="/adminEdit/<%= product.id %>" class="editbtn"><i class="fas fa-edit"></i></a>
-            <a href="/adminDelete/<%= product.id %>" class="deletebtn"><i class="fas fa-trash-alt"></i></a>
+    </div>
+    <div class="adminproducts">
+        <% products.forEach(product=> { %>
+
+            <div class="showproduct">
+                <img src="data:image/<%=product.img.contentType%>;base64,<%=product.img.data.toString('base64')%>"
+                    alt="" />
+                <p class="producttext"><span class="headlineproduct">Title:</span>
+                    <%= product.title %>
+                </p>
+                <p class="producttext"><span class="headlineproduct">Origin:</span>
+                    <%= product.origin %>
+                </p>
+                <p class="producttext"><span class="headlineproduct">Blend:</span>
+                    <%= product.blend %>
+                </p>
+                <p class="producttext"><span class="headlineproduct">Description:</span>
+                <p>
+                    <%= product.description %>
+                </p>
+                </p>
+                <p class="producttext"><span class="headlineproduct">Price:</span>
+                    <%= product.price %> SEK
+                </p>
+                <div class="editdeletebtn">
+                    <a href="/adminEdit/<%= product.id %>" class="editbtn"><i class="fas fa-edit"></i></a>
+                    <a href="/adminDelete/<%= product.id %>" class="deletebtn"><i class="fas fa-trash-alt"></i></a>
+                </div>
             </div>
+            <% }) %>
+    </div>
+
+    <div id="removeusersection">
+        <div class="removeuserdiv">
+            <h4 class="removeuserheader">List of all active users without admin-privilige</h4>
+            <p class="removeuserwarning"><strong>Warning! Admin must read this: </strong>You can delete any of these
+                users.
+                Please note in doing so, the person along with all of his or hers
+                data will be removed from the database, and will no longer be available to log in or purchase products
+                as that specific user, and that the person will need to register anew to use these functions.
+            </p>
+            <% userList.forEach(user=> { %>
+                <% if (user.role !='admin' ) { %>
+                    <div class="removeuser">
+                        <p class="usertoremove"><span class="headlineuser">User: </span>
+                            <%= user.username %>
+                        </p>
+                        <a href="/userDelete/<%= user.id %>" class="removeuserbtn"><i class="fas fa-user-slash"></i></a>
+                    </div>
+                    <% } %>
+                        <% }) %>
         </div>
-<% }) %>
-</div>
+    </div>
 
-<div id="removeusersection">
-<div class="removeuserdiv">
-    <h4 class="removeuserheader">List of all active users without admin-privilige</h4>
-    <p class="removeuserwarning"><strong>Warning! Admin must read this: </strong>You can delete any of these users. 
-        Please note in doing so, the person along with all of his or hers 
-        data will be removed from the database, and will no longer be available to log in or purchase products
-         as that specific user, and that the person will need to register anew to use these functions. 
-    </p>
-    <% userList.forEach(user => { %>
-        <% if (user.role != 'admin') { %>
-        <div class="removeuser">
-            <p class="usertoremove"><span class="headlineuser">User: </span><%= user.username %></p>
-            <a href="/userDelete/<%= user.id %>" class="removeuserbtn"><i class="fas fa-user-slash"></i></a>
-        </div>
-        <% } %>
-    <% }) %>
-</div>
-</div>
+    <div class="backtotopdiv"><a href="/admin" class="backtotopbtn">Back to top</a></div>
 
-<div class="backtotopdiv"><a href="/admin" class="backtotopbtn">Back to top</a></div>
-
-<%- include("../partials/footer") %>
+    <%- include("../partials/footer") %>

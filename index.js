@@ -1,5 +1,5 @@
-const express = require('express');
-const mongoose = require('mongoose');
+const express = require("express");
+const mongoose = require("mongoose");
 const cookieparser = require("cookie-parser");
 const flash = require("connect-flash");
 const session = require("express-session");
@@ -11,11 +11,11 @@ const shoppingRoute = require("./routes/shoppingRoute");
 
 const app = express();
 
-require('dotenv').config();
+require("dotenv").config();
 
 app.use(express.static(__dirname + "/public"));
 
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 app.use(cookieparser());
@@ -23,33 +23,37 @@ app.use(cookieparser());
 app.set("view engine", "ejs");
 
 app.use(
-    session({
-      secret: "secret",
-      resave: true,
-      saveUninitialized: true,
-    })
-  );
-  
-  app.use(flash());
-  
-  app.use((req, res, next) => {
-    res.locals.success_msg = req.flash("success_msg");
-    res.locals.warning_msg = req.flash("warning_msg");
-    next();
-  });
+  session({
+    secret: "secret",
+    resave: true,
+    saveUninitialized: true,
+  })
+);
+
+app.use(flash());
+
+app.use((req, res, next) => {
+  res.locals.success_msg = req.flash("success_msg");
+  res.locals.warning_msg = req.flash("warning_msg");
+  next();
+});
 
 app.use(userRoute);
 app.use(productRoute);
 app.use(wishlistRoute);
 app.use(shoppingRoute);
 
-mongoose.connect(process.env.DB_URL, {
-    useNewUrlParser: true, 
-    useUnifiedTopology: true, 
-    useCreateIndex: true, 
-    useFindAndModify: false
-    }, () => {
+mongoose.connect(
+  process.env.DB_URL,
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+  },
+  () => {
     app.listen(process.env.PORT, () => {
-        console.log("Server is up and running on port 8000");
+      console.log("Server is up and running");
     });
-});
+  }
+);
