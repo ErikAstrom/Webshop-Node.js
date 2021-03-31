@@ -26,6 +26,6 @@
 
 ---
 
-Project members are Erik Åström, Fredrik André and Micaela Goffe 
+Project members are Erik Åström, Fredrik André and Micaela Goffe.
  
  
