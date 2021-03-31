@@ -69,7 +69,7 @@ const thankYou = async (req, res) => {
       to: user.email,
       from: "bubblifyinfo@gmail.com",
       subject: "Order confirmation",
-      html: `<h2>Thank you<h2>`,
+      html: `<body style="color:black"><h2> Thank you <span style="color:#CCAC00;"> ${user.username} </span> <h2> <p style="font-style:italic; font-size:smaller;">Your order has been processed and will arrive in 3-5 working days.</p> <p style="font-size:smaller;"> Hope we will see you again very soon </p> <p style="font-size:smaller;"> Best regards, <span style="color:#CCAC00;"> Bubblify team </span> </p></body> `,
     };
     sgMail.send(msg);
 
