@@ -75,7 +75,7 @@ const renderProducts = async (req, res) => {
 
   } catch (err) {
     console.log(err.message)
-    req.flash("warning_msg", "Something went wrong, please try again")
+    req.flash("warning_msg", "Product already exists, try another title.")
     res.redirect("/admin")
   }
 }
