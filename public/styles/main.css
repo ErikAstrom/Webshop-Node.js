@@ -467,7 +467,8 @@
         display: flex;
         justify-content: center; }
         .productMain .productContainer .productDiv picture img {
-          width: 40%; }
+          width: 40%;
+          max-height: 300px; }
           @media screen and (min-width: 576px) {
             .productMain .productContainer .productDiv picture img {
               width: 25%; } }
