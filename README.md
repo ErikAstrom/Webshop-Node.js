@@ -1,6 +1,7 @@
 # Webshop group project
 *School assignment to create a webshop with authentication, authorization and payment using Node.js, Express, MongoDB, Stripe, EJS, SCSS.*
 
+#### This project is available on heroku! Please visit [Bubblify](https://bubblifywebshop.herokuapp.com/) to view it.
 ---
 
 ### Installation
